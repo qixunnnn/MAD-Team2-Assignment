@@ -31,9 +31,7 @@ public class SignUpActivity extends AppCompatActivity {
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.v(TAG, FILENAME + ": Login with info: " + etPassword.getText().toString());
-                Log.v(TAG, FILENAME + ": Login with info: " + etCfmPassword.getText().toString());
-               if (etPassword.getText().toString().equals(etCfmPassword.getText().toString())) {
+                if (etPassword.getText().toString().equals(etCfmPassword.getText().toString())) {
                     UserData userData = dbHandler.findUser(etUsername.getText().toString());
                     if (userData == null) {
                         String dbUsername = etUsername.getText().toString();
@@ -50,7 +48,7 @@ public class SignUpActivity extends AppCompatActivity {
                         Toast.makeText(SignUpActivity.this, "User already exist. \nPLease try again.", Toast.LENGTH_SHORT).show();
                     }
                 }
-              else
+                else
                 {
                     Toast.makeText(SignUpActivity.this, "Password does not match \nPLease try again.", Toast.LENGTH_SHORT).show();
                 }
