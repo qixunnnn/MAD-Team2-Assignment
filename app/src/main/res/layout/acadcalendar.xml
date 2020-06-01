@@ -10,9 +10,7 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/imageView4"
         android:fillViewport="true"
-        android:layout_marginTop="25dp"
         >
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,14 +21,12 @@
             <ImageView
                 android:id="@+id/imageView4"
                 android:layout_width="match_parent"
-                android:layout_height="217dp"
+                android:layout_height="match_parent"
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/academic2" />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="25dp" />
+
 
             <TextView
                 android:id="@+id/textView8"

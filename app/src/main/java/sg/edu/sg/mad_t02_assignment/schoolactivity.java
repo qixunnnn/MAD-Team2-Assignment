@@ -1,5 +1,6 @@
 package sg.edu.sg.mad_t02_assignment;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -25,6 +26,7 @@ public class schoolactivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schoolactivity);
+
 
         RecyclerView recyclerView = findViewById(R.id.schoolRecycle);
         SchoolAdapter sAdapter = new SchoolAdapter(images,this);
