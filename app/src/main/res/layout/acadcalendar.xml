@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/imageView4"
+        android:fillViewport="true"
+        android:layout_marginTop="25dp"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="match_parent"
+                android:layout_height="217dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/academic2" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="25dp" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#2196F3"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:text="April 2020 Semester 1"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center|start"
+                android:text="Teaching weeks"
+                android:textAlignment="gravity"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="20 Apr 2020 to 14 Jun 2020"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#00BCD4" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center|start"
+                android:text="Break"
+                android:textAlignment="gravity"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="15 Jun 2020 to 28 Jun 2020"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#00BCD4" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center|start"
+                android:text="Teaching weeks"
+                android:textAlignment="gravity"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="29 Jun 2020 to 19 Jul 2020"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#00BCD4" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center|start"
+                android:text="Special Breaks"
+                android:textAlignment="gravity"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="20 Jul 2020 to 26 Jul 2020"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/view5"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#00BCD4" />
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center|start"
+                android:text="Teaching weeks"
+                android:textAlignment="gravity"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="27 Jul 2020 to 23 Aug 2020"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/view6"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#00BCD4" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center|start"
+                android:text='Study and Exam Weeks'
+                android:textAlignment="gravity"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="24 Aug 2020 to 6 Sep 2020"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/view7"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#00BCD4" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center|start"
+                android:text='Vacation'
+                android:textAlignment="gravity"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="7 Sep 2020 to 18 Oct 2020"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/view8"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#00BCD4" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="66dp" />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#673AB7"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:text="October 2020 Semester 2"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FFFFFF" />
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center|start"
+                android:text='Teaching Weeks'
+                android:textAlignment="gravity"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="19 Oct 2020 to 20 Dec 2020"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/view9"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#00BCD4" />
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center|start"
+                android:text='Break'
+                android:textAlignment="gravity"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="21 Dec 2020 to 3 Jan 2021"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/view10"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#00BCD4" />
+
+            <TextView
+                android:id="@+id/textView28"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center|start"
+                android:text='Teaching Weeks'
+                android:textAlignment="gravity"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="4 Jan 2021 to 14 Feb 2021"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/view11"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#00BCD4" />
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center|start"
+                android:text='Study and Exam Weeks'
+                android:textAlignment="gravity"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView31"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="15 Feb 2021 to 28 Feb 2021"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/view12"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#00BCD4" />
+
+            <TextView
+                android:id="@+id/textView32"
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center|start"
+                android:text='Vacation'
+                android:textAlignment="gravity"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView33"
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="1 Mar 2021 to 18 Apr 2021"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/view13"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#00BCD4" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
