@@ -5,25 +5,47 @@ import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
-    CardView bmiclick;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+
+    final String TAG = "Home Page";
+
+    //Put all card view ID where
+    private static final int[] CARDVIEW_ID = {
+            R.id.cardviewCalendar, R.id.cardviewSchool
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        bmiclick = (CardView)findViewById(R.id.cardviewCalendar);
-        bmiclick.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bminextpage();
-            }
-        });
+        setTitle("Home");
+
+        //Assigning local variable to ID
+
+        for (final int id: CARDVIEW_ID)
+        {
+            findViewById(id).setOnClickListener(this);
+        }
+        Log.v(TAG, "Finished Pre-Initialization");
     }
-    private void bminextpage(){
-        Intent intent = new Intent(MainActivity.this, AcadCalendar.class);
-        startActivity(intent);
+
+    @Override
+    public void onClick(View v) {
+        Intent i;
+        //Redirect to their specific activity
+        if (v.getId() == CARDVIEW_ID[0])
+        {
+            i = new Intent(this,AcadCalendar.class);
+            startActivity(i);
+        }
+        else if (v.getId() == CARDVIEW_ID[1])
+        {
+            i = new Intent(this,schoolactivity.class);
+            startActivity(i);
+        }
     }
 }
