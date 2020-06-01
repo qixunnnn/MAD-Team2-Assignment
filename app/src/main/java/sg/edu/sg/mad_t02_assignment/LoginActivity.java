@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
                 Log.v(TAG, FILENAME + ": Login with info: " + etPassword.getText().toString());
 
                 if(isValidCredential(etUsername.getText().toString(), etPassword.getText().toString())){
-                    Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
                     Toast.makeText(LoginActivity.this,"Valid", Toast.LENGTH_SHORT).show();
                 }
