@@ -17,7 +17,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BMICalculator"></activity>
+        <activity android:name=".AcadCalendar"></activity>
     </application>
 
 </manifest>

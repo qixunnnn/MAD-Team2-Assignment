@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        bmiclick = (CardView)findViewById(R.id.cardviewBMI);
+        bmiclick = (CardView)findViewById(R.id.cardviewCalendar);
         bmiclick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     private void bminextpage(){
-        Intent intent = new Intent(MainActivity.this, BMICalculator.class);
+        Intent intent = new Intent(MainActivity.this, AcadCalendar.class);
         startActivity(intent);
     }
 }
