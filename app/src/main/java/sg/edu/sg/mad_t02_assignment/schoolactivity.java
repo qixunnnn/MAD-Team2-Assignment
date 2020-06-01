@@ -6,7 +6,8 @@ import android.os.Bundle;
 
 public class schoolactivity extends AppCompatActivity {
 
-    String s1, s2;
+    String schools[];
+    String s_description[];
     int images [] = {};
 
     @Override
