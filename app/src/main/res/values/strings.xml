@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">MAD_Team2_Assignment</string>
+
+    <string-array name="np_school">
+        <item>School of Business &amp; Accountancy</item>
+        <item>School of Design &amp; Environment</item>
+        <item>School of Engineering</item>
+        <item>School of Humanities &amp; Social Sciences</item>
+        <item>School of Health Sciences</item>
+        <item>School of Film &amp; Media Studies</item>
+        <item>School of InfoComm Technology</item>
+        <item>School of Life Science &amp; Chemical Technology</item>
+    </string-array>
+
+    <string-array name="school_description">
+        <item>Strong Ties with Industry Leader</item>
+        <item>Live Design, Think Environment</item>
+        <item>School of Engineering</item>
+        <item>Inspiring People</item>
+        <item>Clinical training from the get-go</item>
+        <item>A League of its Own</item>
+        <item>Immersive &amp; Experimental Learning</item>
+        <item>Re-code Your DNA</item>
+    </string-array>
+
 </resources>
