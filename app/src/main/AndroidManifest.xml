@@ -30,6 +30,9 @@
         <activity android:name=".SignUpActivity">
 
         </activity>
+        <activity android:name=".SettingActivity">
+
+        </activity>
 
     </application>
 
