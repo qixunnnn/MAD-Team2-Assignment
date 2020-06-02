@@ -11,9 +11,7 @@
         <ImageView
             android:id="@+id/school_image"
             android:layout_width="match_parent"
-            android:layout_height="188dp"
-
-            android:src="@drawable/ba" />
+            android:layout_height="188dp" />
 
 
 </androidx.cardview.widget.CardView>
