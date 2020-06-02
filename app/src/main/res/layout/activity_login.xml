@@ -105,7 +105,7 @@
         android:layout_marginTop="328dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_view" />
+        app:srcCompat="@drawable/ic_adb_black_24dp" />
 
     <CheckBox
         android:id="@+id/checkBox_RememberMe"
