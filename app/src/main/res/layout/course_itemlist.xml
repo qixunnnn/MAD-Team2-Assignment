@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="15dp"
+        >
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:id="@+id/course_logo"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/course_name"
+            android:text="Course Name"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_toRightOf="@+id/course_logo"
+            android:layout_toEndOf="@+id/course_logo"
+            android:layout_marginLeft="12dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="3dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/course_motto"
+            android:text="Course Description"
+            android:textColor="@color/MediumVioletRed"
+            android:textSize="14sp"
+            android:layout_toRightOf="@id/course_logo"
+            android:layout_toEndOf="@id/course_logo"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="16dp"
+            android:layout_below="@id/course_name"/>
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

@@ -10,17 +10,27 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MainActivity" />
-        <activity android:name=".AcadCalendar" />
-        <activity android:name=".schoolactivity" />
+        <activity android:name=".MainActivity">
+
+        </activity>
+        <activity android:name=".AcadCalendar">
+
+        </activity>
+        <activity android:name=".schoolactivity"></activity>
+        <activity android:name=".CourseActivity"></activity>
+
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".SignUpActivity" />
+        <activity android:name=".SignUpActivity">
+
+        </activity>
+
     </application>
 
 </manifest>

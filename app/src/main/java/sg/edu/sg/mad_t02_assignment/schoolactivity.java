@@ -8,10 +8,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import java.util.ArrayList;
+
 public class schoolactivity extends AppCompatActivity {
 
     String schools[];
     String s_description[];
+
 
     int images[] = {R.drawable.ba,
                     R.drawable.de,
@@ -27,7 +30,6 @@ public class schoolactivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schoolactivity);
 
-
         RecyclerView recyclerView = findViewById(R.id.schoolRecycle);
         SchoolAdapter sAdapter = new SchoolAdapter(images,this);
 
@@ -40,6 +42,10 @@ public class schoolactivity extends AppCompatActivity {
         schools = getResources().getStringArray(R.array.np_school);
         s_description = getResources().getStringArray(R.array.school_description);
 
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
 
 
     }
