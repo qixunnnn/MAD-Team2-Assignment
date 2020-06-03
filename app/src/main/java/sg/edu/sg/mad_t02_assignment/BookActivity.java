@@ -20,6 +20,8 @@ public class BookActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.book_activity);
 
+        setTitle("Book Price");
+
         BookModel bookModel = new BookModel(R.drawable.cmbook,"Computing Mathematics",27,"Computing Mathematics module used by all course in ICT Year 1 Students");
         bookModelList.add(bookModel);
 
