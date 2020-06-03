@@ -132,6 +132,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardviewBook"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="1"
@@ -141,9 +142,8 @@
             android:layout_gravity="fill"
             android:layout_margin="8dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp"
 
-            >
+            app:cardElevation="8dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"

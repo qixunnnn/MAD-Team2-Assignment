@@ -12,33 +12,29 @@ import java.util.ArrayList;
 
 public class BookAdapter extends RecyclerView.Adapter<BookViewHolder> {
 
-    private ArrayList<BookModel> bookModelList;
-    private Context bookContext;
+     ArrayList<BookModel> bookModelList;
 
     public BookAdapter(ArrayList<BookModel> bookModelList) {
         this.bookModelList = bookModelList;
-        this.bookContext = bookContext;
     }
 
     @NonNull
     @Override
     public BookViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.book_itemlist,parent,false);
-        return new BookViewHolder(view);
+        View item = LayoutInflater.from(parent.getContext()).inflate(R.layout.book_itemlist,parent,false);
+        return new BookViewHolder(item);
     }
 
     @Override
     public void onBindViewHolder(@NonNull BookViewHolder holder, int position) {
-        int bookImage = bookModelList.get(position).getBookImage();
-        String bookName = bookModelList.get(position).getBookName();
-        int bookPrice = bookModelList.get(position).getBookPrice();
-        String bookDescription = bookModelList.get(position).getBookDescription();
-        holder.setData(bookImage,bookName,bookPrice,bookDescription);
+        holder.bookImage.setImageResource(bookModelList.get(position).getBookImage());
+        holder.bookDescription.setText(bookModelList.get(position).getBookDescription());
+        holder.bookPrice.setText("$ " + String.valueOf(bookModelList.get(position).getBookPrice()));
+        holder.bookName.setText(bookModelList.get(position).getBookName());
     }
 
     @Override
     public int getItemCount() {
         return bookModelList.size();
     }
-
 }
