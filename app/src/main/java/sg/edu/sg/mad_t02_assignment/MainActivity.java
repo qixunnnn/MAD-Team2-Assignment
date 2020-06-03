@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //Put all card view ID where
     private static final int[] CARDVIEW_ID = {
-            R.id.cardviewCalendar, R.id.cardviewSchool, R.id.cardviewSettings
+            R.id.cardviewCalendar, R.id.cardviewSchool, R.id.cardviewSettings, R.id.cardviewBook
     };
 
     @Override
@@ -49,6 +49,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         else if (v.getId() == CARDVIEW_ID[2])
         {
             i = new Intent(this,SettingActivity.class);
+            startActivity(i);
+        }
+        else if (v.getId() == CARDVIEW_ID[3])
+        {
+            i = new Intent(this, BookActivity.class);
             startActivity(i);
         }
     }
