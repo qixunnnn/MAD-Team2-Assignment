@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bluebackground"
+    android:background="#2E2D2C"
     android:theme="@style/Theme.AppCompat.Light.NoActionBar"
 
 
@@ -16,7 +16,7 @@
         android:layout_height="43dp"
         android:layout_marginStart="84dp"
         android:layout_marginTop="324dp"
-        android:background="#0B1652"
+        android:background="@color/colorPrimary"
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
@@ -24,7 +24,8 @@
         android:textColor="#FFFFFF"
         android:textColorHint="#F4F3F3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <EditText
         android:id="@+id/editText_password"
@@ -32,7 +33,7 @@
         android:layout_height="43dp"
         android:layout_marginStart="84dp"
         android:layout_marginTop="384dp"
-        android:background="#0B1652"
+        android:background="#524F4E"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
@@ -47,8 +48,8 @@
         android:layout_height="49dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="484dp"
-        android:background="#FFFFFF"
-        app:cardBackgroundColor="#FFFFFF"
+        android:background="#FFFFF"
+        app:cardBackgroundColor="@color/DarkCyan"
         app:cardCornerRadius="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -59,11 +60,12 @@
         android:layout_height="45dp"
         android:layout_marginStart="68dp"
         android:layout_marginTop="488dp"
-        android:background="#FFFFFF"
+        android:background="@color/DarkCyan"
         android:text="Login"
-        android:textColor="#131313"
+        android:textColor="@color/White"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <TextView
         android:id="@+id/textView_NewUser"
@@ -111,7 +113,7 @@
         android:id="@+id/checkBox_RememberMe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="440dp"
         android:buttonTint="@color/White"
         android:text="Remember Me?"
@@ -126,7 +128,7 @@
         android:id="@+id/checkBox_Stayloggedin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="192dp"
+        android:layout_marginStart="220dp"
         android:layout_marginTop="440dp"
         android:buttonTint="@color/White"
         android:text="Stay logged in"
