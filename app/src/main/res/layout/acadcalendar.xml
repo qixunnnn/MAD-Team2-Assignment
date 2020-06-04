@@ -41,6 +41,19 @@
                 android:textColor="#FFFFFF" />
 
             <TextView
+                android:id="@+id/coutdown"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center"
+                android:text="test"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="@color/ForestGreen"
+                />
+
+
+            <TextView
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
                 android:layout_height="29dp"
