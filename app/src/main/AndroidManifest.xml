@@ -9,9 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ChangePassActivity"></activity>
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".AcadCalendar"></activity>
+        <activity android:name=".GeneralContact"></activity>
+        <activity android:name=".ContactActivity" />
+        <activity android:name=".ChangePassActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".AcadCalendar" />
         <activity android:name=".schoolactivity" />
         <activity android:name=".CourseActivity" />
         <activity android:name=".LoginActivity">
@@ -20,18 +22,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".SignUpActivity">
-
-        </activity>
-        <activity android:name=".SettingActivity">
-
-        </activity>
-        <activity android:name=".BookActivity">
-
-        </activity>
-
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".BookActivity" />
     </application>
 
 </manifest>
