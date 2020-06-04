@@ -56,10 +56,13 @@ public class SettingActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int id) {
                                 Intent intent = new Intent(SettingActivity.this, LoginActivity.class);
                                 intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                                finish();
                                 startActivity(intent);
                                 settingsPrefsEditor.putBoolean("stayloggedin", false);
                                 settingsPrefsEditor.commit();
+
                                 Log.v(TAG, "User accept!");
+
                             }
                         })
                         //when user press no

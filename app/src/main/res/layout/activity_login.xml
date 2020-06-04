@@ -48,7 +48,6 @@
         android:layout_height="49dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="484dp"
-        android:background="#FFFFF"
         app:cardBackgroundColor="@color/DarkCyan"
         app:cardCornerRadius="25dp"
         app:layout_constraintStart_toStartOf="parent"

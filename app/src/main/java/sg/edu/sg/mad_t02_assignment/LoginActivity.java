@@ -60,6 +60,8 @@ public class LoginActivity extends AppCompatActivity {
         newUser.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                loginPrefsEditor.putBoolean("stayloggedin", false);
+                loginPrefsEditor.commit();
                 Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
