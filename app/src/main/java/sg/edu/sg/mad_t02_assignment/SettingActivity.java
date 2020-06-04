@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import java.util.Set;
 
@@ -33,7 +34,7 @@ public class SettingActivity extends AppCompatActivity {
         settingsPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
         settingsPrefsEditor = settingsPreferences.edit();
         builder = new AlertDialog.Builder(this);
-        signOutButton.setOnTouchListener(new View.OnTouchListener() {
+        ChangePassButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 Intent intent = new Intent(SettingActivity.this,ChangePassActivity.class);

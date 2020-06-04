@@ -98,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
                         loginPrefsEditor.commit();
                     }
 
-                    Toast.makeText(LoginActivity.this,"Valid", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this,"Logged in successful", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     Toast.makeText(LoginActivity.this, "Invalid Username / Password", Toast.LENGTH_SHORT).show();
