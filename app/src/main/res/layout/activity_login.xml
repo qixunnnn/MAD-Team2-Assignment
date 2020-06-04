@@ -16,7 +16,7 @@
         android:layout_height="43dp"
         android:layout_marginStart="84dp"
         android:layout_marginTop="324dp"
-        android:background="@color/colorPrimary"
+        android:background="#524F4E"
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
