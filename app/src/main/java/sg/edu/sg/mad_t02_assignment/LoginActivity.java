@@ -60,6 +60,8 @@ public class LoginActivity extends AppCompatActivity {
         newUser.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                loginPrefsEditor.putBoolean("stayloggedin", false);
+                loginPrefsEditor.commit();
                 Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
@@ -98,7 +100,7 @@ public class LoginActivity extends AppCompatActivity {
                         loginPrefsEditor.commit();
                     }
 
-                    Toast.makeText(LoginActivity.this,"Valid", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this,"Logged in successful", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     Toast.makeText(LoginActivity.this, "Invalid Username / Password", Toast.LENGTH_SHORT).show();
