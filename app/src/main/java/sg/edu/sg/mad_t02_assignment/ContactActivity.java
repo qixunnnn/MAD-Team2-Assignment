@@ -3,16 +3,19 @@ package sg.edu.sg.mad_t02_assignment;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 
-import java.util.ArrayList;
 
-public class ContactActivity extends AppCompatActivity {
+public class ContactActivity extends AppCompatActivity implements View.OnClickListener{
 
-    Button generalBtn;
-    Button acadBtn;
+    final String TAG = "Contact Activity";
+
+    private static final int[] BUTTON_ID = {
+            R.id.contact_general_btn, R.id.contact_academic_btn, R.id.contact_feedback_btn
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,24 +23,33 @@ public class ContactActivity extends AppCompatActivity {
         setContentView(R.layout.activity_contact);
 
         setTitle("Contact");
-        generalBtn = (Button) findViewById(R.id.contact_general_btn);
-        acadBtn = (Button) findViewById(R.id.contact_academic_btn);
 
-        generalBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        for (final int id: BUTTON_ID)
+        {
+            //SET ALL BUTTON BUTTON ID TO ONCLICKLISTENER
+            findViewById(id).setOnClickListener(this);
+        }
+        Log.v(TAG, "Finished Pre-Initialization");
 
-                Intent i = new Intent(getApplicationContext(),GeneralContact.class);
-                startActivity(i);
-            }
-        });
+    }
 
-        acadBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),AcademicContact.class);
-                startActivity(i);
-            }
-        });
+    @Override
+    public void onClick(View v) {
+        Intent i = null;
+
+        //Redirect to their specific activity
+        if (v.getId() == BUTTON_ID[0])
+        {
+            i = new Intent(this,GeneralContact.class);
+        }
+        else if (v.getId() == BUTTON_ID[1])
+        {
+            i = new Intent(this,AcademicContact.class);
+        }
+        else if (v.getId() == BUTTON_ID[2])
+        {
+            i = new Intent("android.intent.action.VIEW", Uri.parse("https://www1.np.edu.sg/PPO/SQCFeedback/Feedback.aspx"));
+        }
+        startActivity(i);
     }
 }

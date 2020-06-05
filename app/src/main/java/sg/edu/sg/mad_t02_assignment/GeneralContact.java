@@ -20,6 +20,21 @@ public class GeneralContact extends AppCompatActivity {
 
         setTitle("General Contact");
 
+        LoadContactInfo();
+        RecyclerView recyclerView = findViewById(R.id.generalrecycler);
+        GeneralContactAdapter gAdapter = new GeneralContactAdapter(contactList);
+
+        LinearLayoutManager sLayoutManager = new LinearLayoutManager(this);
+
+        recyclerView.setLayoutManager(sLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(gAdapter);
+
+        
+
+    }
+
+    public void LoadContactInfo(){
         contactList.add(new ContactModel("General Enquiries", "6466 6555\n Name: Tan AH kao", "askNP@np.edu.sg"));
         contactList.add(new ContactModel("Covid-19 Enquiries","6460 7888", "askCovid@np.edu.sg"));
         contactList.add(new ContactModel("Admissions for Full-time Diplomas","6463 1233", "admissions@np.edu.sg"));
@@ -31,14 +46,5 @@ public class GeneralContact extends AppCompatActivity {
         contactList.add(new ContactModel("Campus Security", "6460 6999", "-"));
         contactList.add(new ContactModel("Financial Matters (Fee Payment)", "6460 6215", "fin_student@np.edu.sg"));
         contactList.add(new ContactModel("Financial Assistance (Bursaries & Loans)", "6460 7553", "Dorothea_Ong@np.edu.sg"));
-        RecyclerView recyclerView = findViewById(R.id.generalrecycler);
-        GeneralContactAdapter gAdapter = new GeneralContactAdapter(contactList);
-
-        LinearLayoutManager sLayoutManager = new LinearLayoutManager(this);
-
-        recyclerView.setLayoutManager(sLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(gAdapter);
-
     }
 }

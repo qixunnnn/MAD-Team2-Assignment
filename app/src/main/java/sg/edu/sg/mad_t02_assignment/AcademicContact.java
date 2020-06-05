@@ -20,7 +20,21 @@ public class AcademicContact extends AppCompatActivity {
         setContentView(R.layout.activity_academic_contact);
 
         setTitle("Academic Contact");
+        LoadContactInfo();
 
+        RecyclerView recyclerView = findViewById(R.id.academicrecycler);
+        GeneralContactAdapter gAdapter = new GeneralContactAdapter(contactList);
+
+        LinearLayoutManager sLayoutManager = new LinearLayoutManager(this);
+
+        recyclerView.setLayoutManager(sLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(gAdapter);
+
+    }
+
+    public void LoadContactInfo()
+    {
         contactList.add(new ContactModel("School of Business & Accountancy\n" + "(Tan Hui Hui)","6460 8324","Sch-BA@np.edu.sg"));
         contactList.add(new ContactModel("School of Business & Accountancy\n" + "(Wong Siew Fatt)","6460 7764","Sch-BA@np.edu.sg"));
         contactList.add(new ContactModel("School of Design & Environment\n" + "(Debby Lee)","6460 6973","debby_lee@np.edu.sg"));
@@ -38,16 +52,5 @@ public class AcademicContact extends AppCompatActivity {
         contactList.add(new ContactModel("School of Life Sciences & Chemical Technology\n" + "(Yeo-Lim Sor Khim)","6460 8011","YEO-LIM_Sor_Khim@np.edu.sg"));
         contactList.add(new ContactModel("School of Interdisciplinary Studies\n" + "(CHAN-LOH_Wai Cheng)","6460 6570","CHAN-LOH_Wai_Cheng@np.edu.sg"));
         contactList.add(new ContactModel("School of Interdisciplinary Studies\n" + "(SETO-NG Beng Kiang Edalene)","6460 8366","SETO-NG-Beng-Kiang@np.edu.sg"));
-
-        RecyclerView recyclerView = findViewById(R.id.academicrecycler);
-        GeneralContactAdapter gAdapter = new GeneralContactAdapter(contactList);
-
-        LinearLayoutManager sLayoutManager = new LinearLayoutManager(this);
-
-        recyclerView.setLayoutManager(sLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(gAdapter);
-
-
     }
 }

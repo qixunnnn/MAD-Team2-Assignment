@@ -21,7 +21,22 @@ public class BookActivity extends AppCompatActivity {
         setContentView(R.layout.book_activity);
 
         setTitle("Book Price");
+        LoadInputData();
+        //All books loaded
 
+        //Load RecyclerView
+        RecyclerView recyclerView = findViewById(R.id.book_recycler);
+
+        BookAdapter bAdapter = new BookAdapter(bookModelList);
+        LinearLayoutManager sLayoutManager = new LinearLayoutManager(this);
+
+        recyclerView.setLayoutManager(sLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(bAdapter);
+
+        Log.v(TAG, "Finished Pre-Initialization");
+    }
+    public void LoadInputData(){
         BookModel bookMode0 = new BookModel(R.drawable.eblbook,"Essentials of Business Law",36,"Business Law module textbook used by all Year 1 students taking courses in school of BA");
         bookModelList.add(bookMode0);
         BookModel bookModel1 = new BookModel(R.drawable.fmbook,"Financial Management",15,"Financial Management module textbook used students taking courses in school of DE");
@@ -38,16 +53,5 @@ public class BookActivity extends AppCompatActivity {
         bookModelList.add(bookModel6);
         BookModel bookModel7 = new BookModel(R.drawable.esbook,"Elementary Statistics",30,"Biostatistics / Applied Biostatistics module textbook used by students taking courses in school of LSCT");
         bookModelList.add(bookModel7);
-
-        RecyclerView recyclerView = findViewById(R.id.book_recycler);
-
-        BookAdapter bAdapter = new BookAdapter(bookModelList);
-        LinearLayoutManager sLayoutManager = new LinearLayoutManager(this);
-
-        recyclerView.setLayoutManager(sLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(bAdapter);
-
-        Log.v(TAG, "Finished Pre-Initialization");
     }
 }

@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //Put all card view ID where
     private static final int[] CARDVIEW_ID = {
-            R.id.cardviewCalendar, R.id.cardviewSchool, R.id.cardviewSettings, R.id.cardviewBook, R.id.cardviewContact
+            R.id.cardviewCalendar, R.id.cardviewSchool, R.id.cardviewSettings,
+            R.id.cardviewBook, R.id.cardviewContact
     };
 
     @Override
