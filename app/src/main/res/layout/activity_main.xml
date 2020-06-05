@@ -14,11 +14,25 @@
 
     </VideoView>
 
+    <TextView
+        android:id="@+id/loginUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/video_mainmenu"
+        android:background="@color/DarkCyan"
+        android:textColor="@color/White"
+        android:text="Welcome,User"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:padding="18dp"
+        />
+
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="531dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="230dp"
         android:columnCount="2"
         android:rowCount="3">
 

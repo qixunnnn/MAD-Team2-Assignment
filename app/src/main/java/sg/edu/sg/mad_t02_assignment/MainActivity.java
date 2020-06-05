@@ -44,9 +44,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
         npVideo.start();
-        //title = findViewById(R.id.title_textview);
-        //title.setText();
-        setTitle("Welcome " + username);
+        title = findViewById(R.id.loginUser);
+        title.setText(("Welcome, " + username).toUpperCase());
+        setTitle("Home");
 
         //Assigning local variable to ID
 
