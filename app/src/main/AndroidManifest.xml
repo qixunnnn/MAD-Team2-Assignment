@@ -41,9 +41,9 @@
         <activity android:name=".BookActivity"
             android:parentActivityName=".MainActivity"
             />
-
-
-
+        <activity android:name=".ContactActivity"
+            android:parentActivityName=".MainActivity"
+            />
     </application>
 
 </manifest>
