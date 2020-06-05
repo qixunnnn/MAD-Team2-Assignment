@@ -20,6 +20,8 @@ public class CourseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.course_activity);
 
+        setTitle("Courses");
+
         int mPostID = getIntent().getIntExtra("pos",0);
         Log.v(TAG,"Position of recyclerview: " + String.valueOf(mPostID));
 

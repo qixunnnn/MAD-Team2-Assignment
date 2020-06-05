@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private String username;
     private TextView title;
     final String TAG = "Home Page";
+    private VideoView npVideo;
 
     //Put all card view ID where
     private static final int[] CARDVIEW_ID = {
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         MainPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
 
         username = MainPreferences.getString("username", "");
-        VideoView npVideo = findViewById(R.id.video_mainmenu);
+        npVideo = findViewById(R.id.video_mainmenu);
         npVideo.setVideoURI(
                 Uri.parse("android.resource://" + getPackageName() +  "/" +R.raw.npvideo)
         );
@@ -87,6 +88,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             i = new Intent(this, ContactActivity.class);
         }
         startActivity(i);
+    }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        npVideo.stopPlayback();
     }
 }

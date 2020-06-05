@@ -19,7 +19,9 @@ public class AcadCalendar extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acadcalendar);
+
         TextView countdownDate = findViewById(R.id.coutdown);
+        setTitle("Academic Calendar");
 
         try{
             Date cDate = new Date();

@@ -24,7 +24,6 @@ public class SchoolAdapter extends RecyclerView.Adapter<SchoolViewHolder> {
 
     public void onBindViewHolder(SchoolViewHolder holder, final int position) {
         holder.schoolImage.setImageResource(imagesss[position]);
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

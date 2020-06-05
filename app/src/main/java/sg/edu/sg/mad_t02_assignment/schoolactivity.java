@@ -28,6 +28,8 @@ public class schoolactivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schoolactivity);
 
+        setTitle("Schools");
+
         RecyclerView recyclerView = findViewById(R.id.schoolRecycle);
         SchoolAdapter sAdapter = new SchoolAdapter(images,this);
 
