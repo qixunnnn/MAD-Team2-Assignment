@@ -9,41 +9,42 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ChangePassActivity"
-            android:parentActivityName=".SettingActivity"
-            />
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".AcadCalendar"
-            android:parentActivityName=".MainActivity"
-            />
-        <activity android:name=".schoolactivity"
-            android:parentActivityName=".MainActivity"
-            />
-        <activity android:name=".CourseActivity"
-            android:parentActivityName=".schoolactivity"/>
-        <activity android:name=".GeneralContact"></activity>
-
+        <activity android:name=".AcademicContact"></activity>
+        <activity
+            android:name=".ChangePassActivity"
+            android:parentActivityName=".SettingActivity" />
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".AcadCalendar"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".schoolactivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".CourseActivity"
+            android:parentActivityName=".schoolactivity" />
+        <activity
+            android:name=".GeneralContact"
+            android:parentActivityName=".ContactActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".SignUpActivity"
-            android:parentActivityName=".LoginActivity"
-            />
-        <activity android:name=".SettingActivity"
-            android:parentActivityName=".MainActivity"
-
-        />
-        <activity android:name=".BookActivity"
-            android:parentActivityName=".MainActivity"
-            />
-        <activity android:name=".ContactActivity"
-            android:parentActivityName=".MainActivity"
-            />
+        <activity
+            android:name=".SignUpActivity"
+            android:parentActivityName=".LoginActivity" />
+        <activity
+            android:name=".SettingActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".BookActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ContactActivity"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>
