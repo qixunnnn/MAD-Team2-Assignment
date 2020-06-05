@@ -9,11 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ChangePassActivity"></activity>
+        <activity android:name=".ChangePassActivity"
+            android:parentActivityName=".SettingActivity"
+            />
         <activity android:name=".MainActivity"></activity>
-        <activity android:name=".AcadCalendar"></activity>
-        <activity android:name=".schoolactivity" />
-        <activity android:name=".CourseActivity" />
+        <activity android:name=".AcadCalendar"
+            android:parentActivityName=".MainActivity"
+            />
+        <activity android:name=".schoolactivity"
+            android:parentActivityName=".MainActivity"
+            />
+        <activity android:name=".CourseActivity"
+            android:parentActivityName=".schoolactivity"/>
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,15 +29,18 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".SignUpActivity">
+        <activity android:name=".SignUpActivity"
+            android:parentActivityName=".LoginActivity"
+            />
+        <activity android:name=".SettingActivity"
+            android:parentActivityName=".MainActivity"
 
-        </activity>
-        <activity android:name=".SettingActivity">
+        />
+        <activity android:name=".BookActivity"
+            android:parentActivityName=".MainActivity"
+            />
 
-        </activity>
-        <activity android:name=".BookActivity">
 
-        </activity>
 
     </application>
 

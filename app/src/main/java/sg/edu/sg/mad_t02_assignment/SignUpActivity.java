@@ -4,20 +4,58 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class SignUpActivity extends AppCompatActivity {
     private String TAG = "Learning@NP";
     private String FILENAME = "SignUpActivity.java";
-
+    private EditText et;
     private TextView newUser;
     private Button loginButton;
     MyDBHandler dbHandler = new MyDBHandler(this,null,null,1);
+
+    private static final int[] btn_IDS = {
+            //stores the id of textview here to reduce repeated codes
+
+            R.id.passwordBtn,
+            R.id.confirmpassBtn,
+    };
+    private static final int[] et_IDS = {
+            //stores the id of textview here to reduce repeated codes
+
+            R.id.editText_PasswordNew,
+            R.id.editText_PasswordNew2,
+    };
+    private View.OnTouchListener touch = new View.OnTouchListener() {
+        @Override
+        public boolean onTouch(View v, MotionEvent event) {
+            for (int id = 0; id < btn_IDS.length; id++) {
+                if (v.getId() == btn_IDS[id]) {
+                    et = findViewById(et_IDS[id]);
+
+                }
+            }
+            if (event.getAction() == android.view.MotionEvent.ACTION_DOWN) {
+                et.setTransformationMethod(null);
+            } else if (event.getAction() == android.view.MotionEvent.ACTION_UP) {
+
+                et.setTransformationMethod(new PasswordTransformationMethod());
+            }
+
+
+
+            return true;
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +66,14 @@ public class SignUpActivity extends AppCompatActivity {
         Button createButton = findViewById(R.id.buttonCreate);
         Button cancelButton = findViewById(R.id.buttonCancel);
 
+        setTitle("Create Account");
+
+        for(int id = 0; id < btn_IDS.length; id++){
+
+            ImageButton btn = findViewById(btn_IDS[id]);
+            btn.setOnTouchListener(touch);
+
+        }
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,7 +110,7 @@ public class SignUpActivity extends AppCompatActivity {
         });
 
     }
-
+    //so that user wont be allowed to go back into the main menu when logged out
     @Override
     public void onBackPressed(){
         moveTaskToBack(true);

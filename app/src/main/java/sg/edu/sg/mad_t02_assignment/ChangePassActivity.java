@@ -112,6 +112,7 @@ public class ChangePassActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_pass);
 
+        setTitle("Change Password");
         changePassPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
         changePassPrefsEditor = changePassPreferences.edit();
         password = changePassPreferences.getString("password", "");
@@ -126,6 +127,9 @@ public class ChangePassActivity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                //intent back to settings activity
+                Intent intent = new Intent(ChangePassActivity.this, SettingActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
                 return false;
             }
         });

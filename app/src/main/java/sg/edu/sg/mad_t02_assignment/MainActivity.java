@@ -3,12 +3,17 @@ package sg.edu.sg.mad_t02_assignment;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-
+    private SharedPreferences MainPreferences;
+    private SharedPreferences.Editor MainPrefsEditor;
+    private String username;
+    private TextView title;
     final String TAG = "Home Page";
 
     //Put all card view ID where
@@ -20,7 +25,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        MainPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
 
+        username = MainPreferences.getString("username", "");
+        title = findViewById(R.id.title_textview);
+        title.setText("Welcome " + username);
         setTitle("Home");
 
         //Assigning local variable to ID
@@ -30,6 +39,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             findViewById(id).setOnClickListener(this);
         }
         Log.v(TAG, "Finished Pre-Initialization");
+    }
+    @Override
+    public void onBackPressed(){
+        moveTaskToBack(true);
     }
 
     @Override

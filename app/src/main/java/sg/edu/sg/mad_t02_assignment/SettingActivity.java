@@ -18,6 +18,7 @@ import java.util.Set;
 
 public class SettingActivity extends AppCompatActivity {
 
+
     private Button signOutButton;
     private Button ChangePassButton;
     private SharedPreferences settingsPreferences;
@@ -29,6 +30,8 @@ public class SettingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
+
+        setTitle("Settings");
         signOutButton = findViewById(R.id.signOutBtn);
         ChangePassButton = findViewById(R.id.ChangePassBtn);
         settingsPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
@@ -44,9 +47,9 @@ public class SettingActivity extends AppCompatActivity {
             }
         });
 
-        signOutButton.setOnTouchListener(new View.OnTouchListener() {
+        signOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
+            public void onClick(View v) {
 
                 //alert for user to confirm sign out
                 builder.setMessage("By clicking Yes, you will be brought to the login page and Stay logged in checkbox will be unticked for you")
@@ -54,12 +57,13 @@ public class SettingActivity extends AppCompatActivity {
                         //when user press yes
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
+                                settingsPrefsEditor.putBoolean("stayloggedin", false);
+                                settingsPrefsEditor.commit();
                                 Intent intent = new Intent(SettingActivity.this, LoginActivity.class);
                                 intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                                 finish();
                                 startActivity(intent);
-                                settingsPrefsEditor.putBoolean("stayloggedin", false);
-                                settingsPrefsEditor.commit();
+
 
                                 Log.v(TAG, "User accept!");
 
@@ -80,7 +84,6 @@ public class SettingActivity extends AppCompatActivity {
                 alert.show();
 
 
-                return false;
             }
 
 

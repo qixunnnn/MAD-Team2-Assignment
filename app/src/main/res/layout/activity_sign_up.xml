@@ -4,28 +4,76 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bluebackground"
+    android:background="#2E2D2C"
     android:theme="@style/Theme.AppCompat.NoActionBar"
     tools:context=".SignUpActivity">
+
+    <EditText
+        android:id="@+id/editText_UsernameNew"
+        android:layout_width="279dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="228dp"
+        android:background="#524F4E"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        android:paddingLeft="10dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#F4F3F3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="316dp"
         android:layout_height="54dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="508dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="444dp"
         android:background="#FFFFFF"
-        app:cardBackgroundColor="#FFFFFF"
+        app:cardBackgroundColor="@color/DarkCyan"
         app:cardCornerRadius="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="40dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="368dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_lock_idle_lock" />
+
+    <Button
+        android:id="@+id/buttonCreate"
+        android:layout_width="273dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="444dp"
+        android:background="@color/DarkCyan"
+        android:text="Create"
+        android:textColor="@color/White"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="40dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="300dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_lock_idle_lock" />
 
     <EditText
         android:id="@+id/editText_PasswordNew2"
         android:layout_width="279dp"
         android:layout_height="43dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="416dp"
-        android:background="#0B1652"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="364dp"
+        android:background="#524F4E"
         android:ems="10"
         android:hint="Confirm Password"
         android:inputType="textPassword"
@@ -36,70 +84,35 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/buttonCreate"
-        android:layout_width="273dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="508dp"
-        android:background="#FFFFFF"
-        android:text="Create"
-        android:textColor="#070707"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="40dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="420dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_lock_idle_lock" />
-
-    <EditText
-        android:id="@+id/editText_UsernameNew"
-        android:layout_width="279dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="296dp"
-        android:background="#0B1652"
-        android:ems="10"
-        android:hint="Username"
-        android:inputType="textPersonName"
-        android:paddingLeft="10dp"
+        android:id="@+id/buttonCancel"
+        android:layout_width="141dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="512dp"
+        android:background="#00F1EDED"
+        android:text="Back to login"
         android:textColor="#FFFFFF"
-        android:textColorHint="#F4F3F3"
+        android:textSize="9dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="40dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="360dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_lock_idle_lock" />
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="40dp"
         android:layout_height="36dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="232dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_view" />
+        app:srcCompat="@drawable/ic_android_black_24dp" />
 
     <EditText
         android:id="@+id/editText_PasswordNew"
         android:layout_width="279dp"
         android:layout_height="43dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="356dp"
-        android:background="#0B1652"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="296dp"
+        android:background="#524F4E"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
@@ -109,28 +122,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Create Account"
-        android:textColor="#FFFFFF"
-        android:textSize="40sp"
+    <ImageButton
+        android:id="@+id/passwordBtn"
+        android:layout_width="57dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="300dp"
+        android:background="#524F4E"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_view" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="215dp"
+        android:layout_height="208dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.162" />
+        app:layout_constraintVertical_bias="0.011"
+        app:srcCompat="@drawable/profile" />
 
-    <Button
-        android:id="@+id/buttonCancel"
-        android:layout_width="52dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
-        android:background="#00F1EDED"
-        android:text="Back"
-        android:textColor="#FFFFFF"
+    <ImageButton
+        android:id="@+id/confirmpassBtn"
+        android:layout_width="57dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="368dp"
+        android:background="#524F4E"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_view" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

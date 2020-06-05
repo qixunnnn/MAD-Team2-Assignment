@@ -33,8 +33,10 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        setTitle("");
         final EditText etUsername = findViewById(R.id.editText_username);
         final EditText etPassword = findViewById(R.id.editText_password);
+
         remebermeCheckBox = (CheckBox)findViewById(R.id.checkBox_RememberMe);
         stayloggedinCheckBox = (CheckBox)findViewById(R.id.checkBox_RememberMe);
         loginPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
@@ -51,6 +53,7 @@ public class LoginActivity extends AppCompatActivity {
             remebermeCheckBox.setChecked(true);
         }
         if(Stayloggedin == true){
+            Log.v(TAG, FILENAME + ": Auto logged in " + etUsername.getText().toString());
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
@@ -152,7 +155,10 @@ public class LoginActivity extends AppCompatActivity {
             return false;
         }
     }
-
+    @Override
+    public void onBackPressed(){
+        moveTaskToBack(true);
+    }
 
     protected void onStop(){
         super.onStop();
