@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         Intent i = null;
 
+        Log.v(TAG,v.getId() + " Is clicked");
         //Redirect to their specific activity
         if (v.getId() == CARDVIEW_ID[0])
         {

@@ -6,21 +6,22 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import java.util.ArrayList;
 
 public class AcademicContact extends AppCompatActivity {
 
     ArrayList<ContactModel> contactList = new ArrayList<>();
-    int itemlist;
-
+    final static String TAG = "Academic Contact";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_academic_contact);
 
         setTitle("Academic Contact");
-        LoadContactInfo();
+        LoadContactInfo(); //Loaded all contact information from another method
+        Log.v(TAG,"Contact info added to the list!");
 
         RecyclerView recyclerView = findViewById(R.id.academicrecycler);
         GeneralContactAdapter gAdapter = new GeneralContactAdapter(contactList);
@@ -30,6 +31,8 @@ public class AcademicContact extends AppCompatActivity {
         recyclerView.setLayoutManager(sLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(gAdapter);
+        Log.v(TAG, "Finished Pre-Initialization");
+
 
     }
 

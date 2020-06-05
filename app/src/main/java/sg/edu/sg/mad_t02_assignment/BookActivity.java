@@ -23,6 +23,7 @@ public class BookActivity extends AppCompatActivity {
         setTitle("Book Price");
         LoadInputData();
         //All books loaded
+        Log.v(TAG,"All input Data Loaded");
 
         //Load RecyclerView
         RecyclerView recyclerView = findViewById(R.id.book_recycler);
@@ -36,7 +37,8 @@ public class BookActivity extends AppCompatActivity {
 
         Log.v(TAG, "Finished Pre-Initialization");
     }
-    public void LoadInputData(){
+    public void LoadInputData()
+    {
         BookModel bookMode0 = new BookModel(R.drawable.eblbook,"Essentials of Business Law",36,"Business Law module textbook used by all Year 1 students taking courses in school of BA");
         bookModelList.add(bookMode0);
         BookModel bookModel1 = new BookModel(R.drawable.fmbook,"Financial Management",15,"Financial Management module textbook used students taking courses in school of DE");

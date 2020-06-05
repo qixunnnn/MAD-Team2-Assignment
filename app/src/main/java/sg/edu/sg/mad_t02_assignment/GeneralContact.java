@@ -6,12 +6,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import java.util.ArrayList;
 
 public class GeneralContact extends AppCompatActivity {
 
     ArrayList<ContactModel> contactList = new ArrayList<>();
+    final static String TAG = "General Contact";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,8 @@ public class GeneralContact extends AppCompatActivity {
         setTitle("General Contact");
 
         LoadContactInfo();
+        Log.v(TAG,"Loaded all contact info from list");
+        //Load all contact info from list
         RecyclerView recyclerView = findViewById(R.id.generalrecycler);
         GeneralContactAdapter gAdapter = new GeneralContactAdapter(contactList);
 
@@ -30,7 +34,7 @@ public class GeneralContact extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(gAdapter);
 
-        
+        Log.v(TAG, "Finished Pre-Initialization");
 
     }
 

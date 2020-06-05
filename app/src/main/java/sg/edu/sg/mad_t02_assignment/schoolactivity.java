@@ -7,15 +7,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import java.util.ArrayList;
 
 public class schoolactivity extends AppCompatActivity {
 
-    String schools[];
-    String s_description[];
-
-
+    final static String TAG = "School Activity";
     int images[] = {R.drawable.ba,
                     R.drawable.de,
                     R.drawable.soe,
@@ -39,13 +37,7 @@ public class schoolactivity extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(sAdapter);
 
-        schools = getResources().getStringArray(R.array.np_school);
-        s_description = getResources().getStringArray(R.array.school_description);
-
-    }
-    @Override
-    protected void onStart() {
-        super.onStart();
+        Log.v(TAG, "Finished Pre-Initialization");
 
 
     }
