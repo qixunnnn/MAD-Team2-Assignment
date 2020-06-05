@@ -28,9 +28,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         MainPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
 
         username = MainPreferences.getString("username", "");
-        title = findViewById(R.id.title_textview);
-        title.setText("Welcome " + username);
-        setTitle("Home");
+        //title = findViewById(R.id.title_textview);
+        //title.setText();
+        setTitle("Welcome " + username);
 
         //Assigning local variable to ID
 
