@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ContactActivity"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/contact_us_header"
+        android:layout_width="match_parent"
+        android:layout_height="195dp"
+        app:srcCompat="@drawable/contactheader" />
+    <TextView
+        android:id="@+id/contact_txt"
+        android:layout_below="@id/contact_us_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/White"
+        android:text="Campus Information"
+        android:background="@color/Peru"
+        android:textAlignment="center"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:textSize="24sp"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contact_txt"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp">
+
+            <TextView
+                android:id="@+id/address_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginTop="18dp"
+                android:paddingLeft="18dp"
+                android:textColor="@color/Black"
+                android:text="Address"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/addressnum_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_below="@id/address_txt"
+                android:layout_marginLeft="18dp"
+                android:textColor="@color/Black"
+                android:text="535 Clementi Road, Singapore 599489"
+                />
+
+            <TextView
+                android:id="@+id/opening_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:layout_below="@id/addressnum_txt"
+                android:layout_marginBottom="6dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginLeft="18dp"
+                android:textColor="@color/Black"
+                android:text="Opening hours"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/opening_txt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_below="@id/opening_txt"
+                android:layout_marginLeft="18dp"
+                android:textColor="@color/Black"
+                android:text="Mon to Thurs - 8:30AM to 6:00PM"
+                />
+            <TextView
+                android:id="@+id/opening_txt3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_below="@id/opening_txt2"
+                android:layout_marginLeft="18dp"
+                android:textColor="@color/Black"
+                android:text="Fri - 8:30AM to 5:30PM"
+                />
+            <TextView
+                android:id="@+id/opening_txt4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_below="@id/opening_txt3"
+                android:layout_marginLeft="18dp"
+                android:textColor="@color/Black"
+                android:text="Sat, Sun &amp; Public Holidays – Closed"
+                />
+            <TextView
+                android:id="@+id/opening_txt5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_below="@id/opening_txt4"
+                android:layout_marginLeft="18dp"
+                android:textColor="@color/Black"
+                android:text="Note: Gates are opened from 6am to 10pm."
+                />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+    <Button
+        android:id="@+id/contact_general_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cardViewAdd"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12sp"
+        android:background="@color/DarkCyan"
+        android:text="Contact List"
+        android:textColor="@color/White"
+        />
+</RelativeLayout>
