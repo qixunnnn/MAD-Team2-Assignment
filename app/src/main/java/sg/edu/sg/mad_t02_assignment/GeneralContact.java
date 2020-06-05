@@ -20,7 +20,7 @@ public class GeneralContact extends AppCompatActivity {
 
         setTitle("General Contact");
 
-        contactList.add(new ContactModel("General Enquiries", "6466 6555", "askNP@np.edu.sg"));
+        contactList.add(new ContactModel("General Enquiries", "6466 6555\n Name: Tan AH kao", "askNP@np.edu.sg"));
         contactList.add(new ContactModel("Covid-19 Enquiries","6460 7888", "askCovid@np.edu.sg"));
         contactList.add(new ContactModel("Admissions for Full-time Diplomas","6463 1233", "admissions@np.edu.sg"));
         contactList.add(new ContactModel("CET Academy for Lifelong Learning","6460 6353", "enquiryCET@np.edu.sg"));

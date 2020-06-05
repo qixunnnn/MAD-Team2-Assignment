@@ -12,8 +12,10 @@ import java.util.ArrayList;
 public class GeneralContactAdapter extends RecyclerView.Adapter<GeneralContactViewHolder> {
 
     ArrayList<ContactModel> cList;
+    int selectedItemlist;
 
     public GeneralContactAdapter(ArrayList<ContactModel> list){
+
         this.cList = list;
     }
 

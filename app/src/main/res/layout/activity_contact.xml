@@ -127,7 +127,20 @@
         android:layout_marginRight="12dp"
         android:layout_marginLeft="12sp"
         android:background="@color/DarkCyan"
-        android:text="Contact List"
+        android:text="Contact (General)"
+        android:textColor="@color/White"
+        />
+
+    <Button
+        android:id="@+id/contact_academic_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contact_general_btn"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12sp"
+        android:background="@color/DarkOrchid"
+        android:text="Contact (Academic)"
         android:textColor="@color/White"
         />
 </RelativeLayout>

@@ -12,6 +12,7 @@ import java.util.ArrayList;
 public class AcademicContact extends AppCompatActivity {
 
     ArrayList<ContactModel> contactList = new ArrayList<>();
+    int itemlist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +21,7 @@ public class AcademicContact extends AppCompatActivity {
 
         setTitle("Academic Contact");
 
-
+        contactList.add(new ContactModel("School of Business & Accountancy\n" + "(Tan Hui Hui)","6460 8324","Sch-BA@np.edu.sg"));
 
         RecyclerView recyclerView = findViewById(R.id.academicrecycler);
         GeneralContactAdapter gAdapter = new GeneralContactAdapter(contactList);
