@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     private SharedPreferences MainPreferences;
@@ -28,6 +31,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         MainPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
 
         username = MainPreferences.getString("username", "");
+        VideoView npVideo = findViewById(R.id.video_mainmenu);
+        npVideo.setVideoURI(
+                Uri.parse("android.resource://" + getPackageName() +  "/" +R.raw.npvideo)
+        );
+        npVideo.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                mp.setVolume(0,0);
+            }
+        });
+        npVideo.start();
         //title = findViewById(R.id.title_textview);
         //title.setText();
         setTitle("Welcome " + username);
