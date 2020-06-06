@@ -20,6 +20,7 @@ public class SettingActivity extends AppCompatActivity {
 
 
     private Button signOutButton;
+    private String username;
     private Button ChangePassButton;
     private SharedPreferences settingsPreferences;
     private SharedPreferences.Editor settingsPrefsEditor;
@@ -36,6 +37,7 @@ public class SettingActivity extends AppCompatActivity {
         ChangePassButton = findViewById(R.id.ChangePassBtn);
         settingsPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
         settingsPrefsEditor = settingsPreferences.edit();
+        username = settingsPreferences.getString("username", "");
         builder = new AlertDialog.Builder(this);
         ChangePassButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -52,10 +54,10 @@ public class SettingActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 //alert for user to confirm sign out
-                builder.setMessage("By clicking Yes, you will be brought to the login page and Stay logged in checkbox will be unticked for you")
+                builder.setMessage("You will be brought to the login page and \"Stay Logged In \" checkbox will be unticked for you")
                         .setCancelable(false)
                         //when user press yes
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 settingsPrefsEditor.putBoolean("stayloggedin", false);
                                 settingsPrefsEditor.commit();
@@ -70,7 +72,7 @@ public class SettingActivity extends AppCompatActivity {
                             }
                         })
                         //when user press no
-                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 //  Action for 'NO' Button
                                 dialog.cancel();
