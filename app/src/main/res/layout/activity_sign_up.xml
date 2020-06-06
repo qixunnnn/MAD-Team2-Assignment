@@ -8,6 +8,7 @@
     android:theme="@style/Theme.AppCompat.NoActionBar"
     tools:context=".SignUpActivity">
 
+
     <EditText
         android:id="@+id/editText_UsernameNew"
         android:layout_width="279dp"
