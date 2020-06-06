@@ -12,6 +12,13 @@
         <item>School of Life Science &amp; Chemical Technology</item>
     </string-array>
 
+    <string name="coursequizintro">
+        The most important consideration when choosing your course is asking yourself why you are looking to study.
+        The following quiz help you to identify courses and career paths that suit your skills and preferences. This
+        short quiz will help you find the right course for you. To get accurate results, please answer the questions on your preferences, passion and interest.
+        Press the start button below to begin.
+</string>
+
     <string-array name="school_description">
         <item>Strong Ties with Industry Leader</item>
         <item>Live Design, Think Environment</item>
