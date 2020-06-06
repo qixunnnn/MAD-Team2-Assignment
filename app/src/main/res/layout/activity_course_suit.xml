@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CourseSuit">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="195dp"
+        android:src="@drawable/coursequizpic" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Find the school that suits you"
+        android:background="@color/Crimson"
+        android:textColor="@color/White"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:padding="12dp"
+        android:gravity="center"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="8dp"
+        app:cardUseCompatPadding="true">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:padding="30dp"
+            android:lineSpacingExtra="8dp"
+            android:text="@string/coursequizintro"
+            android:textAlignment="center"
+            />
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/course_startbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Start Quiz"
+        android:layout_margin="12dp"
+        android:textColor="@color/White"
+        android:background="@color/DarkCyan"
+        />
+
+</LinearLayout>
