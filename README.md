@@ -24,7 +24,7 @@ Jun Wei : LoginPage, Homepage, SignUp, Settings, ChangePassword, CourseSuits
 
 Qi Xun : CourseSuits, School, Courses, Contact, GeneralContact, AcademicContact, Design for BookPrice
 
-Guan Teck : 
+Guan Teck : <br/>
 AcademicCalendar layout<br/>
 -Designed using linearlayout and scrollview<br/>
 -Implemented countdown function
@@ -47,4 +47,4 @@ Kamarul : BookPrice,AcademicContact,CourseSuits,Help in design of LoginPage, Res
 Relevant appendices (diagrams, screenshots, user guides)<br/>
 
 Discussion on Health/Fitness App<br/>
-![](images/mad_discussion.png)
+![](Images/mad_discussion.png)
