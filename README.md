@@ -13,9 +13,18 @@ Have you ever struggled on deciding what career path to pursue in the future? Ha
 
 “Learning@NP” app is an excellent way for graduating students who are deciding what course they want to join in Ngee Ann Polytechnic. Our app provides many functions including a survey to give the students a better insight or clearer view of what path they want to choose. Our app also allows students to learn more about Ngee Ann Polytechnic with functions ranging from “Book Prices” to “Academic Calendar”.
 
-In the future we plan to implement a GPS to navigate new students through Ngee Ann Polytechnic.
+Some of the features we hope to implement in the future:<br/>
+
+- Implement a GPS to navigate visitors/new students.<br/>
+- More In-depth information about each course.<br/>
+- Allow students to purchase textbooks.<br/>
+- Use online cloud storage (Firebase) to store information.<br/>
+- Search Bar to allow users to search for specific courses and textbooks.<br/>
+- Side menu for more navigation around the app.<br/>
+- Create an admin user that allows them to add textbook, courses, other information, etc.<br/>
+
 ## Target Audience<br/>
-Our target audience is graduating Secondary School students and ITE students planning to join Ngee Ann Polytechnic.<br/>
+Our target audience is graduating Secondary School students and ITE students planning to join Ngee Ann Polytechnic.Freshies that are new to the school.<br/>
 
 ## Basic features of our app<br/>
 -Our app is responsive, allows the app to orientate and use for different sizes of phone<br/>
@@ -133,7 +142,7 @@ AcademicCalendar layout<br/>
 -Programmed AcademicCalendar
 
 GeneralContact layout<br/>
--Helped in keying more additional information
+-Helped in keying more additional information<br/>
 -Created RecyclerView
 
 CourseSuits/Quiz layout<br/>
@@ -165,6 +174,8 @@ User inputs their username and password and presses the ‘LOGIN’ button to lo
 <img src="Images/mad14.PNG" height="500">
 
 SignUpPage<br/>
+User inputs their credentials for their account. They can click on the ‘eye’ beside the password textbox to reveal the password they typed in. After finishing typing in their credentials, the user clicks on the “SIGN UP” button to complete their signup. For users that accidentally clicked to sign up, they can click “Already have an account? Return to login” or pressing the back button to go back to the login page.<br/>
+<img src="Images/madsignup.PNG" height="500">
 
 HomePage<br/>
 In the homepage, above the text "WELCOME,ADMIN" there will be a video playing. This page is in cardview and users can click on the respective cardviews to go to the page stated in the text.<br/>
@@ -183,7 +194,12 @@ This page uses a linear layout with scrollview and displays the image and instru
 <img src="Images/mad4.PNG" height="500">
 
 QuizPage<br/>
+This page uses a linear layout with scrollview and displays the questions for the quiz. Users click on the radio buttons to pick their answers. After finishing the quiz and clicking submit, they will be shown the result of the school they are well fitted for.<br/>
+<img src="Images/madquiz.PNG" height="500">
 
+ResultPage<br/>
+This page uses a linear layout with scrollview and displays the result after finishing the quiz. Users can click on the “RE-TRY QUIZ” button to do the quiz again, or click “BACK TO MAIN MENU” to return to the homepage.<br/>
+<img src="Images/madresult.PNG" height="500">
 
 AcademicCalenderPage<br/>
 This page uses a linear layout with scrollview to display the academic calendar for the current year. It also implements a countdown function for days until the next holiday.<br/>
@@ -210,3 +226,5 @@ Users can come here to change their password and to sign out from the current ac
 <img src="Images/mad13.PNG" height="500">
 
 ChangePasswordPage<br/>
+This page uses a linear layout with scrollview and displays textview to input the old and new passwords. Users input their current password and also their new password twice. After that, they can click the “CONFIRM” button to confirm changing their password or click the “CANCEL” button to return to the settings page.<br/>
+<img src="Images/madchangepw.PNG" height="500">
