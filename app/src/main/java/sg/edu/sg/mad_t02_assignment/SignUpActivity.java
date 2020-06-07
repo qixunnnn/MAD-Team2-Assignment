@@ -18,8 +18,8 @@ public class SignUpActivity extends AppCompatActivity {
     private String TAG = "Learning@NP";
     private String FILENAME = "SignUpActivity.java";
     private EditText et;
-    private TextView newUser;
-    private Button loginButton;
+    private TextView backtoMain;
+
     MyDBHandler dbHandler = new MyDBHandler(this,null,null,1);
 
     private static final int[] btn_IDS = {
@@ -98,12 +98,17 @@ public class SignUpActivity extends AppCompatActivity {
 
             }
         });
+        backtoMain = findViewById(R.id.backtomain);
+        backtoMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),LoginActivity.class);
+                startActivity(i);
+            }
+        });
+
 
     }
     //so that user wont be allowed to go back into the main menu when logged out
-    @Override
-    public void onBackPressed(){
-        moveTaskToBack(true);
-    }
 }
 

@@ -25,18 +25,35 @@
                 android:scaleType="fitXY"/>
 
             <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Question 1"
+                android:padding="10dp"
+                android:textSize="18sp"
+                android:background="@color/Crimson"
+                android:textColor="@color/White"
+                android:textStyle="bold"
+                android:gravity="center"
+                />
+
+            <TextView
                 android:id="@+id/textView34"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
                 android:paddingLeft="10dp"
+                android:textAlignment="center"
                 android:text="What would you find yourself doing in your spare time?"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textColor="@color/Black"
+                />
 
             <RadioGroup
                 android:id="@+id/radioQ1"
                 android:layout_width="match_parent"
-                android:layout_height="219dp">
+                android:layout_height="219dp"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp">
 
                 <RadioButton
                     android:id="@+id/Q1A1"
@@ -62,20 +79,35 @@
                     android:layout_height="55dp"
                     android:text="Basking in my loneliness; playing games, reading a book or listening to music." />
             </RadioGroup>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Question 2"
+                android:padding="10dp"
+                android:textSize="18sp"
+                android:background="@color/Crimson"
+                android:textColor="@color/White"
+                android:textStyle="bold"
+                android:gravity="center"
+                />
 
             <TextView
                 android:id="@+id/textView35"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:textColor="@color/Black"
                 android:paddingLeft="10dp"
                 android:paddingTop="15dp"
+                android:textAlignment="center"
                 android:text="I would just describe myself as ..."
                 android:textSize="18sp" />
 
             <RadioGroup
                 android:id="@+id/radioQ2"
                 android:layout_width="match_parent"
-                android:layout_height="219dp">
+                android:layout_height="219dp"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp">
 
                 <RadioButton
                     android:id="@+id/Q2A1"
@@ -101,7 +133,17 @@
                     android:layout_height="55dp"
                     android:text="Assertive and firm" />
             </RadioGroup>
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Question 3"
+                android:padding="10dp"
+                android:textSize="18sp"
+                android:background="@color/Crimson"
+                android:textColor="@color/White"
+                android:textStyle="bold"
+                android:gravity="center"
+                />
             <TextView
                 android:id="@+id/textView37"
                 android:layout_width="match_parent"
@@ -109,12 +151,16 @@
                 android:paddingLeft="10dp"
                 android:paddingTop="15dp"
                 android:text="How do you learn best?"
+                android:textColor="@color/Black"
+                android:textAlignment="center"
                 android:textSize="18sp" />
 
             <RadioGroup
                 android:id="@+id/radioQ3"
                 android:layout_width="match_parent"
-                android:layout_height="219dp">
+                android:layout_height="219dp"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp">
 
                 <RadioButton
                     android:id="@+id/Q3A1"
@@ -142,18 +188,34 @@
             </RadioGroup>
 
             <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Question 4"
+                android:padding="10dp"
+                android:textSize="18sp"
+                android:background="@color/Crimson"
+                android:textColor="@color/White"
+                android:textStyle="bold"
+                android:gravity="center"
+                />
+
+            <TextView
                 android:id="@+id/textView38"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:paddingLeft="10dp"
                 android:paddingTop="15dp"
                 android:text="Which book interests you most?"
+                android:textColor="@color/Black"
+                android:textAlignment="center"
                 android:textSize="18sp"  />
 
             <RadioGroup
                 android:id="@+id/radioQ4"
                 android:layout_width="match_parent"
-                android:layout_height="219dp">
+                android:layout_height="219dp"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp">
 
                 <RadioButton
                     android:id="@+id/Q4A1"
@@ -179,6 +241,17 @@
                     android:layout_height="55dp"
                     android:text="How to win at life" />
             </RadioGroup>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Question 5"
+                android:padding="10dp"
+                android:textSize="18sp"
+                android:background="@color/Crimson"
+                android:textColor="@color/White"
+                android:textStyle="bold"
+                android:gravity="center"
+                />
 
             <TextView
                 android:id="@+id/textView39"
@@ -187,12 +260,16 @@
                 android:paddingLeft="10dp"
                 android:paddingTop="15dp"
                 android:text="What are you really interested in?"
+                android:textColor="@color/Black"
+                android:textAlignment="center"
                 android:textSize="18sp" />
 
             <RadioGroup
                 android:id="@+id/radioQ5"
                 android:layout_width="match_parent"
-                android:layout_height="219dp">
+                android:layout_height="219dp"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp">
 
                 <RadioButton
                     android:id="@+id/Q5A1"
@@ -218,19 +295,35 @@
                     android:layout_height="55dp"
                     android:text="Human physiology" />
             </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Question 6"
+                android:padding="10dp"
+                android:textSize="18sp"
+                android:background="@color/Crimson"
+                android:textColor="@color/White"
+                android:textStyle="bold"
+                android:gravity="center"
+                />
             <TextView
                 android:id="@+id/textView40"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:paddingLeft="10dp"
                 android:paddingTop="15dp"
+                android:textColor="@color/Black"
+                android:textAlignment="center"
                 android:text="What do you take pride in ?"
                 android:textSize="18sp" />
 
             <RadioGroup
                 android:id="@+id/radioQ6"
                 android:layout_width="match_parent"
-                android:layout_height="219dp">
+                android:layout_height="219dp"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp">
 
                 <RadioButton
                     android:id="@+id/Q6A1"
@@ -258,18 +351,33 @@
             </RadioGroup>
 
             <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Question 7"
+                android:padding="10dp"
+                android:textSize="18sp"
+                android:background="@color/Crimson"
+                android:textColor="@color/White"
+                android:textStyle="bold"
+                android:gravity="center"
+                />
+            <TextView
                 android:id="@+id/textView41"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:paddingLeft="10dp"
                 android:paddingTop="15dp"
+                android:textColor="@color/Black"
+                android:textAlignment="center"
                 android:text="If you were going to travel the world, would you find yourself in?"
                 android:textSize="18sp" />
 
             <RadioGroup
                 android:id="@+id/radioQ7"
                 android:layout_width="match_parent"
-                android:layout_height="219dp">
+                android:layout_height="219dp"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp">
 
                 <RadioButton
                     android:id="@+id/Q7A1"
@@ -296,18 +404,33 @@
                     android:text="Los Angeles - biggest entertainment capital in the world" />
             </RadioGroup>
             <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Question 8"
+                android:padding="10dp"
+                android:textSize="18sp"
+                android:background="@color/Crimson"
+                android:textColor="@color/White"
+                android:textStyle="bold"
+                android:gravity="center"
+                />
+            <TextView
                 android:id="@+id/textView42"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:paddingLeft="10dp"
                 android:paddingTop="15dp"
+                android:textColor="@color/Black"
+                android:textAlignment="center"
                 android:text="What would you like to be?"
                 android:textSize="18sp" />
 
             <RadioGroup
                 android:id="@+id/radioQ8"
                 android:layout_width="match_parent"
-                android:layout_height="219dp">
+                android:layout_height="219dp"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp">
 
                 <RadioButton
                     android:id="@+id/Q8A1"
@@ -339,8 +462,11 @@
                 android:layout_width="136dp"
                 android:layout_height="61dp"
                 android:text="Submit"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center"/>
+                android:layout_margin="50dp"
+                android:layout_gravity="center"
+                android:textColor="@color/White"
+                android:background="@color/DarkCyan"
+                />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

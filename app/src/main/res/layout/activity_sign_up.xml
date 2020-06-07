@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:src="@drawable/profile"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="50dp"
         />
     <TextView
         android:id="@+id/signuptext"
@@ -160,7 +160,7 @@
                 android:layout_height="49dp"
                 android:layout_marginStart="45dp"
                 android:layout_marginEnd="45dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="30dp"
                 app:cardBackgroundColor="@color/DarkCyan"
                 app:cardCornerRadius="25dp"
                 />
@@ -170,12 +170,22 @@
                 android:layout_height="45dp"
                 android:layout_marginStart="68dp"
                 android:layout_marginEnd="68dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="30dp"
                 android:background="@color/DarkCyan"
                 android:text="Sign Up"
                 android:textColor="@color/White"
                 />
         </RelativeLayout>
+        <TextView
+            android:id="@+id/backtomain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Already have an account? Return to login"
+            android:textColor="@color/White"
+            android:layout_gravity="center"
+            />
+
     </LinearLayout>
     </ScrollView>
 
