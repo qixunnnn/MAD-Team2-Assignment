@@ -12,9 +12,11 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import java.util.Arrays;
+
 public class StartQuiz extends AppCompatActivity {
     private String TAG = "Learning@NP";
-    private String FILENAME = "SignUpActivity.java";
+    private String FILENAME = "StartQuiz.java";
     Boolean bool;
     Button submit;
     RadioButton radio;
@@ -334,13 +336,18 @@ public class StartQuiz extends AppCompatActivity {
 
                if (bool) {
                    //move
-                   Intent results = new Intent(StartQuiz.this, resultActivity.class);
-                   results.putExtra("results",);
-                   startActivity(results);
-               }
-               else {
+                   Arrays.sort(SchoolID);
+                   Log.v(TAG, FILENAME + " Sorted" + SchoolID[7]);
 
-                }
+                   Intent results = new Intent(StartQuiz.this, ResultActivity.class);
+                   results.putExtra("top", SchoolID[7]);
+                   results.putExtra("second", SchoolID[6]);
+                   results.putExtra("third", SchoolID[])
+                   startActivity(results);
+
+
+               }
+
 
 
             }
