@@ -28,6 +28,7 @@ public class ChangePassActivity extends AppCompatActivity {
     Button OkBtn;
     EditText et;
     TextView tv;
+    TextView em;
     private String TAG = "Learning@NP";
     private String FILENAME = "SettingActivity.java";
     private SharedPreferences changePassPreferences;
@@ -61,7 +62,6 @@ public class ChangePassActivity extends AppCompatActivity {
             R.id.EMNewPass,
             R.id.EMConfirmPass,
     };
-
     private View.OnTouchListener touch = new View.OnTouchListener() {
         @Override
         public boolean onTouch(View v, MotionEvent event) {

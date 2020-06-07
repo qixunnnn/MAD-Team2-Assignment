@@ -1,192 +1,202 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChangePassActivity">
+    tools:context=".ChangePassActivity"
+    android:orientation="vertical">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:srcCompat="@android:drawable/ic_lock_idle_lock"
+        android:layout_marginTop="20dp"/>
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="24dp"
-        android:text="Change Password"
-        android:textColor="#000000"
-        android:textSize="45dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/etNewPass"
-        android:layout_width="356dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="304dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        android:text="- Change Password -"
+        android:textColor="@color/Black"
+        android:textSize="24sp"
+        android:padding="20dp"
+        android:gravity="center"/>
     <TextView
-        android:id="@+id/tvCurrentPass"
+        android:id="@+id/EMNewPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="144dp"
+        android:layout_gravity="center"
+        android:text="Password must be at least six characters"
+        android:textColor="@color/Gray" />
+
+        <TextView
+            android:id="@+id/tvCurrentPass"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:shadowColor="#606060"
+            android:text="Current Password: "
+            android:layout_marginStart="25dp"
+            android:textSize="20dp"
+            android:textColor="@color/Black"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/etCurrentPass"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:ems="10"
+            android:layout_weight="0.8"
+            android:inputType="textPassword"
+            android:textColorHint="#FFFFFF" />
+
+        <ImageButton
+            android:id="@+id/CurrentPassBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:background="#F9F9F9"
+            android:layout_marginEnd="20dp"
+            app:srcCompat="@android:drawable/ic_menu_view" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tvNewPass"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:shadowColor="#606060"
-        android:text="Current Password"
+        android:text="New Password: "
+        android:layout_marginStart="25dp"
         android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="@color/Black"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        >
+        <EditText
+            android:id="@+id/etNewPass"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:ems="10"
+            android:layout_weight="0.8"
+            android:inputType="textPassword"
+            android:textColorHint="#FFFFFF" />
+
+        <ImageButton
+            android:id="@+id/NewPassBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:background="#F9F9F9"
+            android:layout_marginEnd="20dp"
+            app:srcCompat="@android:drawable/ic_menu_view" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tvConfirmPass"
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="392dp"
-        android:text="Confirm Password"
+        android:shadowColor="#606060"
+        android:text="Confirm Password: "
+        android:layout_marginStart="25dp"
         android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="@color/Black"/>
 
-    <EditText
-        android:id="@+id/etCurrentPass"
-        android:layout_width="356dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="176dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:textColorHint="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        >
+        <EditText
+            android:id="@+id/etConfirmPass"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:ems="10"
+            android:layout_weight="0.8"
+            android:inputType="textPassword"
+            android:textColorHint="#FFFFFF" />
+
+        <ImageButton
+            android:id="@+id/ConfirmPassBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:background="#F9F9F9"
+            android:layout_marginEnd="20dp"
+            app:srcCompat="@android:drawable/ic_menu_view" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        >
+    <Button
+        android:id="@+id/OkBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/DarkCyan"
+        android:text="Confirm"
+        android:textColor="@color/White"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        />
+
+        <Button
+            android:id="@+id/CancelBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/Crimson"
+            android:layout_weight="1"
+            android:text="@android:string/cancel"
+            android:textColor="@color/White"
+            android:layout_marginRight="20dp"/>
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/EMConfirmPass"
-        android:layout_width="353dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="488dp"
-        android:gravity="center|left"
-        android:text="New Password does not match"
-        android:textColor="#F30000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/NewPassBtn"
-        android:layout_width="57dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="324dp"
-        android:layout_marginTop="300dp"
-        android:background="#F9F9F9"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_view" />
-
-    <ImageButton
-        android:id="@+id/CurrentPassBtn"
-        android:layout_width="57dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="324dp"
-        android:layout_marginTop="172dp"
-        android:background="#F9F9F9"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_view" />
-
-    <TextView
-        android:id="@+id/tvNewPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="268dp"
-        android:text="New Password"
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center"
+        android:text="New Password does not match"
+        android:textColor="#F30000" />
 
-    <TextView
-        android:id="@+id/EMNewPass"
-        android:layout_width="353dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="356dp"
-        android:gravity="center|left"
-        android:text="Password must be at least six characters"
-        android:textColor="#F30000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/EMCurrentPass"
-        android:layout_width="353dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="228dp"
-        android:gravity="center|left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="Invalid Password"
-        android:textColor="#F30000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="#F30000" />
+        </LinearLayout>
+    </ScrollView>
 
-    <EditText
-        android:id="@+id/etConfirmPass"
-        android:layout_width="356dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="432dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/CancelBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="220dp"
-        android:layout_marginTop="512dp"
-        android:background="#F9F9F9"
-        android:text="@android:string/cancel"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/OkBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="308dp"
-        android:layout_marginTop="512dp"
-        android:background="#F9F9F9"
-        android:text="@android:string/ok"
-        android:textColor="@color/colorPrimary"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/ConfirmPassBtn"
-        android:layout_width="57dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="324dp"
-        android:layout_marginTop="428dp"
-        android:background="#F9F9F9"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_view" />
-
-    <TextView
-        android:id="@+id/textView40"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="104dp"
-        android:text="Password must be at least six characters"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
