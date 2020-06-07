@@ -1,9 +1,320 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StartQuiz">
+    android:orientation="vertical"
+    tools:context=".StartQuiz" >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="match_parent"
+                android:layout_height="226dp"
+                app:srcCompat="@drawable/coursequizpic"
+                android:scaleType="fitXY"/>
+
+            <TextView
+                android:id="@+id/textView34"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:text="What would you find yourself doing in your spare time?"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="219dp">
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Planning my schedule. I like to have an overall strategy!" />
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="What's spare time?" />
+
+                <RadioButton
+                    android:id="@+id/radioButton3"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Dreaming of possibilities - from what my future might be like." />
+
+                <RadioButton
+                    android:id="@+id/radioButton4"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Basking in my loneliness; playing games, reading a book or listening to music." />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView35"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="15dp"
+                android:text="I would just describe myself as ..."
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="219dp">
+
+                <RadioButton
+                    android:id="@+id/radioButton5"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Knowledgeable - the know it all in group" />
+
+                <RadioButton
+                    android:id="@+id/radioButton6"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Energetic - A ball of energy" />
+
+                <RadioButton
+                    android:id="@+id/radioButton7"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Fashionista" />
+
+                <RadioButton
+                    android:id="@+id/radioButton8"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Assertive and firm" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView37"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="15dp"
+                android:text="How do you learn best?"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="219dp" >
+
+                <RadioButton
+                    android:id="@+id/radioButton9"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="By doing on experiments" />
+
+                <RadioButton
+                    android:id="@+id/radioButton10"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Through group and peer sharing " />
+
+                <RadioButton
+                    android:id="@+id/radioButton11"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="By referring to diagrams or pictures" />
+
+                <RadioButton
+                    android:id="@+id/radioButton12"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Classes that mix theories with hands on experiments" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="15dp"
+                android:text="Which book interests you most?"
+                android:textSize="18sp"  />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="219dp" >
+
+                <RadioButton
+                    android:id="@+id/radioButton13"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Coding for beginners" />
+
+                <RadioButton
+                    android:id="@+id/radioButton14"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Thinking outside the box" />
+
+                <RadioButton
+                    android:id="@+id/radioButton15"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Ten Inventions that changed the world" />
+
+                <RadioButton
+                    android:id="@+id/radioButton16"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="How to win at life" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView39"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="15dp"
+                android:text="What are you really interested in?"
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="219dp" >
+
+                <RadioButton
+                    android:id="@+id/radioButton17"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Robots" />
+                <RadioButton
+                    android:id="@+id/radioButton18"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Stock Market" />
+                <RadioButton
+                    android:id="@+id/radioButton19"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Video Production" />
+                <RadioButton
+                    android:id="@+id/radioButton20"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Human physiology" />
+            </RadioGroup>
+            <TextView
+                android:id="@+id/textView40"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="15dp"
+                android:text="What do you take pride in ?"
+                android:textSize="18sp" />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="219dp">
+                <RadioButton
+                    android:id="@+id/radioButton21"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Seeing my ideas come to life" />
+                <RadioButton
+                    android:id="@+id/radioButton22"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Solving brain teasers" />
+                <RadioButton
+                    android:id="@+id/radioButton23"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Proving my theories right" />
+                <RadioButton
+                    android:id="@+id/radioButton24"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Creating something unique and beautiful" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView41"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="15dp"
+                android:text="If you were going to travel the world, would you find yourself in?"
+                android:textSize="18sp" />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="219dp">
+                <RadioButton
+                    android:id="@+id/radioButton25"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Italy - land of beautiful landmarks" />
+                <RadioButton
+                    android:id="@+id/radioButton26"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Germany - home to prominent sciences and engineering researchers" />
+                <RadioButton
+                    android:id="@+id/radioButton27"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="London - one of the leading financial hubs in the world" />
+                <RadioButton
+                    android:id="@+id/radioButton28"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Los Angeles - biggest entertainment capital in the world" />
+            </RadioGroup>
+            <TextView
+                android:id="@+id/textView42"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="15dp"
+                android:text="What would you like to be?"
+                android:textSize="18sp" />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="219dp">
+                <RadioButton
+                    android:id="@+id/radioButton29"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Programmer" />
+                <RadioButton
+                    android:id="@+id/radioButton30"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Scientist" />
+                <RadioButton
+                    android:id="@+id/radioButton31"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Designer" />
+                <RadioButton
+                    android:id="@+id/radioButton32"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:text="Accountant" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="136dp"
+                android:layout_height="61dp"
+                android:text="Submit"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

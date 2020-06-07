@@ -32,7 +32,17 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //To check if saveInstance state is not null, if it is null it means there is a save file and it might be a cause the phone has oriantated
+        if(savedInstanceState != null)
+        {
+
+            Intent refresh = new Intent(this, LoginActivity.class);
+            startActivity(refresh);//Start the same Activity
+            finish(); //finish Activity.
+        }
+
         setContentView(R.layout.activity_login);
+        //remove title in login page
         setTitle("");
         final EditText etUsername = findViewById(R.id.editText_username);
         final EditText etPassword = findViewById(R.id.editText_password);
@@ -60,23 +70,25 @@ public class LoginActivity extends AppCompatActivity {
             stayloggedinCheckBox.setChecked(true);
         }
 
-        newUser.setOnTouchListener(new View.OnTouchListener() {
+        newUser.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
+            public void onClick(View v) {
+
                 loginPrefsEditor.putBoolean("stayloggedin", false);
                 loginPrefsEditor.commit();
                 Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
-                return false;
+
             }
 
 
         });
         loginButton = findViewById(R.id.loginButton);
-        loginButton.setOnTouchListener(new View.OnTouchListener() {
+        loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
+            public void onClick(View v) {
+
 
 
                 Log.v(TAG, FILENAME + ": Login with info: " + etUsername.getText().toString());
@@ -108,7 +120,7 @@ public class LoginActivity extends AppCompatActivity {
                 else{
                     Toast.makeText(LoginActivity.this, "Invalid Username / Password", Toast.LENGTH_SHORT).show();
                 }
-                return false;
+
 
             }
         });
@@ -155,10 +167,14 @@ public class LoginActivity extends AppCompatActivity {
             return false;
         }
     }
+
+
     @Override
     public void onBackPressed(){
         moveTaskToBack(true);
     }
+
+
 
     protected void onStop(){
         super.onStop();
