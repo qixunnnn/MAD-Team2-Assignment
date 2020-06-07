@@ -1,9 +1,9 @@
 # MAD-Team2-Assignment
-Team members' names, Student IDs
-1)Goh Qi Xun, S10192811B
-2)Yip Jun Wei, S10198567B
-3)Kamarul Aszryn Bin Jalil, s10198273F
-4)Tan Guan Teck, S10198165K
+Team members' names, Student IDs<br/>
+1)Goh Qi Xun, S10192811B<br/>
+2)Yip Jun Wei, S10198567B<br/>
+3)Kamarul Aszryn Bin Jalil, s10198273F<br/>
+4)Tan Guan Teck, S10198165K<br/>
 
 Problem Statement
 
@@ -25,8 +25,8 @@ Jun Wei : LoginPage, Homepage, SignUp, Settings, ChangePassword, CourseSuits
 Qi Xun : CourseSuits, School, Courses, Contact, GeneralContact, AcademicContact, Design for BookPrice
 
 Guan Teck : 
-AcademicCalendar layout
--Designed using linearlayout and scrollview
+AcademicCalendar layout<br/>
+-Designed using linearlayout and scrollview<br/>
 -Implemented countdown function
 
 GeneralContact layout
