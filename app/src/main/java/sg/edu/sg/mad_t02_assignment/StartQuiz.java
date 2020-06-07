@@ -24,11 +24,6 @@ public class StartQuiz extends AppCompatActivity {
     RadioButton radio;
     RadioGroup radioGroup;
 
-    private static final int[] SchoolID = {
-            //stores the id of textview here to reduce repeated codes
-            //0 BA,1 HMS,2 IT,3 FMS,4 LS,5 DE,6 E,7 HS
-            0,0,0,0,0,0,0,0
-    };
 
     ArrayList<StartQuizModel> Schoollist = new ArrayList<StartQuizModel>();
 
@@ -50,19 +45,19 @@ public class StartQuiz extends AppCompatActivity {
         setContentView(R.layout.activity_start_quiz);
 
         addListenerOnButton();
-
+        setTitle("Quiz");
         StartQuizModel BA = new StartQuizModel();
         BA.schoolname = "BA";
         BA.score = 0;
         Schoollist.add(BA); //So the list inside got School Name and Score won't lose track. When sorting u can sort their .Score
 
-        Schoollist.add(new StartQuizModel(0,"HMS"));
-        Schoollist.add(new StartQuizModel(0,"IT"));
-        Schoollist.add(new StartQuizModel(0,"FMS"));
-        Schoollist.add(new StartQuizModel(0,"LS"));
-        Schoollist.add(new StartQuizModel(0,"DE"));
-        Schoollist.add(new StartQuizModel(0,"SOE"));
-        Schoollist.add(new StartQuizModel(0,"HS"));
+        Schoollist.add(new StartQuizModel(0,"Humanities & Social Sciences"));
+        Schoollist.add(new StartQuizModel(0,"Infocomm Technology"));
+        Schoollist.add(new StartQuizModel(0,"Film & Media Studies"));
+        Schoollist.add(new StartQuizModel(0,"Life Sciences & Chemical Techonology"));
+        Schoollist.add(new StartQuizModel(0,"Design & Environment"));
+        Schoollist.add(new StartQuizModel(0,"Engineering"));
+        Schoollist.add(new StartQuizModel(0,"Health Sciences"));
 
 
 
@@ -356,7 +351,7 @@ public class StartQuiz extends AppCompatActivity {
 
                if (bool) {
                    //move
-                   Log.v(TAG, FILENAME + " Sorted" + SchoolID[7]);
+                   Log.v(TAG, FILENAME + " Sorted" );
 
 
 
@@ -379,8 +374,9 @@ public class StartQuiz extends AppCompatActivity {
                    }
 
                    Intent results = new Intent(StartQuiz.this, ResultActivity.class);
-                   results.putExtra("top", SchoolID[7]);
-                   results.putExtra("second", SchoolID[6]);
+                   results.putExtra("top", Schoollist.get(0).getSchoolname());
+                   results.putExtra("second", Schoollist.get(1).getSchoolname());
+                   results.putExtra("third", Schoollist.get(2).getSchoolname());
                   // results.putExtra("third", SchoolID[])
                    startActivity(results);
 
@@ -396,8 +392,5 @@ public class StartQuiz extends AppCompatActivity {
 
 
     }
-    private void addScoreIntoSchool(int schoolid)
-    {
-        SchoolID[schoolid] = SchoolID[schoolid]+=1;
-    }
+
 }

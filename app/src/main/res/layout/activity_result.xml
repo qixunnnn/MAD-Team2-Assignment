@@ -100,27 +100,29 @@
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 >
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="RE-TRY QUIZ"
-                    android:layout_weight="0.5"
-                    android:layout_marginStart="20dp"
-                    android:textColor="@color/White"
-                    android:background="@color/FireBrick"
-                    android:layout_marginEnd="10dp"
 
-                    />
                 <Button
+                    android:id="@+id/retryBtn"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Back To Main Menu"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
                     android:layout_weight="0.5"
-                    android:layout_marginEnd="20dp"
-                    android:background="@color/DarkCyan"
-                    android:textColor="@color/White"
+                    android:background="@color/FireBrick"
+                    android:text="RE-TRY QUIZ"
+
+                    android:textColor="@color/White" />
+
+                <Button
+                    android:id="@+id/MainmenuBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    />
+                    android:layout_marginEnd="20dp"
+                    android:layout_weight="0.5"
+                    android:background="@color/DarkCyan"
+                    android:text="Back To Main Menu"
+                    android:textColor="@color/White" />
 
             </LinearLayout>
 
