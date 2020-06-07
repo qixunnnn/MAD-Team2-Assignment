@@ -47,5 +47,8 @@ Kamarul : BookPrice,AcademicContact,CourseSuits,Help in design of LoginPage, Res
 Relevant appendices (diagrams, screenshots, user guides)<br/>
 
 Discussion on Health/Fitness App<br/>
-<img src="Images/mad_discussion.png" width="450">
-<img src="Images/mad_discussiong2.png">
+<img src="Images/mad_discussion.png" width="450"><br/>
+<img src="Images/mad_discussion2.png"><br/>
+
+Decided to change idea from Health/Fitness app to Education app<br/>
+<img src="Images/mad_discussiong3.png">
