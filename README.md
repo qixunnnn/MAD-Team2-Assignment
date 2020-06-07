@@ -17,12 +17,41 @@ In the future we plan to implement a GPS to navigate new students through Ngee A
 Target Audience<br/>
 Our target audience is graduating Secondary School students and ITE students planning to join Ngee Ann Polytechnic.<br/>
 
+Basic features of our app<br/>
+-Our app is responsive, allows the app to orientate and use for different sizes of phone<br/>
+-Has a recycler view <br/>
+-Includes SQLite and sharepreferance <br/>
+-Has multimedia <br/>
 
-
-Roles and contributions of each member
-Jun Wei : LoginPage, Homepage, SignUp, Settings, ChangePassword, CourseSuits
-
-Qi Xun : CourseSuits, School, Courses, Contact, GeneralContact, AcademicContact, Design for BookPrice
+Roles and contributions of each member<br/>
+Jun Wei :<br/>
+LoginPage<br/>
+-<br/>
+Homepage <br/>
+-<br/>
+SignUp<br/>
+-<br/>
+Settings<br/>
+-<br/>
+ChangePassword<br/>
+-<br/>
+CourseSuits<br/>
+-<br/>
+Qi Xun :<br/>
+CourseSuits<br/>
+-<br/>
+School<br/>
+-<br/>
+Courses<br/>
+-<br/>
+Contact<br/>
+-<br/>
+GeneralContact<br/>
+-<br/>
+AcademicContact<br/>
+-<br/>
+Design for BookPrice<br/>
+-<br/>
 
 Guan Teck : <br/>
 AcademicCalendar layout<br/>
@@ -39,10 +68,22 @@ Homepage video<br/>
 -Implemented video in homepage
 
 Research on Quiz questions<br/>
--Done some research for quiz questions.
+-Done some research for quiz questions.<br/>
 
-Kamarul : BookPrice,AcademicContact,CourseSuits,Help in design of LoginPage, Research on Quiz questions<br/>
+Updated readme<br/>
 
+Kamarul :<br/>
+BookPrice<br/>
+-<br/>
+AcademicContact<br/>
+-<br/>
+CourseSuits<br/>
+-<br/>
+Help in design of LoginPage<br/>
+-<br/>
+Research on Quiz questions<br/>
+-<br/>
+Updated readme<br/>
 
 Relevant appendices (diagrams, screenshots, user guides)<br/>
 
@@ -51,4 +92,5 @@ Discussion on Health/Fitness App<br/>
 <img src="Images/mad_discussion2.png"><br/>
 
 Decided to change idea from Health/Fitness app to Education app<br/>
-<img src="Images/mad_discussiong3.png">
+<img src="Images/mad_discussion3.png">
+
