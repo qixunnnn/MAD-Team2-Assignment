@@ -1,29 +1,30 @@
 # MAD-Team2-Assignment
-Team members' names, Student IDs<br/>
+###### Team members' names, Student IDs<br/>
 1)Goh Qi Xun, S10192811B<br/>
 2)Yip Jun Wei, S10198567B<br/>
 3)Kamarul Aszryn Bin Jalil, s10198273F<br/>
 4)Tan Guan Teck, S10198165K<br/>
 
-Problem Statement
+###### Problem Statement
 
 Have you ever struggled on deciding what career path to pursue in the future? Have you ever been indecisive about what course to select?
 
-Description of app
+###### Description of app
 
 “Learning@NP” app is an excellent way for graduating students who are deciding what course they want to join in Ngee Ann Polytechnic. Our app provides many functions including a survey to give the students a better insight or clearer view of what path they want to choose. Our app also allows students to learn more about Ngee Ann Polytechnic with functions ranging from “Book Prices” to “Academic Calendar”.
 
 In the future we plan to implement a GPS to navigate new students through Ngee Ann Polytechnic.
-Target Audience<br/>
+###### Target Audience<br/>
 Our target audience is graduating Secondary School students and ITE students planning to join Ngee Ann Polytechnic.<br/>
 
-Basic features of our app<br/>
+###### Basic features of our app<br/>
 -Our app is responsive, allows the app to orientate and use for different sizes of phone<br/>
 -Has a recycler view <br/>
 -Includes SQLite and sharepreferance <br/>
 -Has multimedia <br/>
 
-Roles and contributions of each member<br/>
+###### Roles and contributions of each member<br/>
+
 Jun Wei :<br/>
 LoginPage<br/>
 -<br/>
@@ -37,6 +38,7 @@ ChangePassword<br/>
 -<br/>
 CourseSuits<br/>
 -<br/>
+
 Qi Xun :<br/>
 CourseSuits<br/>
 -<br/>
@@ -85,7 +87,7 @@ Research on Quiz questions<br/>
 -<br/>
 Updated readme<br/>
 
-Relevant appendices (diagrams, screenshots, user guides)<br/>
+###### Relevant appendices (diagrams, screenshots, user guides)<br/>
 
 Discussion on Health/Fitness App<br/>
 <img src="Images/mad_discussion.png" width="450"><br/>
