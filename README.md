@@ -15,6 +15,7 @@ Our target audience is graduating Secondary School students and ITE students pla
 
 
 Roles and contributions of each member
+
 Jun Wei : LoginPage, Homepage, SignUp, Settings, ChangePassword, CourseSuits, Result, Quiz
 
 Qi Xun : CourseSuits, School, Courses, Contact, GeneralContact, AcademicContact, Design for BookPrice, Quiz, Design for Result
