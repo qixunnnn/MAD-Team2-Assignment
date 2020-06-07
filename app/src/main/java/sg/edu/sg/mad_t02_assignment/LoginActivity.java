@@ -32,6 +32,16 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(savedInstanceState != null)
+        {
+            Intent refresh = new Intent(this, LoginActivity.class);
+            startActivity(refresh);//Start the same Activity
+            finish(); //finish Activity.
+        }
+        else
+        {
+
+        }
         setContentView(R.layout.activity_login);
         setTitle("");
         final EditText etUsername = findViewById(R.id.editText_username);
@@ -158,9 +168,22 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
     @Override
+    protected void onSaveInstanceState( Bundle outState ) {
+        outState.putAll(outState);
+        super.onSaveInstanceState(outState);
+
+    }
+
+    @Override
     public void onBackPressed(){
         moveTaskToBack(true);
     }
+
+    protected void onPause(){
+        super.onPause();
+
+    }
+
 
     protected void onStop(){
         super.onStop();
