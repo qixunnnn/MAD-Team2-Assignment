@@ -60,23 +60,25 @@ public class LoginActivity extends AppCompatActivity {
             stayloggedinCheckBox.setChecked(true);
         }
 
-        newUser.setOnTouchListener(new View.OnTouchListener() {
+        newUser.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
+            public void onClick(View v) {
+
                 loginPrefsEditor.putBoolean("stayloggedin", false);
                 loginPrefsEditor.commit();
                 Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
-                return false;
+
             }
 
 
         });
         loginButton = findViewById(R.id.loginButton);
-        loginButton.setOnTouchListener(new View.OnTouchListener() {
+        loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
+            public void onClick(View v) {
+
 
 
                 Log.v(TAG, FILENAME + ": Login with info: " + etUsername.getText().toString());
@@ -108,7 +110,7 @@ public class LoginActivity extends AppCompatActivity {
                 else{
                     Toast.makeText(LoginActivity.this, "Invalid Username / Password", Toast.LENGTH_SHORT).show();
                 }
-                return false;
+
 
             }
         });
