@@ -105,4 +105,10 @@ Decided to change idea from Health/Fitness app to Education app<br/>
 **User Guide for our app**<br/>
 
 Login page<br/>
+User inputs their username and password and presses the ‘LOGIN’ button to log in. They can click ‘Remember Me’ to remember their credentials and ‘Stay Logged In’ if they do not want to type out their username and password to login. For new users, they can click the ‘New user? Sign up here’ to sign up.<br/>
 <img src="Images/mad14.PNG" height="500">
+
+SignUpPage<br/>
+
+HomePage<br/>
+In the homepage, above the ‘WELCOME,ADMIN’ there will be a video playing. This page is in cardview and users can click on the respective cardviews to go to the page stated in the text.<br/>
