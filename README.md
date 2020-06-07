@@ -15,13 +15,13 @@ Our target audience is graduating Secondary School students and ITE students pla
 
 
 Roles and contributions of each member
-Jun Wei : LoginPage, Homepage, SignUp, Settings, ChangePassword, CourseSuits
+Jun Wei : LoginPage, Homepage, SignUp, Settings, ChangePassword, CourseSuits, Result, Quiz
 
-Qi Xun : CourseSuits, School, Courses, Contact, GeneralContact, AcademicContact, Design for BookPrice
+Qi Xun : CourseSuits, School, Courses, Contact, GeneralContact, AcademicContact, Design for BookPrice, Quiz, Design for Result
 
-Guan Teck : AcademicCalendar,GeneralContact,CourseSuits,Homepage video
+Guan Teck : AcademicCalendar,GeneralContact,CourseSuits,Homepage video, Design for Quiz
 
-Kamarul : BookPrice,AcademicContact,CourseSuits,Help in design of LoginPage 
+Kamarul : BookPrice,AcademicContact,CourseSuits,Help in design of LoginPage
 
 
 
