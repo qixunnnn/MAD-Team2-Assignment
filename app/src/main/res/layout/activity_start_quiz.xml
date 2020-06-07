@@ -242,10 +242,11 @@
                     android:layout_height="55dp"
                     android:text="Creating something unique and beautiful" />
             </RadioGroup>
+
             <TextView
                 android:id="@+id/textView41"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:paddingLeft="10dp"
                 android:paddingTop="15dp"
                 android:text="If you were going to travel the world, would you find yourself in?"
@@ -306,6 +307,14 @@
                     android:layout_height="55dp"
                     android:text="Accountant" />
             </RadioGroup>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="136dp"
+                android:layout_height="61dp"
+                android:text="Submit"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
