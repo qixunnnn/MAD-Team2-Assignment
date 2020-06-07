@@ -47,4 +47,4 @@ Kamarul : BookPrice,AcademicContact,CourseSuits,Help in design of LoginPage, Res
 Relevant appendices (diagrams, screenshots, user guides)<br/>
 
 Discussion on Health/Fitness App<br/>
-![](Images/mad_discussion.png)
+<img src="Images/mad_discussion.png" width="450">
