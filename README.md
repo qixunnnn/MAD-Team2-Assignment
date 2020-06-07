@@ -1,4 +1,9 @@
 # MAD-Team2-Assignment
+Team members' names, Student IDs
+1)Goh Qi Xun, S10192811B
+2)Yip Jun Wei, S10198567B
+3)Kamarul Aszryn Bin Jalil, s10198273F
+4)Tan Guan Teck, S10198165K
 
 Problem Statement
 
@@ -15,14 +20,29 @@ Our target audience is graduating Secondary School students and ITE students pla
 
 
 Roles and contributions of each member
+Jun Wei : LoginPage, Homepage, SignUp, Settings, ChangePassword, CourseSuits
 
-Jun Wei : LoginPage, Homepage, SignUp, Settings, ChangePassword, CourseSuits, Result, Quiz
+Qi Xun : CourseSuits, School, Courses, Contact, GeneralContact, AcademicContact, Design for BookPrice
 
-Qi Xun : CourseSuits, School, Courses, Contact, GeneralContact, AcademicContact, Design for BookPrice, Quiz, Design for Result
+Guan Teck : 
+AcademicCalendar layout
+-Designed using linearlayout and scrollview
+-Implemented countdown function
 
-Guan Teck : AcademicCalendar,GeneralContact,CourseSuits,Homepage video, Design for Quiz
+GeneralContact layout
+-Helped in keying more additional information
 
-Kamarul : BookPrice,AcademicContact,CourseSuits,Help in design of LoginPage
+CourseSuits layout
+-Designed 1st draft for this layout
+
+Homepage video
+-Implemented video in homepage
+
+Research on Quiz questions
+-Done some research for quiz questions.
+
+Kamarul : BookPrice,AcademicContact,CourseSuits,Help in design of LoginPage, Research on Quiz questions
 
 
+Relevant appendices (diagrams, screenshots, user guides)
 
