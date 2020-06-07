@@ -50,8 +50,6 @@ public class SignUpActivity extends AppCompatActivity {
                 et.setTransformationMethod(new PasswordTransformationMethod());
             }
 
-
-
             return true;
         }
     };
