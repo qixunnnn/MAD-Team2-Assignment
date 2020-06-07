@@ -64,7 +64,6 @@ public class SignUpActivity extends AppCompatActivity {
         final EditText etPassword = findViewById(R.id.editText_PasswordNew);
         final EditText etCfmPassword = findViewById(R.id.editText_PasswordNew2);
         Button createButton = findViewById(R.id.buttonCreate);
-        Button cancelButton = findViewById(R.id.buttonCancel);
 
         setTitle("Create Account");
 
@@ -99,13 +98,6 @@ public class SignUpActivity extends AppCompatActivity {
                     Toast.makeText(SignUpActivity.this, "Password does not match \nPLease try again.", Toast.LENGTH_SHORT).show();
                 }
 
-            }
-        });
-        cancelButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
-                startActivity(intent);
             }
         });
 
