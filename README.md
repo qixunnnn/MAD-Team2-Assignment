@@ -29,20 +29,22 @@ AcademicCalendar layout<br/>
 -Designed using linearlayout and scrollview<br/>
 -Implemented countdown function
 
-GeneralContact layout
+GeneralContact layout<br/>
 -Helped in keying more additional information
 
-CourseSuits layout
+CourseSuits layout<br/>
 -Designed 1st draft for this layout
 
-Homepage video
+Homepage video<br/>
 -Implemented video in homepage
 
-Research on Quiz questions
+Research on Quiz questions<br/>
 -Done some research for quiz questions.
 
-Kamarul : BookPrice,AcademicContact,CourseSuits,Help in design of LoginPage, Research on Quiz questions
+Kamarul : BookPrice,AcademicContact,CourseSuits,Help in design of LoginPage, Research on Quiz questions<br/>
 
 
-Relevant appendices (diagrams, screenshots, user guides)
+Relevant appendices (diagrams, screenshots, user guides)<br/>
 
+Discussion on Health/Fitness App<br/>
+![](images/mad_discussion.png)
