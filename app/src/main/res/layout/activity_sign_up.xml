@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#2E2D2C"
     android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-    tools:context=".LoginActivity"
+    tools:context=".SignUpActivity"
     android:orientation="vertical"
     >
 
@@ -76,24 +76,23 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     >
-    <ImageView
-        android:id="@+id/newPassword_logo"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        app:srcCompat="@android:drawable/ic_lock_lock"
-        android:layout_marginTop="15dp"
-        android:layout_marginStart="40dp"
-        android:layout_weight="0"
-        />
+
+        <ImageView
+            android:id="@+id/newPassword_logo"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="0"
+            app:srcCompat="@android:drawable/ic_lock_idle_lock" />
 
     <EditText
-        android:id="@+id/edit_PasswordNew"
+        android:id="@+id/editText_PasswordNew"
         android:layout_width="0dp"
         android:layout_height="43dp"
         android:layout_marginTop="25dp"
         android:layout_marginLeft="16dp"
         android:ems="10"
-        android:layout_marginRight="50dp"
         android:background="#524F4F"
         android:hint="Password"
         android:textColor="@color/White"
@@ -101,6 +100,16 @@
         android:paddingLeft="15dp"
         android:inputType="textPassword"
         android:layout_weight="1"/>
+    <ImageButton
+        android:id="@+id/passwordBtn"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:background="#40403a"
+        android:layout_marginTop="25dp"
+        android:layout_weight="0.2"
+        android:layout_marginEnd="50dp"
+        app:srcCompat="@android:drawable/ic_menu_view" />
+
 </LinearLayout>
     <LinearLayout
         android:id="@+id/linear_repassword"
@@ -108,24 +117,23 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         >
+
         <ImageView
             android:id="@+id/new2ndPassword_logo"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            app:srcCompat="@android:drawable/ic_lock_lock"
-            android:layout_marginTop="15dp"
             android:layout_marginStart="40dp"
+            android:layout_marginTop="15dp"
             android:layout_weight="0"
-            />
+            app:srcCompat="@android:drawable/ic_lock_idle_lock" />
 
         <EditText
-            android:id="@+id/edit_PasswordNew2"
+            android:id="@+id/editText_PasswordNew2"
             android:layout_width="0dp"
             android:layout_height="43dp"
             android:layout_marginTop="25dp"
             android:layout_marginLeft="16dp"
             android:ems="10"
-            android:layout_marginRight="50dp"
             android:background="#524F4F"
             android:hint="Re-Type Password"
             android:textColor="@color/White"
@@ -133,6 +141,15 @@
             android:paddingLeft="15dp"
             android:inputType="textPassword"
             android:layout_weight="1"/>
+        <ImageButton
+            android:id="@+id/confirmpassBtn"
+            android:layout_width="0dp"
+            android:layout_height="43dp"
+            android:background="#40403a"
+            android:layout_marginTop="25dp"
+            android:layout_weight="0.2"
+            android:layout_marginEnd="50dp"
+            app:srcCompat="@android:drawable/ic_menu_view" />
     </LinearLayout>
         <RelativeLayout
             android:layout_width="match_parent"
@@ -148,7 +165,7 @@
                 app:cardCornerRadius="25dp"
                 />
             <Button
-                android:id="@+id/loginButton"
+                android:id="@+id/buttonCreate"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_marginStart="68dp"

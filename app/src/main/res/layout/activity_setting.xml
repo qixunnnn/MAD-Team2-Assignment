@@ -10,6 +10,7 @@
         android:layout_width="410dp"
         android:layout_height="730dp"
         android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -29,13 +30,14 @@
                     app:srcCompat="@android:drawable/sym_def_app_icon" />
 
                 <TextView
-                    android:id="@+id/settings"
+                    android:id="@+id/profileUsername"
                     android:layout_width="293dp"
                     android:layout_height="121dp"
                     android:gravity="center|left"
                     android:paddingLeft="10dp"
                     android:text="TextView"
-                    android:textSize="20dp" />
+                    android:textColor="#000000"
+                    android:textSize="25dp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
