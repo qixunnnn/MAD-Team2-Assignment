@@ -12,7 +12,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class StartQuiz extends AppCompatActivity {
     private String TAG = "Learning@NP";
@@ -27,6 +29,9 @@ public class StartQuiz extends AppCompatActivity {
             //0 BA,1 HMS,2 IT,3 FMS,4 LS,5 DE,6 E,7 HS
             0,0,0,0,0,0,0,0
     };
+
+    ArrayList<StartQuizModel> Schoollist = new ArrayList<StartQuizModel>();
+
     private static final int[] RadioGroup = {
             R.id.radioQ1,
             R.id.radioQ2,
@@ -45,6 +50,20 @@ public class StartQuiz extends AppCompatActivity {
         setContentView(R.layout.activity_start_quiz);
 
         addListenerOnButton();
+
+        StartQuizModel BA = new StartQuizModel();
+        BA.schoolname = "BA";
+        BA.score = 0;
+        Schoollist.add(BA); //So the list inside got School Name and Score won't lose track. When sorting u can sort their .Score
+
+        Schoollist.add(new StartQuizModel(0,"HMS"));
+        Schoollist.add(new StartQuizModel(0,"IT"));
+        Schoollist.add(new StartQuizModel(0,"FMS"));
+        Schoollist.add(new StartQuizModel(0,"LS"));
+        Schoollist.add(new StartQuizModel(0,"DE"));
+        Schoollist.add(new StartQuizModel(0,"SOE"));
+        Schoollist.add(new StartQuizModel(0,"HS"));
+
 
 
     }
@@ -67,29 +86,30 @@ public class StartQuiz extends AppCompatActivity {
 
                         if (selectedId == 2131230734) {
                             Log.v(TAG, FILENAME + " 1st ticked ");
-                            addScoreIntoSchool(0);
-                            addScoreIntoSchool(1);
+                            Schoollist.get(0).score++;
+                            Schoollist.get(1).score++;
                         }
                         else if (selectedId == 2131230735) {
                             Log.v(TAG, FILENAME + " 2nd ticked ");
-                            addScoreIntoSchool(3);
-                            addScoreIntoSchool(5);
+                            Schoollist.get(3).score++;
+                            Schoollist.get(5).score++;
 
                         }
                         else if (selectedId == 2131230736) {
                             Log.v(TAG, FILENAME + " 3rd ticked ");
-                            addScoreIntoSchool(7);
-                            addScoreIntoSchool(4);
+                            Schoollist.get(7).score++;
+                            Schoollist.get(4).score++;
+
                         }
                         else {
                             Log.v(TAG, FILENAME + " 4th ticked ");
-                            addScoreIntoSchool(6);
-                            addScoreIntoSchool(2);
+                            Schoollist.get(6).score++;
+                            Schoollist.get(2).score++;
                         }
                     }
                     //not checked
                     else {
-                        Toast.makeText(StartQuiz.this, "Please select an option in question 1", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(StartQuiz.this, "Please select an option in Question 1", Toast.LENGTH_SHORT).show();
                         bool = false;
                     }
 
@@ -102,24 +122,24 @@ public class StartQuiz extends AppCompatActivity {
 
                     if (selectedId == 2131230738) {
                         Log.v(TAG, FILENAME + " 1st ticked ");
-                        addScoreIntoSchool(2);
-                        addScoreIntoSchool(4);
+                        Schoollist.get(2).score++;
+                        Schoollist.get(4).score++;
                     }
                     else if (selectedId == 2131230739) {
                         Log.v(TAG, FILENAME + " 2nd ticked ");
-                        addScoreIntoSchool(0);
-                        addScoreIntoSchool(7);
+                        Schoollist.get(0).score++;
+                        Schoollist.get(7).score++;
 
                     }
                     else if (selectedId == 2131230740) {
                         Log.v(TAG, FILENAME + " 3rd ticked ");
-                        addScoreIntoSchool(5);
-                        addScoreIntoSchool(3);
+                        Schoollist.get(5).score++;
+                        Schoollist.get(3).score++;
                     }
                     else {
                         Log.v(TAG, FILENAME + " 4th ticked ");
-                        addScoreIntoSchool(6);
-                        addScoreIntoSchool(1);
+                        Schoollist.get(6).score++;
+                        Schoollist.get(1).score++;
                     }
                 }
                 //not checked
@@ -137,23 +157,23 @@ public class StartQuiz extends AppCompatActivity {
 
                     if (selectedId == 2131230742) {
                         Log.v(TAG, FILENAME + " 1st ticked ");
-                        addScoreIntoSchool(4);
-                        addScoreIntoSchool(7);
+                        Schoollist.get(4).score++;
+                        Schoollist.get(7).score++;
                     }
                     else if (selectedId == 2131230743) {
                         Log.v(TAG, FILENAME + " 2nd ticked ");
-                        addScoreIntoSchool(0);
-                        addScoreIntoSchool(1);
+                        Schoollist.get(0).score++;
+                        Schoollist.get(1).score++;
                     }
                     else if (selectedId == 2131230744) {
                         Log.v(TAG, FILENAME + " 3rd ticked ");
-                        addScoreIntoSchool(6);
-                        addScoreIntoSchool(5);
+                        Schoollist.get(6).score++;
+                        Schoollist.get(5).score++;
                     }
                     else {
                         Log.v(TAG, FILENAME + " 4th ticked ");
-                        addScoreIntoSchool(2);
-                        addScoreIntoSchool(3);
+                        Schoollist.get(2).score++;
+                        Schoollist.get(3).score++;
                     }
                 }
                 //not checked
@@ -171,23 +191,23 @@ public class StartQuiz extends AppCompatActivity {
 
                     if (selectedId == 2131230746) {
                         Log.v(TAG, FILENAME + " 1st ticked ");
-                        addScoreIntoSchool(2);
-                        addScoreIntoSchool(3);
+                        Schoollist.get(2).score++;
+                        Schoollist.get(3).score++;
                     }
                     else if (selectedId == 2131230747) {
                         Log.v(TAG, FILENAME + " 2nd ticked ");
-                        addScoreIntoSchool(5);
-                        addScoreIntoSchool(7);
+                        Schoollist.get(5).score++;
+                        Schoollist.get(7).score++;
                     }
                     else if (selectedId == 2131230748) {
                         Log.v(TAG, FILENAME + " 3rd ticked ");
-                        addScoreIntoSchool(4);
-                        addScoreIntoSchool(6);
+                        Schoollist.get(4).score++;
+                        Schoollist.get(6).score++;
                     }
                     else {
                         Log.v(TAG, FILENAME + " 4th ticked ");
-                        addScoreIntoSchool(1);
-                        addScoreIntoSchool(0);
+                        Schoollist.get(1).score++;
+                        Schoollist.get(0).score++;
                     }
                 }
                 //not checked
@@ -206,23 +226,23 @@ public class StartQuiz extends AppCompatActivity {
 
                     if (selectedId == 2131230750) {
                         Log.v(TAG, FILENAME + " 1st ticked ");
-                        addScoreIntoSchool(2);
-                        addScoreIntoSchool(6);
+                        Schoollist.get(2).score++;
+                        Schoollist.get(6).score++;
                     }
                     else if (selectedId == 2131230751) {
                         Log.v(TAG, FILENAME + " 2nd ticked ");
-                        addScoreIntoSchool(0);
-                        addScoreIntoSchool(1);
+                        Schoollist.get(0).score++;
+                        Schoollist.get(1).score++;
                     }
                     else if (selectedId == 2131230752) {
                         Log.v(TAG, FILENAME + " 3rd ticked ");
-                        addScoreIntoSchool(3);
-                        addScoreIntoSchool(5);
+                        Schoollist.get(3).score++;
+                        Schoollist.get(5).score++;
                     }
                     else {
                         Log.v(TAG, FILENAME + " 4th ticked ");
-                        addScoreIntoSchool(7);
-                        addScoreIntoSchool(4);
+                        Schoollist.get(7).score++;
+                        Schoollist.get(4).score++;
                     }
                 }
                 //not checked
@@ -240,23 +260,23 @@ public class StartQuiz extends AppCompatActivity {
 
                     if (selectedId == 2131230754) {
                         Log.v(TAG, FILENAME + " 1st ticked ");
-                        addScoreIntoSchool(0);
-                        addScoreIntoSchool(1);
+                        Schoollist.get(0).score++;
+                        Schoollist.get(1).score++;
                     }
                     else if (selectedId == 2131230755) {
                         Log.v(TAG, FILENAME + " 2nd ticked ");
-                        addScoreIntoSchool(2);
-                        addScoreIntoSchool(6);
+                        Schoollist.get(2).score++;
+                        Schoollist.get(6).score++;
                     }
                     else if (selectedId == 2131230756) {
                         Log.v(TAG, FILENAME + " 3rd ticked ");
-                        addScoreIntoSchool(4);
-                        addScoreIntoSchool(7);
+                        Schoollist.get(4).score++;
+                        Schoollist.get(7).score++;
                     }
                     else {
                         Log.v(TAG, FILENAME + " 4th ticked ");
-                        addScoreIntoSchool(5);
-                        addScoreIntoSchool(4);
+                        Schoollist.get(5).score++;
+                        Schoollist.get(4).score++;
                     }
                 }
                 //not checked
@@ -274,23 +294,23 @@ public class StartQuiz extends AppCompatActivity {
 
                     if (selectedId == 2131230758) {
                         Log.v(TAG, FILENAME + " 1st ticked ");
-                        addScoreIntoSchool(5);
-                        addScoreIntoSchool(4);
+                        Schoollist.get(5).score++;
+                        Schoollist.get(4).score++;
                     }
                     else if (selectedId == 2131230759) {
                         Log.v(TAG, FILENAME + " 2nd ticked ");
-                        addScoreIntoSchool(6);
-                        addScoreIntoSchool(7);
+                        Schoollist.get(6).score++;
+                        Schoollist.get(7).score++;
                     }
                     else if (selectedId == 2131230760) {
                         Log.v(TAG, FILENAME + " 3rd ticked ");
-                        addScoreIntoSchool(0);
-                        addScoreIntoSchool(2);
+                        Schoollist.get(0).score++;
+                        Schoollist.get(2).score++;
                     }
                     else {
                         Log.v(TAG, FILENAME + " 4th ticked ");
-                        addScoreIntoSchool(3);
-                        addScoreIntoSchool(1);
+                        Schoollist.get(3).score++;
+                        Schoollist.get(1).score++;
                     }
                 }
                 //not checked
@@ -308,23 +328,23 @@ public class StartQuiz extends AppCompatActivity {
 
                     if (selectedId == 2131230762) {
                         Log.v(TAG, FILENAME + " 1st ticked ");
-                        addScoreIntoSchool(2);
-                        addScoreIntoSchool(6);
+                        Schoollist.get(2).score++;
+                        Schoollist.get(6).score++;
                     }
                     else if (selectedId == 2131230763) {
                         Log.v(TAG, FILENAME + " 2nd ticked ");
-                        addScoreIntoSchool(4);
-                        addScoreIntoSchool(7);
+                        Schoollist.get(4).score++;
+                        Schoollist.get(7).score++;
                     }
                     else if (selectedId == 2131230764) {
                         Log.v(TAG, FILENAME + " 3rd ticked ");
-                        addScoreIntoSchool(3);
-                        addScoreIntoSchool(5);
+                        Schoollist.get(3).score++;
+                        Schoollist.get(5).score++;
                     }
                     else {
                         Log.v(TAG, FILENAME + " 4th ticked ");
-                        addScoreIntoSchool(0);
-                        addScoreIntoSchool(1);
+                        Schoollist.get(0).score++;
+                        Schoollist.get(1).score++;
                     }
                 }
                 //not checked
@@ -336,13 +356,32 @@ public class StartQuiz extends AppCompatActivity {
 
                if (bool) {
                    //move
-                   Arrays.sort(SchoolID);
                    Log.v(TAG, FILENAME + " Sorted" + SchoolID[7]);
+
+
+
+//                   for (int i = 0; i<Schoollist.size() - 1;i++)
+//                   {
+//                       for (int j = 0; j<Schoollist.size()-i-1;i++){
+//                           if (Schoollist.get(j).score > Schoollist.get(j+1).score)
+//                           {
+//                               StartQuizModel temp = Schoollist.get(j);
+//                               Schoollist.set(j,Schoollist.get(j+1));
+//                               Schoollist.set(j+1,temp);
+//                           }
+//                       }
+//                   }
+                   Collections.sort(Schoollist);
+
+                   //Check log
+                   for (int i = 0; i<Schoollist.size();i++){
+                       Log.v(TAG,Schoollist.get(i).schoolname + String.valueOf(Schoollist.get(i).score));
+                   }
 
                    Intent results = new Intent(StartQuiz.this, ResultActivity.class);
                    results.putExtra("top", SchoolID[7]);
                    results.putExtra("second", SchoolID[6]);
-                   results.putExtra("third", SchoolID[])
+                  // results.putExtra("third", SchoolID[])
                    startActivity(results);
 
 
