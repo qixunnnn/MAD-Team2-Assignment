@@ -43,7 +43,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SignUpActivity" />
+            android:name=".SignUpActivity"
+            android:parentActivityName=".MainActivity"
+            />
         <activity
             android:name=".SettingActivity"
             android:parentActivityName=".MainActivity" />
