@@ -26,91 +26,120 @@
         android:src="@drawable/logo3"
         android:layout_marginTop="80dp"
         />
+        <LinearLayout
+            android:id="@+id/linear1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageView"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:id="@+id/profilelogo"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/profile"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="40dp"
+                android:layout_weight="0"
+                />
 
-    <ImageView
-        android:id="@+id/profilelogo"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:src="@drawable/profile"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="40dp"
-        android:layout_below="@id/imageView"
-        />
+            <EditText
+                android:id="@+id/editText_username"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="55dp"
+                android:layout_marginLeft="16dp"
+                android:ems="10"
+                android:background="#524F4F"
+                android:hint="Username"
+                android:textColor="@color/White"
+                android:textColorHint="#F3F3F3"
+                android:paddingStart="15dp"
+                android:inputType="textPersonName"
+                android:layout_weight="2"/>
 
-    <EditText
-        android:id="@+id/editText_username"
-        android:layout_width="240dp"
-        android:layout_height="43dp"
-        android:layout_toRightOf="@id/profilelogo"
-        android:layout_below="@id/imageView"
-        android:layout_marginTop="60dp"
-        android:layout_marginLeft="16dp"
-        android:ems="10"
-        android:background="#524F4F"
-        android:hint="Username"
-        android:textColor="@color/White"
-        android:textColorHint="#F3F3F3"
-        android:paddingLeft="15dp"
-        android:inputType="textPersonName" />
+        </LinearLayout>
 
-    <ImageView
-        android:id="@+id/passwordLogo"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        app:srcCompat="@android:drawable/ic_lock_lock"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="40dp"
-        android:layout_below="@id/profilelogo"
-        />
+        <LinearLayout
+            android:id="@+id/linear2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear1"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:id="@+id/passwordLogo"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                app:srcCompat="@android:drawable/ic_lock_lock"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="40dp"
+                android:layout_weight="0"
+                />
 
-    <EditText
-        android:id="@+id/editText_password"
-        android:layout_width="240dp"
-        android:layout_height="43dp"
-        android:layout_toRightOf="@id/profilelogo"
-        android:layout_below="@id/editText_username"
-        android:layout_marginTop="35dp"
-        android:layout_marginLeft="16dp"
-        android:ems="10"
-        android:background="#524F4F"
-        android:hint="Password"
-        android:textColor="@color/White"
-        android:textColorHint="#F3F3F3"
-        android:paddingLeft="15dp"
-        android:inputType="textPassword" />
+            <EditText
+                android:id="@+id/editText_password"
+                android:layout_width="0dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="16dp"
+                android:ems="10"
+                android:layout_marginRight="50dp"
+                android:background="#524F4F"
+                android:hint="Password"
+                android:textColor="@color/White"
+                android:textColorHint="#F3F3F3"
+                android:paddingLeft="15dp"
+                android:inputType="textPassword"
+                android:layout_weight="1"/>
 
-    <CheckBox
-        android:id="@+id/checkBox_RememberMe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="35dp"
-        android:buttonTint="@color/White"
-        android:text="Remember Me?"
-        android:textColor="#FFFFFF"
-        android:textColorHighlight="#FFFFFF"
-        android:textColorHint="#FDFDFD"
-        android:textColorLink="#FDFDFD"
-        android:layout_below="@id/editText_password"
-        />
 
-    <CheckBox
-        android:id="@+id/checkBox_Stayloggedin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:layout_toRightOf="@id/checkBox_RememberMe"
-        android:layout_marginLeft="25dp"
-        android:buttonTint="@color/White"
-        android:text="Stay logged in"
-        android:textColor="#FFFFFF"
-        android:textColorHighlight="#FFFFFF"
-        android:textColorHint="#FDFDFD"
-        android:textColorLink="#FDFDFD"
-        android:layout_below="@id/editText_password"
-        android:layout_centerHorizontal="true"
+        </LinearLayout>
 
-        />
+        <LinearLayout
+            android:id="@+id/linear3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/linear2"
+            android:layout_marginTop="20dp"
+            android:gravity="center">
+
+            <CheckBox
+                android:id="@+id/checkBox_RememberMe"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/White"
+                android:text="Remember Me?"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FDFDFD"
+                android:textColorLink="#FDFDFD"
+                android:layout_weight="1"
+                android:layout_marginStart="70dp"
+
+                />
+
+            <CheckBox
+                android:id="@+id/checkBox_Stayloggedin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/White"
+                android:text="Stay logged in"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FDFDFD"
+                android:textColorLink="#FDFDFD"
+                android:layout_weight="1"
+                android:layout_marginEnd="70dp"
+
+                />
+
+        </LinearLayout>
+
+
+
 
     <androidx.cardview.widget.CardView
         android:layout_width="316dp"
@@ -119,7 +148,7 @@
         android:layout_marginTop="40dp"
         app:cardBackgroundColor="@color/DarkCyan"
         app:cardCornerRadius="25dp"
-        android:layout_below="@id/checkBox_RememberMe"
+        android:layout_below="@id/linear3"
         android:layout_centerHorizontal="true"
 
         />
@@ -133,7 +162,7 @@
         android:background="@color/DarkCyan"
         android:text="Login"
         android:textColor="@color/White"
-        android:layout_below="@id/checkBox_RememberMe"
+        android:layout_below="@id/linear3"
         android:layout_centerHorizontal="true"
         />
 
