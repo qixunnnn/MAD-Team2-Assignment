@@ -104,11 +104,53 @@ Decided to change idea from Health/Fitness app to Education app<br/>
 
 **User Guide for our app**<br/>
 
-Login page<br/>
-User inputs their username and password and presses the ‘LOGIN’ button to log in. They can click ‘Remember Me’ to remember their credentials and ‘Stay Logged In’ if they do not want to type out their username and password to login. For new users, they can click the ‘New user? Sign up here’ to sign up.<br/>
+LoginPage<br/>
+User inputs their username and password and presses the ‘LOGIN’ button to log in. They can click "Remember Me" to remember their credentials and "Stay Logged In" if they do not want to type out their username and password to login. For new users, they can click the "New user? Sign up here" to sign up.<br/>
 <img src="Images/mad14.PNG" height="500">
 
 SignUpPage<br/>
 
 HomePage<br/>
-In the homepage, above the ‘WELCOME,ADMIN’ there will be a video playing. This page is in cardview and users can click on the respective cardviews to go to the page stated in the text.<br/>
+In the homepage, above the text "WELCOME,ADMIN" there will be a video playing. This page is in cardview and users can click on the respective cardviews to go to the page stated in the text.<br/>
+<img src="Images/mad1.PNG" height="500">
+
+SchoolsPage<br/>
+This page is a RecyclerView and shows all the schools in Ngee Ann Poly for users to see. Users can click on the respective images to see available courses in that school.<br/>
+<img src="Images/mad2.PNG" height="500">
+
+CoursesPage<br/>
+This page is a RecyclerView and shows all the available courses for the respective schools in Ngee Ann Poly for users to see.<br/>
+<img src="Images/mad3.PNG" height="500">
+
+CourseQuizPage<br/>
+This page uses a linear layout with scrollview and displays the image and instructions for the quiz. Users can click the “Start Quiz button” to start the quiz.<br/>
+<img src="Images/mad4.PNG" height="500">
+
+QuizPage<br/>
+
+
+AcademicCalenderPage<br/>
+This page uses a linear layout with scrollview to display the academic calendar for the current year. It also implements a countdown function for days until the next holiday.<br/>
+<img src="Images/mad6.PNG" height="500">
+
+BookPricesPage<br/>
+This page is a RecyclerView that displays some books that are shared between courses in the same school for users to see the price.<br/>
+<img src="Images/mad7.PNG" height="500">
+
+ContactPage<br/>
+This page uses a linear layout with scrollview to display the address and opening hours of the campus. It also uses a cardview with relative layout where users can click on the card to go to ‘General Contact’, ‘Academic Contact’ pages. For the ‘QUALITY SERVICE FEEDBACK’, users will be asked to  choose their preferred web browser, and will be directed to a webpage where they can give feedback/comments on the service.<br/>
+<img src="Images/mad8.PNG" height="500">
+
+GeneralContactPage<br/>
+This page is a RecyclerView that displays general contacts from Ngee Ann Poly. Users can call the number or mail the email for any enquiries.<br/>
+<img src="Images/mad9.PNG" height="500">
+
+AcademicContactPage<br/>
+This page is a RecyclerView that displays academic contacts from Ngee Ann Poly. Users can refer to the telephone and email to contact the respective people.<br/>
+<img src="Images/mad10.PNG" height="500">
+
+SettingsPage<br/>
+Users can come here to change their password and to sign out from the current account they are logged in to.<br/>
+<img src="Images/mad13.PNG" height="500">
+
+ChangePasswordPage<br/>
