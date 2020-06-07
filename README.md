@@ -105,4 +105,4 @@ Decided to change idea from Health/Fitness app to Education app<br/>
 **User Guide for our app**<br/>
 
 Login page<br/>
-<img src="Images/mad14.PNG">
+<img src="Images/mad14.PNG" height="500">
