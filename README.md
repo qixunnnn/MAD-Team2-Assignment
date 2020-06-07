@@ -102,7 +102,7 @@ Discussion on Health/Fitness App<br/>
 Decided to change idea from Health/Fitness app to Education app<br/>
 <img src="Images/mad_discussion3.png">
 
-User Guide for our app<br/>
+**User Guide for our app**<br/>
 
 Login page<br/>
-<img src="Images/mad14.png">
+<img src="Images/mad14.PNG">
