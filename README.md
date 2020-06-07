@@ -2,7 +2,7 @@
 ## Team members' names, Student IDs<br/>
 1)Goh Qi Xun, S10192811B<br/>
 2)Yip Jun Wei, S10198567B<br/>
-3)Kamarul Aszryn Bin Jalil, s10198273F<br/>
+3)Kamarul Aszryn Bin Jalil, S10198273F<br/>
 4)Tan Guan Teck, S10198165K<br/>
 
 ## Problem Statement
@@ -27,55 +27,84 @@ Our target audience is graduating Secondary School students and ITE students pla
 
 **Jun Wei :**<br/>
 
+AndroidManifest<br/>
+-Programmed the actionbar so that there will be a back button to navigate to parent class<br/>
+
 LoginPage<br/>
--<br/>
+-Used SQLite and sharedPreference<br/>
+-Programmed LoginActivity,MyDBHandler,UserData<br/>
+-Used Event handling(Toast)<br/>
+-Used responsive(OnFocus)<br/>
+
 Homepage <br/>
--<br/>
+-Programmed the Cardview Design <br/>
+
 SignUp<br/>
--<br/>
+-Used SQLite and sharedPreference<br/>
+-Programmed SignUpActivity<br/>
+
 Settings<br/>
--<br/>
+-Used Linear View<br/>
+-User SharedPreference<br/>
+-Used Event Handling(Alert)<br/>
+-Programmed SettingsActivity,ChangePassword Activity<br/>
+
 ChangePassword<br/>
--<br/>
-CourseSuits<br/>
--<br/>
+-Used SQLite and sharedPreference<br/>
+-Programmed ChangePasswordActivity<br/>
+-Used responsive(OnFocus)<br/>
+
+CourseSuits/Quiz<br/>
+-Programmed StartQuizActivity<br/>
+-Used Intent to passdata(array)<br/>
+
+Result<br/>
+-Programmed ResultActivity<br/>
+-Used Intent to received data(array)<br/>
 
 **Qi Xun :**<br/>
 
-CourseSuits<br/>
--<br/>
+Homepage<br/>
+-Design the layout of the page<br/>
+
+CourseSuits/Quiz<br/>
+-Design the instruction page<br/>
+
 School<br/>
--<br/>
+-Program and design the activity<br/>
+-Used RecyclerView<br/>
+-Created Model for the schools<br/>
+-Used CardView for each RecyclerView row<br/>
+
 Courses<br/>
--<br/>
-Contact<br/>
--<br/>
+-Used RecyclerView<br/>
+-Created Model for courses<br/>
+-Used CardView for each RecyclerView row<br/>
+
+StartQuiz<br/>
+-Created Model for the quiz to store data in list<br/>
+-Override “Collections.sort” method in Model for sorting<br/>
+
+BookPrice<br/>
+-Designed the layout and the row<br/>
+
+ContactUs<br/>
+-Designed the layout<br/>
+
 GeneralContact<br/>
--<br/>
+-Designed the layout for each row<br/>
+-Created Model<br/>
+
 AcademicContact<br/>
--<br/>
-Design for BookPrice<br/>
--<br/>
+-Designed the layout for each row<br/>
+-Created Model<br/>
 
-**Guan Teck :** <br/>
+LoginPage<br/>
+-Updated design for Login Page<br/>
 
-AcademicCalendar layout<br/>
--Designed using linearlayout and scrollview<br/>
--Implemented countdown function
-
-GeneralContact layout<br/>
--Helped in keying more additional information
-
-CourseSuits layout<br/>
--Designed 1st draft for this layout
-
-Homepage video<br/>
--Implemented video in homepage
-
-Research on Quiz questions<br/>
--Done some research for quiz questions.<br/>
-
-Updated readme<br/>
+Others<br/>
+-Added scroll view in most layouts for responsiveness.<br/>
+-Converting Constraint to Linear layout for responsiveness<br/>
 
 **Kamarul :**<br/>
 
@@ -85,13 +114,40 @@ BookPrice<br/>
 
 AcademicContact<br/>
 -Help key in more contact information<br/>
+-Created RecyclerView<br/>
 
 Help in design of LoginPage<br/>
 
 Research on Quiz questions<br/>
 -Help research on questions for quiz<br/>
 
-Updated readme<br/>
+Result<br/>
+-Design for Result Page<br/>
+
+Updated Documentation<br/>
+
+**Guan Teck :** <br/>
+
+AcademicCalendar layout<br/>
+-Designed using relativelayout and scrollview<br/>
+-Programmed AcademicCalendar
+
+GeneralContact layout<br/>
+-Helped in keying more additional information
+-Created RecyclerView
+
+CourseSuits/Quiz layout<br/>
+-Designed 1st draft for this layout
+
+Homepage video<br/>
+-Programmed video in homepage
+
+Research on Quiz questions<br/>
+-Done some research for quiz questions.<br/>
+
+Updated Documentation<br/>
+
+Designed icons<br/>
 
 ## Relevant appendices (diagrams, screenshots, user guides)<br/>
 
