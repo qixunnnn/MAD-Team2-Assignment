@@ -2,7 +2,7 @@
 ## Team members' names, Student IDs<br/>
 1)Goh Qi Xun, S10192811B<br/>
 2)Yip Jun Wei, S10198567B<br/>
-3)Kamarul Aszryn Bin Jalil, s10198273F<br/>
+3)Kamarul Aszryn Bin Jalil, S10198273F<br/>
 4)Tan Guan Teck, S10198165K<br/>
 
 ## Problem Statement
@@ -13,9 +13,18 @@ Have you ever struggled on deciding what career path to pursue in the future? Ha
 
 “Learning@NP” app is an excellent way for graduating students who are deciding what course they want to join in Ngee Ann Polytechnic. Our app provides many functions including a survey to give the students a better insight or clearer view of what path they want to choose. Our app also allows students to learn more about Ngee Ann Polytechnic with functions ranging from “Book Prices” to “Academic Calendar”.
 
-In the future we plan to implement a GPS to navigate new students through Ngee Ann Polytechnic.
+Some of the features we hope to implement in the future:<br/>
+
+- Implement a GPS to navigate visitors/new students.<br/>
+- More In-depth information about each course.<br/>
+- Allow students to purchase textbooks.<br/>
+- Use online cloud storage (Firebase) to store information.<br/>
+- Search Bar to allow users to search for specific courses and textbooks.<br/>
+- Side menu for more navigation around the app.<br/>
+- Create an admin user that allows them to add textbook, courses, other information, etc.<br/>
+
 ## Target Audience<br/>
-Our target audience is graduating Secondary School students and ITE students planning to join Ngee Ann Polytechnic.<br/>
+Our target audience is graduating Secondary School students and ITE students planning to join Ngee Ann Polytechnic.Freshies that are new to the school.<br/>
 
 ## Basic features of our app<br/>
 -Our app is responsive, allows the app to orientate and use for different sizes of phone<br/>
@@ -27,55 +36,84 @@ Our target audience is graduating Secondary School students and ITE students pla
 
 **Jun Wei :**<br/>
 
+AndroidManifest<br/>
+-Programmed the actionbar so that there will be a back button to navigate to parent class<br/>
+
 LoginPage<br/>
--<br/>
+-Used SQLite and sharedPreference<br/>
+-Programmed LoginActivity,MyDBHandler,UserData<br/>
+-Used Event handling(Toast)<br/>
+-Used responsive(OnFocus)<br/>
+
 Homepage <br/>
--<br/>
+-Programmed the Cardview Design <br/>
+
 SignUp<br/>
--<br/>
+-Used SQLite and sharedPreference<br/>
+-Programmed SignUpActivity<br/>
+
 Settings<br/>
--<br/>
+-Used Linear View<br/>
+-User SharedPreference<br/>
+-Used Event Handling(Alert)<br/>
+-Programmed SettingsActivity,ChangePassword Activity<br/>
+
 ChangePassword<br/>
--<br/>
-CourseSuits<br/>
--<br/>
+-Used SQLite and sharedPreference<br/>
+-Programmed ChangePasswordActivity<br/>
+-Used responsive(OnFocus)<br/>
+
+CourseSuits/Quiz<br/>
+-Programmed StartQuizActivity<br/>
+-Used Intent to passdata(array)<br/>
+
+Result<br/>
+-Programmed ResultActivity<br/>
+-Used Intent to received data(array)<br/>
 
 **Qi Xun :**<br/>
 
-CourseSuits<br/>
--<br/>
+Homepage<br/>
+-Design the layout of the page<br/>
+
+CourseSuits/Quiz<br/>
+-Design the instruction page<br/>
+
 School<br/>
--<br/>
+-Program and design the activity<br/>
+-Used RecyclerView<br/>
+-Created Model for the schools<br/>
+-Used CardView for each RecyclerView row<br/>
+
 Courses<br/>
--<br/>
-Contact<br/>
--<br/>
+-Used RecyclerView<br/>
+-Created Model for courses<br/>
+-Used CardView for each RecyclerView row<br/>
+
+StartQuiz<br/>
+-Created Model for the quiz to store data in list<br/>
+-Override “Collections.sort” method in Model for sorting<br/>
+
+BookPrice<br/>
+-Designed the layout and the row<br/>
+
+ContactUs<br/>
+-Designed the layout<br/>
+
 GeneralContact<br/>
--<br/>
+-Designed the layout for each row<br/>
+-Created Model<br/>
+
 AcademicContact<br/>
--<br/>
-Design for BookPrice<br/>
--<br/>
+-Designed the layout for each row<br/>
+-Created Model<br/>
 
-**Guan Teck :** <br/>
+LoginPage<br/>
+-Updated design for Login Page<br/>
 
-AcademicCalendar layout<br/>
--Designed using linearlayout and scrollview<br/>
--Implemented countdown function
-
-GeneralContact layout<br/>
--Helped in keying more additional information
-
-CourseSuits layout<br/>
--Designed 1st draft for this layout
-
-Homepage video<br/>
--Implemented video in homepage
-
-Research on Quiz questions<br/>
--Done some research for quiz questions.<br/>
-
-Updated readme<br/>
+Others<br/>
+-Added scroll view in most layouts for responsiveness.<br/>
+-Converting Constraint to Linear layout for responsiveness<br/>
 
 **Kamarul :**<br/>
 
@@ -85,13 +123,41 @@ BookPrice<br/>
 
 AcademicContact<br/>
 -Help key in more contact information<br/>
+-Created RecyclerView<br/>
 
 Help in design of LoginPage<br/>
 
 Research on Quiz questions<br/>
 -Help research on questions for quiz<br/>
 
-Updated readme<br/>
+Result<br/>
+-Design for Result Page<br/>
+
+Updated Documentation<br/>
+
+**Guan Teck :** <br/>
+
+AcademicCalendar layout<br/>
+-Designed using relativelayout and scrollview<br/>
+-Programmed AcademicCalendar
+
+GeneralContact layout<br/>
+-Helped in keying more additional information<br/>
+-Created RecyclerView
+
+CourseSuits/Quiz layout<br/>
+-Designed 1st draft for this layout
+
+Homepage video<br/>
+-Programmed to mute video<br/>
+-Programmed video in homepage
+
+Research on Quiz questions<br/>
+-Done some research for quiz questions.<br/>
+
+Updated Documentation<br/>
+
+Designed icons<br/>
 
 ## Relevant appendices (diagrams, screenshots, user guides)<br/>
 
@@ -102,17 +168,19 @@ Discussion on Health/Fitness App<br/>
 Decided to change idea from Health/Fitness app to Education app<br/>
 <img src="Images/mad_discussion3.png">
 
-**User Guide for our app**<br/>
+## User Guide for our app<br/>
 
 LoginPage<br/>
 User inputs their username and password and presses the ‘LOGIN’ button to log in. They can click "Remember Me" to remember their credentials and "Stay Logged In" if they do not want to type out their username and password to login. For new users, they can click the "New user? Sign up here" to sign up.<br/>
 <img src="Images/mad14.PNG" height="500">
 
 SignUpPage<br/>
+User inputs their credentials for their account. They can click on the ‘eye’ beside the password textbox to reveal the password they typed in. After finishing typing in their credentials, the user clicks on the “SIGN UP” button to complete their signup. For users that accidentally clicked to sign up, they can click “Already have an account? Return to login” or pressing the back button to go back to the login page.<br/>
+<img src="Images/madsignup.png" height="500">
 
 HomePage<br/>
 In the homepage, above the text "WELCOME,ADMIN" there will be a video playing. This page is in cardview and users can click on the respective cardviews to go to the page stated in the text.<br/>
-<img src="Images/mad1.PNG" height="500">
+<img src="Images/madhomepage.png" height="500">
 
 SchoolsPage<br/>
 This page is a RecyclerView and shows all the schools in Ngee Ann Poly for users to see. Users can click on the respective images to see available courses in that school.<br/>
@@ -127,7 +195,12 @@ This page uses a linear layout with scrollview and displays the image and instru
 <img src="Images/mad4.PNG" height="500">
 
 QuizPage<br/>
+This page uses a linear layout with scrollview and displays the questions for the quiz. Users click on the radio buttons to pick their answers. After finishing the quiz and clicking submit, they will be shown the result of the school they are well fitted for.<br/>
+<img src="Images/madquiz.png" height="500">
 
+ResultPage<br/>
+This page uses a linear layout with scrollview and displays the result after finishing the quiz. Users can click on the “RE-TRY QUIZ” button to do the quiz again, or click “BACK TO MAIN MENU” to return to the homepage.<br/>
+<img src="Images/madresult.png" height="500">
 
 AcademicCalenderPage<br/>
 This page uses a linear layout with scrollview to display the academic calendar for the current year. It also implements a countdown function for days until the next holiday.<br/>
@@ -154,3 +227,5 @@ Users can come here to change their password and to sign out from the current ac
 <img src="Images/mad13.PNG" height="500">
 
 ChangePasswordPage<br/>
+This page uses a linear layout with scrollview and displays textview to input the old and new passwords. Users input their current password and also their new password twice. After that, they can click the “CONFIRM” button to confirm changing their password or click the “CANCEL” button to return to the settings page.<br/>
+<img src="Images/madchangepw.png" height="500">
