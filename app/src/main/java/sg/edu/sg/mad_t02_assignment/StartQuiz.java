@@ -25,7 +25,7 @@ public class StartQuiz extends AppCompatActivity {
     RadioGroup radioGroup;
 
 
-    ArrayList<StartQuizModel> Schoollist = new ArrayList<StartQuizModel>();
+    ArrayList<StartQuizModel> Schoollist = new ArrayList<>();
 
     private static final int[] RadioGroup = {
             R.id.radioQ1,
@@ -382,9 +382,6 @@ public class StartQuiz extends AppCompatActivity {
 
 
                }
-
-
-
             }
 
 

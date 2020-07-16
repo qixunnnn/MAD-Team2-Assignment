@@ -11,9 +11,9 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".ResultActivity"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".StartQuiz"
-            android:parentActivityName=".MainActivity"></activity>/>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".CourseSuit"
             android:parentActivityName=".MainActivity" />
@@ -45,7 +45,7 @@
         </activity>
         <activity
             android:name=".SignUpActivity"
-            android:parentActivityName=".LoginActivity"></activity>/>
+            android:parentActivityName=".LoginActivity" />
         <activity
             android:name=".SettingActivity"
             android:parentActivityName=".MainActivity" />
