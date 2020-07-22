@@ -1,9 +1,11 @@
 package sg.edu.sg.mad_t02_assignment;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -14,13 +16,24 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+
 public class SignUpActivity extends AppCompatActivity {
     private String TAG = "Learning@NP";
     private String FILENAME = "SignUpActivity.java";
     private EditText et;
     private TextView backtoMain;
 
-    MyDBHandler dbHandler = new MyDBHandler(this,null,null,1);
+    FirebaseAuth auth = FirebaseAuth.getInstance();
+    DatabaseReference dbRef;
 
     private static final int[] btn_IDS = {
             //stores the id of textview here to reduce repeated codes
@@ -58,7 +71,7 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        final EditText etUsername = findViewById(R.id.editText_UsernameNew);
+        final EditText etEmail = findViewById(R.id.editText_UsernameNew);
         final EditText etPassword = findViewById(R.id.editText_PasswordNew);
         final EditText etCfmPassword = findViewById(R.id.editText_PasswordNew2);
         Button createButton = findViewById(R.id.buttonCreate);
@@ -74,30 +87,24 @@ public class SignUpActivity extends AppCompatActivity {
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (etPassword.getText().toString().equals(etCfmPassword.getText().toString())) {
-                    UserData userData = dbHandler.findUser(etUsername.getText().toString());
-                    if (userData == null) {
-                        String dbUsername = etUsername.getText().toString();
-                        String dbPassword = etPassword.getText().toString();
-                        UserData dbUserData = new UserData();
-                        dbUserData.setUsername(dbUsername);
-                        dbUserData.setPassword(dbPassword);
-                        dbHandler.addUser(dbUserData);
-                        Toast.makeText(SignUpActivity.this, "New User Created!", Toast.LENGTH_SHORT).show();
-                        Log.v(TAG, FILENAME + "Creation with: " + etUsername.getText().toString() + "| " + etPassword.getText().toString());
-                        Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
-                        startActivity(intent);
+                String txt_email = etEmail.getText().toString();
+                String txt_password = etPassword.getText().toString();
+                String txt_password2 = etCfmPassword.getText().toString();
+
+                if (TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password) || TextUtils.isEmpty(txt_password2))
+                {
+                    Toast.makeText(getApplicationContext(), "Please enter all the fields", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    if (txt_password.equals(txt_password2)) {
+                        Register(txt_email,txt_password);
                     } else {
-                        Toast.makeText(SignUpActivity.this, "User already exist. \nPLease try again.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Password and confirmed password does not match. Please try again", Toast.LENGTH_LONG).show();
                     }
                 }
-                else
-                {
-                    Toast.makeText(SignUpActivity.this, "Password does not match \nPLease try again.", Toast.LENGTH_SHORT).show();
-                }
-
             }
         });
+
         backtoMain = findViewById(R.id.backtomain);
         backtoMain.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,6 +115,41 @@ public class SignUpActivity extends AppCompatActivity {
         });
 
 
+    }
+    public void Register(final String email, String password)
+    {
+        auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()) {
+                    Log.v(TAG,"User: " + email + " created successfully");
+                    FirebaseUser user = auth.getCurrentUser();
+                    assert user != null;
+                    String uid = user.getUid();
+
+                    dbRef = FirebaseDatabase.getInstance().getReference("Users").child(uid);
+
+                    HashMap<String, String> hashMap = new HashMap<>();
+                    hashMap.put("id", uid);
+                    hashMap.put("role", "newUser");
+
+                    dbRef.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                Log.v(TAG,"User ID and role added into database");
+                                //Intent user to other page
+                                Intent i = new Intent(getApplicationContext(), UserInfo.class);
+                                startActivity(i);
+                                finish();
+                            }
+                        }
+                    });
+                } else {
+                    Toast.makeText(getApplicationContext(),"Register failed. Email already existed", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
     //so that user wont be allowed to go back into the main menu when logged out
 }
