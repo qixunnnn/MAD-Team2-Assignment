@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "569153786850",
+    "firebase_url": "https://np-learning.firebaseio.com",
+    "project_id": "np-learning",
+    "storage_bucket": "np-learning.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:569153786850:android:c5fba088e7dce6a4fa5fbb",
+        "android_client_info": {
+          "package_name": "sg.edu.sg.mad_t02_assignment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "569153786850-vta06bk9rcdmbaceiitqrvai8njaq76o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "sg.edu.sg.mad_t02_assignment",
+            "certificate_hash": "586509b2649435a169b523a55dd96676403d7253"
+          }
+        },
+        {
+          "client_id": "569153786850-g8vmvv21ll7909na43gid0ojvbk31vqb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAe3ostu_wqxo7N8cj3XbbXhr-A6kW32C4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "569153786850-g8vmvv21ll7909na43gid0ojvbk31vqb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
