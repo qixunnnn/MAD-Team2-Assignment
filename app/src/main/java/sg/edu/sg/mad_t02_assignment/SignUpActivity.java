@@ -1,21 +1,27 @@
 package sg.edu.sg.mad_t02_assignment;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
+import android.content.ContentResolver;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -23,18 +29,27 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.StorageTask;
+import com.google.firebase.storage.UploadTask;
 
 import java.util.HashMap;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class SignUpActivity extends AppCompatActivity {
     private String TAG = "Learning@NP";
     private String FILENAME = "SignUpActivity.java";
     private EditText et;
     private TextView backtoMain;
+    private CircleImageView profile_pic;
+    private Uri imageUri;
+    private StorageTask uploadTask;
 
 
     FirebaseAuth auth = FirebaseAuth.getInstance();
     DatabaseReference dbRef;
+    StorageReference storageReference;
 
     private static final int[] btn_IDS = {
             //stores the id of textview here to reduce repeated codes
@@ -68,6 +83,7 @@ public class SignUpActivity extends AppCompatActivity {
         }
     };
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +91,7 @@ public class SignUpActivity extends AppCompatActivity {
         final EditText etEmail = findViewById(R.id.editText_UsernameNew);
         final EditText etPassword = findViewById(R.id.editText_PasswordNew);
         final EditText etCfmPassword = findViewById(R.id.editText_PasswordNew2);
+        profile_pic = findViewById(R.id.profile_image);
         Button createButton = findViewById(R.id.buttonCreate);
 
         setTitle("Create Account");
@@ -85,6 +102,13 @@ public class SignUpActivity extends AppCompatActivity {
             btn.setOnTouchListener(touch);
 
         }
+        profile_pic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //openImage();
+            }
+        });
+
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,6 +141,7 @@ public class SignUpActivity extends AppCompatActivity {
 
 
     }
+
     public void Register(final String email, String password)
     {
         auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -133,6 +158,8 @@ public class SignUpActivity extends AppCompatActivity {
                     HashMap<String, String> hashMap = new HashMap<>();
                     hashMap.put("id", uid);
                     hashMap.put("role", "newUser");
+                    hashMap.put("profile_pic","default");
+                    hashMap.put("username","nil");
 
                     dbRef.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
@@ -140,8 +167,9 @@ public class SignUpActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 Log.v(TAG,"User ID and role added into database");
                                 //Intent user to other page
-                                Intent i = new Intent(getApplicationContext(), UserInfo.class);
+                                Intent i = new Intent(getApplicationContext(), LoginActivity.class);
                                 startActivity(i);
+                                Toast.makeText(SignUpActivity.this, "Account created successfully!", Toast.LENGTH_SHORT).show();
                                 finish();
                             }
                         }
