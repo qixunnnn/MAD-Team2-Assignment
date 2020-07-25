@@ -32,6 +32,7 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText et;
     private TextView backtoMain;
 
+
     FirebaseAuth auth = FirebaseAuth.getInstance();
     DatabaseReference dbRef;
 

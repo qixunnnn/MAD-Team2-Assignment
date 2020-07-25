@@ -20,8 +20,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+
 
 import java.util.HashMap;
 
@@ -37,7 +42,9 @@ public class LoginActivity extends AppCompatActivity {
     private Boolean saveLogin;
     private Boolean Stayloggedin;
 
+
     FirebaseAuth auth = FirebaseAuth.getInstance();
+
     DatabaseReference dbRef;
 
     @Override
@@ -127,16 +134,43 @@ public class LoginActivity extends AppCompatActivity {
 
     public void Login(final String email, String password)
     {
-        auth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+
+
+        auth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if (!task.isSuccessful()) {
+                if (task.isSuccessful()) {
                     // there was an error
+                    FirebaseUser currentUser = auth.getCurrentUser();
+                    String uid = currentUser.getUid();
+                    dbRef = FirebaseDatabase.getInstance().getReference("Users").child(uid);
+                    dbRef.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            String role = snapshot.child("role").getValue().toString();
+                            if(role.equals("admin")){
+                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                            else if(role.equals("newUser")){
+                                Intent intent = new Intent(LoginActivity.this, AcadCalendar.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                            else{
+                                Toast.makeText(getApplicationContext(), "Login failed. Incorrect credentials", Toast.LENGTH_LONG).show();
+                                return;
+                            }
+                        }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                        }
+                    });
+
+                }
+                else{
                     Toast.makeText(getApplicationContext(), "Login failed. Incorrect credentials", Toast.LENGTH_LONG).show();
-                } else {
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(intent);
-                    finish();
                 }
             }
         });
