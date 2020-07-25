@@ -92,6 +92,7 @@ public class Admin_AddSchool extends AppCompatActivity{
                 else {
                     //Adding into database
                     createCourse(CourseName, CourseMotto, CourseURL, school);
+                    //Intent to admin
 
                 }
 

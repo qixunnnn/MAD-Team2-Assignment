@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Admin_AddSchool"></activity>
+        <activity android:name=".ForgetPassword"></activity>
+        <activity android:name=".Admin_AddSchool" />
         <activity android:name=".UserInfo" />
         <activity
             android:name=".ResultActivity"
@@ -45,7 +46,7 @@
             android:parentActivityName=".ContactActivity" />
         <activity
             android:name=".LoginActivity"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".SplashScreen"
             android:theme="@style/SplashScreen">
