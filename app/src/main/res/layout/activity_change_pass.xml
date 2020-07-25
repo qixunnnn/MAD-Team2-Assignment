@@ -18,10 +18,11 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         app:srcCompat="@android:drawable/ic_lock_idle_lock"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"/>
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
@@ -54,6 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:orientation="horizontal">
+
         <EditText
             android:id="@+id/etCurrentPass"
             android:layout_width="0dp"
@@ -62,7 +64,8 @@
             android:ems="10"
             android:layout_weight="0.8"
             android:inputType="textPassword"
-            android:textColorHint="#FFFFFF" />
+            android:textColor="@color/White"
+            android:textColorHint="@color/White" />
 
         <ImageButton
             android:id="@+id/CurrentPassBtn"
@@ -98,7 +101,9 @@
             android:ems="10"
             android:layout_weight="0.8"
             android:inputType="textPassword"
-            android:textColorHint="#FFFFFF" />
+            android:textColorHint="#FFFFFF"
+            android:textColor="@color/White"
+            />
 
         <ImageButton
             android:id="@+id/NewPassBtn"
@@ -136,7 +141,9 @@
             android:ems="10"
             android:layout_weight="0.8"
             android:inputType="textPassword"
-            android:textColorHint="#FFFFFF" />
+            android:textColorHint="#FFFFFF"
+            android:textColor="@color/White"
+            />
 
         <ImageButton
             android:id="@+id/ConfirmPassBtn"
@@ -187,7 +194,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="New Password does not match"
-        android:textColor="#F30000" />
+        android:textColor="#F30000"
+        android:layout_marginTop="20dp"/>
 
 
     <TextView
