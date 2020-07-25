@@ -46,7 +46,6 @@ public class LoginActivity extends AppCompatActivity {
         //To check if saveInstance state is not null, if it is null it means there is a save file and it might be a cause the phone has oriantated
         if(savedInstanceState != null)
         {
-
             Intent refresh = new Intent(this, LoginActivity.class);
             startActivity(refresh);//Start the same Activity
             finish(); //finish Activity.
@@ -70,8 +69,6 @@ public class LoginActivity extends AppCompatActivity {
         newUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
@@ -84,8 +81,6 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
 
                 String txt_email = etEmail.getText().toString();
                 String txt_password = etPassword.getText().toString();
@@ -148,7 +143,6 @@ public class LoginActivity extends AppCompatActivity {
     public void onBackPressed(){
         moveTaskToBack(true);
     }
-
 
 
     protected void onStop(){

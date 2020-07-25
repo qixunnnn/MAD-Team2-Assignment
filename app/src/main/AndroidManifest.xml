@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="sg.edu.sg.mad_t02_assignment">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UserInfo"></activity>
+        <activity android:name=".Admin_AddSchool"></activity>
+        <activity android:name=".UserInfo" />
         <activity
             android:name=".ResultActivity"
             android:parentActivityName=".MainActivity" />
@@ -42,12 +43,11 @@
         <activity
             android:name=".GeneralContact"
             android:parentActivityName=".ContactActivity" />
-        <activity android:name=".LoginActivity"
-            android:theme="@style/AppTheme"
-            >
-        </activity>
-
-        <activity android:name=".SplashScreen"
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".SplashScreen"
             android:theme="@style/SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

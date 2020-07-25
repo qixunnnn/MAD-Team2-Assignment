@@ -1,5 +1,6 @@
 package sg.edu.sg.mad_t02_assignment;
 
+/*
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -76,3 +77,4 @@ public class MyDBHandler extends SQLiteOpenHelper {
         return result;
     }
 }
+*/

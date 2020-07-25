@@ -158,6 +158,7 @@ public class SignUpActivity extends AppCompatActivity {
                     hashMap.put("id", uid);
                     hashMap.put("role", "newUser");
                     hashMap.put("profile_pic","default");
+                    hashMap.put("username","nil");
 
                     dbRef.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
@@ -165,8 +166,9 @@ public class SignUpActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 Log.v(TAG,"User ID and role added into database");
                                 //Intent user to other page
-                                Intent i = new Intent(getApplicationContext(), UserInfo.class);
+                                Intent i = new Intent(getApplicationContext(), LoginActivity.class);
                                 startActivity(i);
+                                Toast.makeText(SignUpActivity.this, "Account created successfully!", Toast.LENGTH_SHORT).show();
                                 finish();
                             }
                         }
