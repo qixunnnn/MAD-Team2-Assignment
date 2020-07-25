@@ -46,6 +46,7 @@ public class SignUpActivity extends AppCompatActivity {
     private Uri imageUri;
     private StorageTask uploadTask;
 
+
     FirebaseAuth auth = FirebaseAuth.getInstance();
     DatabaseReference dbRef;
     StorageReference storageReference;
