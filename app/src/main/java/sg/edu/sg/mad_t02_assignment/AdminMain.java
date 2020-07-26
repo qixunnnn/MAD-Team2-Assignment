@@ -12,7 +12,7 @@ public class AdminMain extends AppCompatActivity implements View.OnClickListener
 
     final String TAG = "Admin Page";
     private static final int[] CARDVIEW_ID = {
-            R.id.cardviewSchoolModi
+            R.id.cardviewSchoolModi, R.id.cardviewBookModi
     };
 
     @Override
@@ -38,6 +38,10 @@ public class AdminMain extends AppCompatActivity implements View.OnClickListener
         if (v.getId() == CARDVIEW_ID[0])
         {
             i = new Intent(this,AdminModSchool.class);
+        }
+        else if (v.getId() == CARDVIEW_ID[1])
+        {
+            i = new Intent(this, AdminAddBookActivity.class);
         }
         startActivity(i);
     }
