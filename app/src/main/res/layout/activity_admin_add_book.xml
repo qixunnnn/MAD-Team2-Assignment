@@ -18,7 +18,7 @@
         android:layout_height="100dp"
         android:cropToPadding="false"
         android:scaleType="centerCrop"
-        android:src="@drawable/add_image"
+        android:src="@drawable/add_book_image"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"/>
 
