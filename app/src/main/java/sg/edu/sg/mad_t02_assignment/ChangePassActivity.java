@@ -1,24 +1,24 @@
 package sg.edu.sg.mad_t02_assignment;
-
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.Set;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class ChangePassActivity extends AppCompatActivity {
     EditText CurrentPass;
@@ -31,12 +31,10 @@ public class ChangePassActivity extends AppCompatActivity {
     TextView em;
     private String TAG = "Learning@NP";
     private String FILENAME = "SettingActivity.java";
-    private SharedPreferences changePassPreferences;
-    private SharedPreferences.Editor changePassPrefsEditor;
-    String password;
-    String username;
-    //MyDBHandler dbHandler = new MyDBHandler(this,null,null,1);
 
+
+    //MyDBHandler dbHandler = new MyDBHandler(this,null,null,1);
+    FirebaseAuth auth = FirebaseAuth.getInstance();
 
     private static final int[] TV_IDS = {
             //stores the id of textview here to reduce repeated codes
@@ -47,7 +45,7 @@ public class ChangePassActivity extends AppCompatActivity {
     private static final int[] et_IDS = {
             //stores the id of textview here to reduce repeated codes
             R.id.etCurrentPass,
-            R.id.etNewPass,
+            R.id.editnewPass,
             R.id.etConfirmPass,
     };
     private static final int[] btn_IDS = {
@@ -113,13 +111,11 @@ public class ChangePassActivity extends AppCompatActivity {
         setContentView(R.layout.activity_change_pass);
 
         setTitle("Change Password");
-        changePassPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
-        changePassPrefsEditor = changePassPreferences.edit();
-        password = changePassPreferences.getString("password", "");
-        username = changePassPreferences.getString("username", "");
-        CurrentPass = findViewById(et_IDS[0]);
-        NewPass = findViewById(et_IDS[1]);
-        ConfirmPass = findViewById(et_IDS[2]);
+
+
+        final EditText CurrentPass = findViewById(R.id.etCurrentPass);
+        final EditText NewPass = findViewById(R.id.editnewPass);
+        final EditText ConfirmPass = findViewById(R.id.etConfirmPass);
 
         OkBtn = findViewById(R.id.OkBtn);
         CancelBtn = findViewById(R.id.CancelBtn);
@@ -255,8 +251,51 @@ public class ChangePassActivity extends AppCompatActivity {
         tv = findViewById(em_IDS[id]);
         tv.setVisibility(View.INVISIBLE);
 */
+        OkBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String txt_currentpass = CurrentPass.getText().toString();
+                String txt_password = NewPass.getText().toString();
+                String txt_password2 = ConfirmPass.getText().toString();
+
+                if (TextUtils.isEmpty(txt_currentpass) || TextUtils.isEmpty(txt_password) || TextUtils.isEmpty(txt_password2))
+                {
+                    Toast.makeText(getApplicationContext(), "Please enter all the fields", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    if (txt_password.equals(txt_password2)) {
+                        ChangePass(txt_password);
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Password and confirmed password does not match. Please try again", Toast.LENGTH_LONG).show();
+                    }
+                }
+            }
+        });
+
+
+    }
+    public void ChangePass(final String nPass){
+        FirebaseUser user = auth.getCurrentUser();
+
+            if (user != null ) {
+                user.updatePassword(nPass)
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(ChangePassActivity.this, "Password is updated, sign in with new password!", Toast.LENGTH_SHORT).show();
+
+
+                                } else {
+                                    Toast.makeText(ChangePassActivity.this, "Failed to update password!", Toast.LENGTH_SHORT).show();
+
+                                }
+                            }
+                        });
+            }
+        }
     }
 
 
 
-}
+
