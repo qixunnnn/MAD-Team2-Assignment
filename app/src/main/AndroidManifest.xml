@@ -74,6 +74,7 @@
         <activity
             android:name=".ContactActivity"
             android:parentActivityName=".MainActivity" />
+        <activity android:name=".GpsActivity"/>
     </application>
 
 </manifest>
