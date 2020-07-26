@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+    >
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Course Name: "
+        android:layout_weight="4"
+        android:layout_marginLeft="20dp"
+        android:gravity="center"
+        />
+    <EditText
+        android:id="@+id/updateName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="6"
+        android:layout_marginRight="30dp"
+        />
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Course Motto: "
+            android:layout_weight="4"
+            android:layout_marginLeft="20dp"
+            android:gravity="center"
+            />
+        <EditText
+            android:id="@+id/updateMotto"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:layout_marginRight="30dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="URL: "
+            android:layout_weight="4"
+            android:layout_marginLeft="20dp"
+            android:gravity="center"
+            />
+        <EditText
+            android:id="@+id/updateURL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:layout_marginRight="30dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="20dp"
+        >
+        <Button
+            android:id="@+id/updateUpdate"
+            android:text="Update"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:textColor="@color/DarkCyan"/>
+        <Button
+            android:id="@+id/updateDelete"
+            android:text="Delete"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:textColor="@color/IndianRed"/>
+        <Button
+            android:id="@+id/updateCancel"
+            android:text="Cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

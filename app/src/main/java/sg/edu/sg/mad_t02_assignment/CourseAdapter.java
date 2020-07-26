@@ -1,13 +1,16 @@
 package sg.edu.sg.mad_t02_assignment;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -37,11 +40,14 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseViewHolder> {
         holder.motto.setText(models.get(position).getCourseMotto());        //Set Motto text for each row from model list item.
         holder.name.setText(models.get(position).getCourseName());          //Set Name text for each row from model list item
 
+        Log.v("ASD", context.getClass().getSimpleName());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent("android.intent.action.VIEW", Uri.parse(models.get(position).getCourseURL()));
-                context.startActivity(i);
+                if (context.getClass() == CourseActivity.class) {
+                    Intent i = new Intent("android.intent.action.VIEW", Uri.parse(models.get(position).getCourseURL()));
+                    context.startActivity(i);
+                }
             }
         });
     }

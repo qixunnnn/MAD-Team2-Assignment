@@ -144,12 +144,12 @@ public class LoginActivity extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             String role = snapshot.child("role").getValue().toString();
                             if(role.equals("admin")){
-                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                Intent intent = new Intent(LoginActivity.this, AdminMain.class);
                                 startActivity(intent);
                                 finish();
                             }
                             else if(role.equals("newUser")){
-                                Intent intent = new Intent(LoginActivity.this, AcadCalendar.class);
+                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                 startActivity(intent);
                                 finish();
                             }

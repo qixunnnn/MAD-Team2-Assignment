@@ -32,7 +32,7 @@
         android:layout_below="@id/video_mainmenu"
         android:background="@color/DarkCyan"
         android:textColor="@color/White"
-        android:text="Welcome,User"
+        android:text="Welcome to NP@Learning"
         android:gravity="center"
         android:textStyle="bold"
         android:textSize="18dp"

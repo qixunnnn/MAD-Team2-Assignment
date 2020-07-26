@@ -8,14 +8,20 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo3"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ForgetPassword"
+        <activity android:name=".AdminModSchool"
+            android:parentActivityName=".AdminMain" />
+        <activity android:name=".AdminMain" />
+        <activity
+            android:name=".ForgetPassword"
             android:parentActivityName=".LoginActivity" />
-        <activity android:name=".Admin_AddSchool" />
+        <activity android:name=".Admin_AddSchool"
+            android:parentActivityName=".AdminModSchool"
+            />
         <activity android:name=".UserInfo" />
         <activity
             android:name=".ResultActivity"
