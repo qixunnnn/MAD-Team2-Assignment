@@ -262,6 +262,9 @@ public class ChangePassActivity extends AppCompatActivity {
                 {
                     Toast.makeText(getApplicationContext(), "Please enter all the fields", Toast.LENGTH_SHORT).show();
                 }
+                else if(txt_password.length() < 6 || txt_password2.length() < 6){
+                    Toast.makeText(getApplicationContext(), "Password must be more than 6 characters", Toast.LENGTH_SHORT).show();
+                }
                 else {
                     if (txt_password.equals(txt_password2)) {
                         ChangePass(txt_password);
