@@ -143,8 +143,9 @@ public class Admin_AddSchool extends AppCompatActivity{
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
-                CourseModel newCourse = new CourseModel(CourseName,CourseMotto,CourseURL);
-                mDatabase.child(School).push().setValue(newCourse);
+                String CourseID = mDatabase.push().getKey();
+                CourseModel newCourse = new CourseModel(CourseName,CourseMotto,CourseURL, CourseID);
+                mDatabase.child(School).child(CourseID).setValue(newCourse);
 
                 Log.v(TAG,"Adding into database: School Name: " + School);
                 Log.v(TAG,"Adding into database: Course Name: " + CourseName);

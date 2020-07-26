@@ -93,13 +93,14 @@ public class CourseActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 onResume();
+                courseList.clear();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren())
                 {
                     CourseModel courseModel = snapshot.getValue(CourseModel.class);
                     courseList.add(courseModel);
 
                 }
-                CourseAdapter cAdapter = new CourseAdapter(getApplicationContext(), courseList,schoolname); //Use the position value to return the Arraylist accordingly
+                CourseAdapter cAdapter = new CourseAdapter(CourseActivity.this, courseList,schoolname); //Use the position value to return the Arraylist accordingly
                 LinearLayoutManager sLayoutManager = new LinearLayoutManager(getApplicationContext());
                 recyclerView.setLayoutManager(sLayoutManager);
                 recyclerView.setItemAnimator(new DefaultItemAnimator());

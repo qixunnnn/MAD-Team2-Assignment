@@ -10,16 +10,18 @@ public class CourseModel {
     private String CourseName;
     private String CourseMotto;
     private String CourseURL;
+    private String CourseID;
 
     public CourseModel() {
 
     }
 
-    public CourseModel(String name, String motto/*, int logo */, String CourseURL){
+    public CourseModel(String name, String motto/*, int logo */, String CourseURL, String CourseID){
         this.CourseName = name;
         this.CourseMotto = motto;
         //this.CourseLogo = logo;
         this.CourseURL = CourseURL;
+        this.CourseID = CourseID;
     }
 
     public String getCourseName() {
@@ -54,13 +56,11 @@ public class CourseModel {
         CourseURL = courseURL;
     }
 
-    @Exclude
-    public Map<String, Object> toMap(){
-        HashMap<String,Object> result = new HashMap<>();
-        result.put("CourseName", CourseName);
-        result.put("CourseMotto", CourseMotto);
-        result.put("CourseURL", CourseURL);
-        return result;
+    public String getCourseID() {
+        return CourseID;
+    }
 
+    public void setCourseID(String courseID) {
+        CourseID = courseID;
     }
 }

@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
         npVideo.start();
         title = findViewById(R.id.loginUser);
-        title.setText(("Welcome, " + username).toUpperCase());
         setTitle("Home");
 
         //Assigning local variable to ID
@@ -85,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         else if (v.getId() == CARDVIEW_ID[4])
         {
-            i = new Intent(this, Admin_AddSchool.class);
+            i = new Intent(this, AdminModSchool.class);
         }
         else if (v.getId() == CARDVIEW_ID[5])
         {
