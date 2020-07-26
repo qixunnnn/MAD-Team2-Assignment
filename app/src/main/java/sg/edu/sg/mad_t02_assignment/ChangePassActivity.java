@@ -35,7 +35,7 @@ public class ChangePassActivity extends AppCompatActivity {
     private SharedPreferences.Editor changePassPrefsEditor;
     String password;
     String username;
-    MyDBHandler dbHandler = new MyDBHandler(this,null,null,1);
+    //MyDBHandler dbHandler = new MyDBHandler(this,null,null,1);
 
 
     private static final int[] TV_IDS = {
@@ -133,7 +133,7 @@ public class ChangePassActivity extends AppCompatActivity {
                 return false;
             }
         });
-        OkBtn.setOnTouchListener(new View.OnTouchListener() {
+        /*OkBtn.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if(submit(CurrentPass,NewPass,ConfirmPass))
@@ -254,7 +254,7 @@ public class ChangePassActivity extends AppCompatActivity {
     {
         tv = findViewById(em_IDS[id]);
         tv.setVisibility(View.INVISIBLE);
-
+*/
     }
 
 

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ChangePassActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/colorPrimary">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,16 +18,17 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         app:srcCompat="@android:drawable/ic_lock_idle_lock"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"/>
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="- Change Password -"
-        android:textColor="@color/Black"
+        android:textColor="@color/White"
         android:textSize="24sp"
         android:padding="20dp"
         android:gravity="center"/>
@@ -47,12 +49,13 @@
             android:text="Current Password: "
             android:layout_marginStart="25dp"
             android:textSize="20dp"
-            android:textColor="@color/Black"/>
+            android:textColor="@color/White"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:orientation="horizontal">
+
         <EditText
             android:id="@+id/etCurrentPass"
             android:layout_width="0dp"
@@ -61,14 +64,15 @@
             android:ems="10"
             android:layout_weight="0.8"
             android:inputType="textPassword"
-            android:textColorHint="#FFFFFF" />
+            android:textColor="@color/White"
+            android:textColorHint="@color/White" />
 
         <ImageButton
             android:id="@+id/CurrentPassBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:background="#F9F9F9"
+            android:background="@color/Gray"
             android:layout_marginEnd="20dp"
             app:srcCompat="@android:drawable/ic_menu_view" />
     </LinearLayout>
@@ -81,7 +85,7 @@
         android:text="New Password: "
         android:layout_marginStart="25dp"
         android:textSize="20dp"
-        android:textColor="@color/Black"/>
+        android:textColor="@color/White"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -97,14 +101,16 @@
             android:ems="10"
             android:layout_weight="0.8"
             android:inputType="textPassword"
-            android:textColorHint="#FFFFFF" />
+            android:textColorHint="#FFFFFF"
+            android:textColor="@color/White"
+            />
 
         <ImageButton
             android:id="@+id/NewPassBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:background="#F9F9F9"
+            android:background="@color/Gray"
             android:layout_marginEnd="20dp"
             app:srcCompat="@android:drawable/ic_menu_view" />
 
@@ -119,7 +125,7 @@
         android:text="Confirm Password: "
         android:layout_marginStart="25dp"
         android:textSize="20dp"
-        android:textColor="@color/Black"/>
+        android:textColor="@color/White"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -135,14 +141,16 @@
             android:ems="10"
             android:layout_weight="0.8"
             android:inputType="textPassword"
-            android:textColorHint="#FFFFFF" />
+            android:textColorHint="#FFFFFF"
+            android:textColor="@color/White"
+            />
 
         <ImageButton
             android:id="@+id/ConfirmPassBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.2"
-            android:background="#F9F9F9"
+            android:background="@color/Gray"
             android:layout_marginEnd="20dp"
             app:srcCompat="@android:drawable/ic_menu_view" />
 
@@ -186,7 +194,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="New Password does not match"
-        android:textColor="#F30000" />
+        android:textColor="#F30000"
+        android:layout_marginTop="20dp"/>
 
 
     <TextView

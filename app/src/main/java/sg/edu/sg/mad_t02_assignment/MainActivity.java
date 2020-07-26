@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         else if (v.getId() == CARDVIEW_ID[4])
         {
-            i = new Intent(this, ContactActivity.class);
+            i = new Intent(this, Admin_AddSchool.class);
         }
         else if (v.getId() == CARDVIEW_ID[5])
         {

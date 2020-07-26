@@ -149,6 +149,7 @@ CourseSuits/Quiz layout<br/>
 -Designed 1st draft for this layout
 
 Homepage video<br/>
+-Programmed to mute video<br/>
 -Programmed video in homepage
 
 Research on Quiz questions<br/>
@@ -167,7 +168,7 @@ Discussion on Health/Fitness App<br/>
 Decided to change idea from Health/Fitness app to Education app<br/>
 <img src="Images/mad_discussion3.png">
 
-**User Guide for our app**<br/>
+## User Guide for our app<br/>
 
 LoginPage<br/>
 User inputs their username and password and presses the ‘LOGIN’ button to log in. They can click "Remember Me" to remember their credentials and "Stay Logged In" if they do not want to type out their username and password to login. For new users, they can click the "New user? Sign up here" to sign up.<br/>
@@ -175,11 +176,11 @@ User inputs their username and password and presses the ‘LOGIN’ button to lo
 
 SignUpPage<br/>
 User inputs their credentials for their account. They can click on the ‘eye’ beside the password textbox to reveal the password they typed in. After finishing typing in their credentials, the user clicks on the “SIGN UP” button to complete their signup. For users that accidentally clicked to sign up, they can click “Already have an account? Return to login” or pressing the back button to go back to the login page.<br/>
-<img src="Images/madsignup.PNG" height="500">
+<img src="Images/madsignup.png" height="500">
 
 HomePage<br/>
 In the homepage, above the text "WELCOME,ADMIN" there will be a video playing. This page is in cardview and users can click on the respective cardviews to go to the page stated in the text.<br/>
-<img src="Images/mad1.PNG" height="500">
+<img src="Images/madhomepage.png" height="500">
 
 SchoolsPage<br/>
 This page is a RecyclerView and shows all the schools in Ngee Ann Poly for users to see. Users can click on the respective images to see available courses in that school.<br/>
@@ -195,11 +196,11 @@ This page uses a linear layout with scrollview and displays the image and instru
 
 QuizPage<br/>
 This page uses a linear layout with scrollview and displays the questions for the quiz. Users click on the radio buttons to pick their answers. After finishing the quiz and clicking submit, they will be shown the result of the school they are well fitted for.<br/>
-<img src="Images/madquiz.PNG" height="500">
+<img src="Images/madquiz.png" height="500">
 
 ResultPage<br/>
 This page uses a linear layout with scrollview and displays the result after finishing the quiz. Users can click on the “RE-TRY QUIZ” button to do the quiz again, or click “BACK TO MAIN MENU” to return to the homepage.<br/>
-<img src="Images/madresult.PNG" height="500">
+<img src="Images/madresult.png" height="500">
 
 AcademicCalenderPage<br/>
 This page uses a linear layout with scrollview to display the academic calendar for the current year. It also implements a countdown function for days until the next holiday.<br/>
@@ -227,4 +228,4 @@ Users can come here to change their password and to sign out from the current ac
 
 ChangePasswordPage<br/>
 This page uses a linear layout with scrollview and displays textview to input the old and new passwords. Users input their current password and also their new password twice. After that, they can click the “CONFIRM” button to confirm changing their password or click the “CANCEL” button to return to the settings page.<br/>
-<img src="Images/madchangepw.PNG" height="500">
+<img src="Images/madchangepw.png" height="500">

@@ -1,9 +1,10 @@
 package sg.edu.sg.mad_t02_assignment;
-
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.content.SharedPreferences;
@@ -14,6 +15,20 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+
+
+import java.util.HashMap;
 
 public class LoginActivity extends AppCompatActivity {
     private String TAG = "Learning@NP";
@@ -21,13 +36,16 @@ public class LoginActivity extends AppCompatActivity {
 
     private TextView newUser;
     private Button loginButton;
-    private SharedPreferences loginPreferences;
-    private SharedPreferences.Editor loginPrefsEditor;
+
     private CheckBox remebermeCheckBox;
     private CheckBox stayloggedinCheckBox;
     private Boolean saveLogin;
     private Boolean Stayloggedin;
-    MyDBHandler dbHandler = new MyDBHandler(this,null,null,1);
+
+
+    FirebaseAuth auth = FirebaseAuth.getInstance();
+
+    DatabaseReference dbRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,103 +53,63 @@ public class LoginActivity extends AppCompatActivity {
         //To check if saveInstance state is not null, if it is null it means there is a save file and it might be a cause the phone has oriantated
         if(savedInstanceState != null)
         {
-
             Intent refresh = new Intent(this, LoginActivity.class);
             startActivity(refresh);//Start the same Activity
             finish(); //finish Activity.
         }
 
+
+        if (auth.getCurrentUser() != null) {
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            finish();
+        }
         setContentView(R.layout.activity_login);
         //remove title in login page
         setTitle("");
-        final EditText etUsername = findViewById(R.id.editText_username);
+        final EditText etEmail = findViewById(R.id.editText_username);
         final EditText etPassword = findViewById(R.id.editText_password);
 
         remebermeCheckBox = (CheckBox)findViewById(R.id.checkBox_RememberMe);
         stayloggedinCheckBox = (CheckBox)findViewById(R.id.checkBox_RememberMe);
-        loginPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
-        loginPrefsEditor = loginPreferences.edit();
+
         newUser = findViewById(R.id.textView_NewUser);
-
-        //get boonlean to see if check box have been previously checked
-        saveLogin = loginPreferences.getBoolean("saveLogin", false);
-        Stayloggedin = loginPreferences.getBoolean("stayloggedin", false);
-        // if checkedbox have been checked previously it will execute what ever it is suppose to do
-        if (saveLogin == true) {
-            etUsername.setText(loginPreferences.getString("username", ""));
-            etPassword.setText(loginPreferences.getString("password", ""));
-            remebermeCheckBox.setChecked(true);
-        }
-        if(Stayloggedin == true){
-            Log.v(TAG, FILENAME + ": Auto logged in " + etUsername.getText().toString());
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            startActivity(intent);
-            stayloggedinCheckBox.setChecked(true);
-        }
-
         newUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                loginPrefsEditor.putBoolean("stayloggedin", false);
-                loginPrefsEditor.commit();
                 Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
 
             }
-
-
         });
+        //get boonlean to see if check box have been previously checked
+
         loginButton = findViewById(R.id.loginButton);
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                String txt_email = etEmail.getText().toString();
+                String txt_password = etPassword.getText().toString();
 
 
-                Log.v(TAG, FILENAME + ": Login with info: " + etUsername.getText().toString());
-                Log.v(TAG, FILENAME + ": Login with info: " + etPassword.getText().toString());
-
-                if(isValidCredential(etUsername.getText().toString(), etPassword.getText().toString())){
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(intent);
-
-                    if (remebermeCheckBox.isChecked()) {
-                        loginPrefsEditor.putBoolean("saveLogin", true);
-                        loginPrefsEditor.putString("username", etUsername.getText().toString());
-                        loginPrefsEditor.putString("password", etPassword.getText().toString());
-                        loginPrefsEditor.commit();
-                    } else {
-                        loginPrefsEditor.putBoolean("saveLogin", false);
-                        loginPrefsEditor.commit();
-                    }
-                    if (stayloggedinCheckBox.isChecked()) {
-                        loginPrefsEditor.putBoolean("stayloggedin", true);
-                        loginPrefsEditor.commit();
-                    } else {
-                        loginPrefsEditor.putBoolean("stayloggedin", false);
-                        loginPrefsEditor.commit();
-                    }
-
-                    Toast.makeText(LoginActivity.this,"Logged in successful", Toast.LENGTH_SHORT).show();
+                if (TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password))
+                {
+                    Toast.makeText(getApplicationContext(), "Please enter all the fields", Toast.LENGTH_SHORT).show();
                 }
-                else{
-                    Toast.makeText(LoginActivity.this, "Invalid Username / Password", Toast.LENGTH_SHORT).show();
+                else {
+                        Login(txt_email,txt_password);
+                    }
                 }
-
-
-            }
         });
         //set hint so that when the et is empty it will show what the user need to type
-        etUsername.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        etEmail.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean hasFocus) {
                 if (hasFocus) {
-                    etUsername.setHint("");
+                    etEmail.setHint("");
                 } else {
-                    etUsername.setHint("Username");
+                    etEmail.setHint("Username");
                 }
             }
         });
@@ -148,32 +126,57 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
-    public boolean isValidCredential(String username, String password){
-        UserData dbData = dbHandler.findUser(username);
-        if(dbData != null)
-        {
 
-            Log.v(TAG, FILENAME + ": Running checks..." + dbData.getUsername() + "| " + dbData.getPassword());
+    public void Login(final String email, String password)
+    {
 
-            if(dbData.getUsername().equals(username) && dbData.getPassword().equals(password)){
-                return true;
+
+        auth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    // there was an error
+                    FirebaseUser currentUser = auth.getCurrentUser();
+                    String uid = currentUser.getUid();
+                    dbRef = FirebaseDatabase.getInstance().getReference("Users").child(uid);
+                    dbRef.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            String role = snapshot.child("role").getValue().toString();
+                            if(role.equals("admin")){
+                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                            else if(role.equals("newUser")){
+                                Intent intent = new Intent(LoginActivity.this, AcadCalendar.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                            else{
+                                Toast.makeText(getApplicationContext(), "Login failed. Incorrect credentials", Toast.LENGTH_LONG).show();
+                                return;
+                            }
+                        }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                        }
+                    });
+
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "Login failed. Incorrect credentials", Toast.LENGTH_LONG).show();
+                }
             }
-            return false;
-
-
-
-        }
-        else {
-            return false;
-        }
+        });
     }
+
 
 
     @Override
     public void onBackPressed(){
         moveTaskToBack(true);
     }
-
 
 
     protected void onStop(){
