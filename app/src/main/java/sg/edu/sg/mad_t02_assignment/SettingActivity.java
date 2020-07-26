@@ -1,28 +1,17 @@
 package sg.edu.sg.mad_t02_assignment;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.Set;
 
 
 public class SettingActivity extends AppCompatActivity {
@@ -30,7 +19,6 @@ public class SettingActivity extends AppCompatActivity {
 
     private Button signOutButton;
     private String username;
-    private TextView etUser;
     private Button ChangePassButton;
     //private SharedPreferences settingsPreferences;
     //private SharedPreferences.Editor settingsPrefsEditor;
@@ -44,13 +32,12 @@ public class SettingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_setting);
 
         setTitle("Settings");
-        etUser = findViewById(R.id.profileUsername);
         signOutButton = findViewById(R.id.signOutBtn);
         ChangePassButton = findViewById(R.id.ChangePassBtn);
         //settingsPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
         //settingsPrefsEditor = settingsPreferences.edit();
         //username = settingsPreferences.getString("username", "");
-        etUser.setText(username);
+
         builder = new AlertDialog.Builder(this);
         ChangePassButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
