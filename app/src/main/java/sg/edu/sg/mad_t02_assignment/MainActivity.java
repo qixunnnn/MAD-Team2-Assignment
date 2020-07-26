@@ -80,11 +80,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         else if (v.getId() == CARDVIEW_ID[3])
         {
-            i = new Intent(this, BookActivity.class);
+            i = new Intent(this, AcadCalendar.class);
         }
         else if (v.getId() == CARDVIEW_ID[4])
         {
-            i = new Intent(this, AdminModSchool.class);
+            i = new Intent(this, ContactActivity.class);
         }
         else if (v.getId() == CARDVIEW_ID[5])
         {

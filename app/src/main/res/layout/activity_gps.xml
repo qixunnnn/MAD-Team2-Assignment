@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".GpsActivity">
+    <Spinner
+        android:id="@+id/dropdown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="#151515">
+
+
+        <TextView
+            android:id="@+id/distanceTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="5km"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/arrivalTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingRight="10dp"
+                android:text="ETA: 11:00 PM"
+                android:textColor="#EDE6E6"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/etaTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingRight="10dp"
+                android:text="10mins"
+                android:textColor="#EDE6E6"
+                android:textSize="20dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            tools:context=".MainActivity" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/indicater"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="10dp"
+            android:clickable="false"
+            android:elevation="0dp"
+            android:src="@drawable/walking"
+            android:tint="#00BCD4"
+            app:backgroundTint="#00FFFFFF"
+            app:elevation="0dp"
+            app:rippleColor="@null" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/indicater2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="10dp"
+            android:clickable="false"
+            android:elevation="0dp"
+            android:src="@drawable/driving"
+            android:tint="#00BCD4"
+            android:visibility="invisible"
+            app:backgroundTint="#00FFFFFF"
+            app:elevation="0dp"
+            app:rippleColor="@null" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="false"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:paddingRight="10dp"
+            android:paddingBottom="40dp">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/walkingBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:clickable="true"
+
+                android:src="@drawable/walking"
+                app:backgroundTint="#D5D1D1"
+                app:rippleColor="#1f000000" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/drivingBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_marginLeft="10dp"
+                android:clickable="true"
+                android:src="@drawable/driving"
+                app:backgroundTint="#D5D1D1" />
+
+
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>
