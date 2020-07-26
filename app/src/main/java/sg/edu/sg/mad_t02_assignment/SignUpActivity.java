@@ -158,8 +158,6 @@ public class SignUpActivity extends AppCompatActivity {
                     HashMap<String, String> hashMap = new HashMap<>();
                     hashMap.put("id", uid);
                     hashMap.put("role", "newUser");
-                    hashMap.put("profile_pic","default");
-                    hashMap.put("username","nil");
 
                     dbRef.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override

@@ -45,11 +45,24 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseViewHolder> {
             @Override
             public void onClick(View v) {
                 if (context.getClass() == CourseActivity.class) {
-                    Intent i = new Intent("android.intent.action.VIEW", Uri.parse(models.get(position).getCourseURL()));
-                    context.startActivity(i);
+                    Log.v("ASD",models.get(position).getCourseURL());
+                    openWebPage(models.get(position).getCourseURL());
+                    //Intent i = new Intent("android.intent.action.VIEW", Uri.parse(models.get(position).getCourseURL()));
+                    //context.startActivity(i);
                 }
             }
         });
+    }
+    public void openWebPage(String url) {
+
+        Uri webpage = Uri.parse(url);
+
+        if (!url.startsWith("http://") && !url.startsWith("https://")) {
+            webpage = Uri.parse("http://" + url);
+        }
+
+        Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+        context.startActivity(intent);
     }
 
     @Override
