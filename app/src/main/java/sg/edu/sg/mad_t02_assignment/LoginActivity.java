@@ -36,11 +36,11 @@ public class LoginActivity extends AppCompatActivity {
 
     private TextView newUser;
     private Button loginButton;
-
-    private CheckBox remebermeCheckBox;
-    private CheckBox stayloggedinCheckBox;
+    private SharedPreferences loginPreferences;
+    private SharedPreferences.Editor loginPrefsEditor;
     private Boolean saveLogin;
-    private Boolean Stayloggedin;
+    private CheckBox remebermeCheckBox;
+
 
 
     FirebaseAuth auth = FirebaseAuth.getInstance();
@@ -70,8 +70,9 @@ public class LoginActivity extends AppCompatActivity {
         final EditText etPassword = findViewById(R.id.editText_password);
 
         remebermeCheckBox = (CheckBox)findViewById(R.id.checkBox_RememberMe);
-        stayloggedinCheckBox = (CheckBox)findViewById(R.id.checkBox_RememberMe);
 
+        loginPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
+        loginPrefsEditor = loginPreferences.edit();
         newUser = findViewById(R.id.textView_NewUser);
         newUser.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,18 +124,31 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-
-
+        saveLogin = loginPreferences.getBoolean("saveLogin", false);
+        if (saveLogin == true) {
+            etEmail.setText(loginPreferences.getString("username", ""));
+            etPassword.setText(loginPreferences.getString("password", ""));
+            remebermeCheckBox.setChecked(true);
+        }
     }
 
-    public void Login(final String email, String password)
+    public void Login(final String email, final String password)
     {
 
-
+        if (remebermeCheckBox.isChecked()) {
+            loginPrefsEditor.putBoolean("saveLogin", true);
+            loginPrefsEditor.putString("username", email);
+            loginPrefsEditor.putString("password", password);
+            loginPrefsEditor.commit();
+        } else {
+            loginPrefsEditor.putBoolean("saveLogin", false);
+            loginPrefsEditor.commit();
+        }
         auth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
+
                     // there was an error
                     FirebaseUser currentUser = auth.getCurrentUser();
                     String uid = currentUser.getUid();

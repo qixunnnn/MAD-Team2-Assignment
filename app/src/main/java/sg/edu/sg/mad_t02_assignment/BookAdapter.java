@@ -8,13 +8,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class BookAdapter extends RecyclerView.Adapter<BookViewHolder> {
 
-     ArrayList<BookModel> bookModelList;
+    private Context bContext;
+    ArrayList<NewBookModel> bookModelList;
 
-    public BookAdapter(ArrayList<BookModel> bookModelList) {
+    public BookAdapter(Context bContext, ArrayList<NewBookModel> bookModelList) {
+        this.bContext = bContext;
         this.bookModelList = bookModelList;
     }
 
@@ -27,10 +33,13 @@ public class BookAdapter extends RecyclerView.Adapter<BookViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull BookViewHolder holder, int position) {
-        holder.bookImage.setImageResource(bookModelList.get(position).getBookImage());
-        holder.bookDescription.setText(bookModelList.get(position).getBookDescription());
-        holder.bookPrice.setText("$ " + String.valueOf(bookModelList.get(position).getBookPrice()));
-        holder.bookName.setText(bookModelList.get(position).getBookName());
+        NewBookModel uploadBook = bookModelList.get(position);
+
+        Picasso.get().load(uploadBook.getNBookImage()).fit().centerCrop().into(holder.bookImage);
+        holder.bookDescription.setText(bookModelList.get(position).getNBookDescription());
+        holder.bookPrice.setText("$ " + String.valueOf(bookModelList.get(position).getNBookPrice()));
+        holder.bookName.setText(bookModelList.get(position).getNBookName());
+
     }
 
     @Override
