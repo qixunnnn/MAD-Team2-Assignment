@@ -106,7 +106,6 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
         walkindicater = findViewById(R.id.walkindicater);
         driveindicater = findViewById(R.id.driveindicater);
         final View parentLayout = findViewById(android.R.id.content);
-
         walk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -213,7 +212,6 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
                 locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
                 if (position == 0) {
 
-                    //lm.removeUpdates(locationListener);
                     stopLocationUpdates();
                 } else requestLocationUpdates(locationManager);
                 switch (position) {
@@ -258,6 +256,7 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
                 .findFragmentById(R.id.map);
 
         mapFragment.getMapAsync(this);
+
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         requestLocationUpdates(locationManager);
@@ -368,9 +367,9 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
+        mMap.getUiSettings().setCompassEnabled(true);
+        mMap.getUiSettings().setRotateGesturesEnabled(true);
         //getMyLocation();
-
     }
 
 
@@ -418,6 +417,8 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
 
         CameraUpdate center = CameraUpdateFactory.newLatLng(start);
         CameraUpdate zoom = CameraUpdateFactory.zoomTo(16);
+        mMap.animateCamera(zoom);
+        mMap.animateCamera(zoom);
         if (polylines != null) {
             polylines.clear();
         }
@@ -476,12 +477,25 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
         super.onStart();
 
     }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        stopLocationUpdates();
+
+    }
 
     @Override
     protected void onResume() {
         super.onResume();
         startLocationUpdates();
     }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        stopLocationUpdates();
+
+    }
+
 
 
 
@@ -526,10 +540,7 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
         getFusedLocationProviderClient(this).requestLocationUpdates(mLocationRequest, new LocationCallback() {
                     @Override
                     public void onLocationResult(LocationResult locationResult) {
-
                     }
-
-
                 },
                 Looper.myLooper());
 
