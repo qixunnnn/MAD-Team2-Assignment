@@ -88,8 +88,8 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
     TextView arrvial;
     FloatingActionButton walk;
     FloatingActionButton drive;
-    FloatingActionButton indicater;
-    FloatingActionButton indicater2;
+    FloatingActionButton walkindicater;
+    FloatingActionButton driveindicater;
     Integer speed = 5;
     AbstractRouting.TravelMode ModeOfTransport = AbstractRouting.TravelMode.WALKING;
 
@@ -98,14 +98,15 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_gps);
+
         Spinner dropdown = findViewById(R.id.dropdown);
-        dropdown.setSelection(0,false);
-        walk = findViewById(R.id.walkingBtn);
+        walk = findViewById(R.id.walkingbtn);
         arrvial = findViewById(R.id.arrivalTV);
-        indicater = findViewById(R.id.indicater);
-        indicater2 = findViewById(R.id.indicater2);
+        walkindicater = findViewById(R.id.walkindicater);
+        driveindicater = findViewById(R.id.driveindicater);
         final View parentLayout = findViewById(android.R.id.content);
+
         walk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,12 +119,12 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
                 Snackbar snackbar = Snackbar.make(parentLayout,"Mode of Transport changed to Walking", Snackbar.LENGTH_LONG);
                 snackbar.show();
                 // Toast.makeText(MainActivity.this, "Mode of Transport changed to Walking", Toast.LENGTH_SHORT).show();
-                indicater.show();
-                indicater2.hide();
+                walkindicater.show();
+                driveindicater.hide();
 
             }
         });
-        drive = findViewById(R.id.drivingBtn);
+        drive = findViewById(R.id.drivingbtn);
         drive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -135,10 +136,12 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
                 Snackbar snackbar = Snackbar.make(parentLayout,"Mode of Transport changed to Driving", Snackbar.LENGTH_LONG);
                 snackbar.show();
                 // Toast.makeText(MainActivity.this, "Mode of Transport changed to Driving", Toast.LENGTH_SHORT).show();
-                indicater2.show();
-                indicater.hide();
+                driveindicater.show();
+                walkindicater.hide();
             }
         });
+
+
         String[] blocks = new String[]{"Choose your destination here", "Blk 31(School ICT)", "Blk 23(Electrical Engineering)", "Blk 34(DE)", "Blk 52(FMS)", "Blk 72(BA)", "Blk 83(LSCT)"};
         final LatLng[] coordinates = new LatLng[]{null, new LatLng(1.3336, 103.7750),new LatLng(1.3339, 103.775454),new LatLng(1.333599, 103.774022),new LatLng(1.3320, 103.7753),new LatLng(1.331770, 103.776039),new LatLng(1.3301, 103.7744)};
         locationListener = new LocationListener() {
@@ -427,7 +430,7 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
         for (int i = 0; i < route.size(); i++) {
 
             if (i == shortestRouteIndex) {
-                polyOptions.color(getResources().getColor(R.color.colorPrimary));
+                polyOptions.color(getResources().getColor(R.color.Green));
                 polyOptions.width(7);
                 polyOptions.addAll(route.get(shortestRouteIndex).getPoints());
                 Polyline polyline = mMap.addPolyline(polyOptions);

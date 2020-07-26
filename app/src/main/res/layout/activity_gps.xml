@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".GpsActivity">
+
     <Spinner
         android:id="@+id/dropdown"
         android:layout_width="match_parent"
@@ -75,7 +76,7 @@
             tools:context=".MainActivity" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/indicater"
+            android:id="@+id/walkindicater"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top|left"
@@ -89,7 +90,7 @@
             app:rippleColor="@null" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/indicater2"
+            android:id="@+id/driveindicater"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top|left"
@@ -113,7 +114,7 @@
             android:paddingBottom="40dp">
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/walkingBtn"
+                android:id="@+id/walkingbtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|right"
@@ -124,7 +125,7 @@
                 app:rippleColor="#1f000000" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/drivingBtn"
+                android:id="@+id/drivingbtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|right"
