@@ -90,7 +90,7 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
     FloatingActionButton drive;
     FloatingActionButton walkindicater;
     FloatingActionButton driveindicater;
-    Integer speed = 5;
+    Integer speed = 6;
     AbstractRouting.TravelMode ModeOfTransport = AbstractRouting.TravelMode.WALKING;
 
 
@@ -110,7 +110,7 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
             @Override
             public void onClick(View v) {
                 ModeOfTransport = AbstractRouting.TravelMode.WALKING;
-                speed = 5;
+                speed = 6;
                 if(end != null) {
                     requestLocationUpdates(locationManager);
                 }
@@ -157,8 +157,8 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
                 if(endlocation != null) {
                     float distanceInKM = location.distanceTo(endlocation) / 1000; //to KM
 
-                    distance.setText(String.format("%.2f", distanceInKM) + "Km");
-                    //average walking speed is 5km/h
+                    distance.setText(String.format("%.2f", distanceInKM) + "KM");
+                    //average walking speed is 6km/h
                     //average driving speed in school zone is 40km/h
                     float estimatedTimeOfArrival =  60 * (distanceInKM / speed); //to mins
 
@@ -414,11 +414,13 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
     //If Route finding success..
     @Override
     public void onRoutingSuccess(ArrayList<Route> route, int shortestRouteIndex) {
-
+/*
         CameraUpdate center = CameraUpdateFactory.newLatLng(start);
         CameraUpdate zoom = CameraUpdateFactory.zoomTo(16);
         mMap.animateCamera(zoom);
         mMap.animateCamera(zoom);
+
+ */
         if (polylines != null) {
             polylines.clear();
         }
