@@ -1,7 +1,5 @@
 package sg.edu.sg.mad_t02_assignment;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
@@ -12,6 +10,10 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.VideoView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     private SharedPreferences MainPreferences;
     private SharedPreferences.Editor MainPrefsEditor;
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView title;
     final String TAG = "Home Page";
     private VideoView npVideo;
+    private FloatingActionButton gps;
 
     //Put all card view ID where
     private static final int[] CARDVIEW_ID = {
@@ -33,6 +36,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         MainPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
 
         username = MainPreferences.getString("username", "");
+        gps = findViewById(R.id.gpsBtn);
+        gps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,GpsActivity.class);
+                startActivity(intent);
+            }
+        });
         npVideo = findViewById(R.id.video_mainmenu);
         npVideo.setVideoURI(
                 Uri.parse("android.resource://" + getPackageName() +  "/" +R.raw.npvideo)

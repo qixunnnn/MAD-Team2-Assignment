@@ -88,9 +88,9 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
     TextView arrvial;
     FloatingActionButton walk;
     FloatingActionButton drive;
-    FloatingActionButton indicater;
-    FloatingActionButton indicater2;
-    Integer speed = 5;
+    FloatingActionButton walkindicater;
+    FloatingActionButton driveindicater;
+    Integer speed = 6;
     AbstractRouting.TravelMode ModeOfTransport = AbstractRouting.TravelMode.WALKING;
 
 
@@ -98,19 +98,19 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_gps);
+
         Spinner dropdown = findViewById(R.id.dropdown);
-        dropdown.setSelection(0,false);
-        walk = findViewById(R.id.walkingBtn);
+        walk = findViewById(R.id.walkingbtn);
         arrvial = findViewById(R.id.arrivalTV);
-        indicater = findViewById(R.id.indicater);
-        indicater2 = findViewById(R.id.indicater2);
+        walkindicater = findViewById(R.id.walkindicater);
+        driveindicater = findViewById(R.id.driveindicater);
         final View parentLayout = findViewById(android.R.id.content);
         walk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ModeOfTransport = AbstractRouting.TravelMode.WALKING;
-                speed = 5;
+                speed = 6;
                 if(end != null) {
                     requestLocationUpdates(locationManager);
                 }
@@ -118,12 +118,12 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
                 Snackbar snackbar = Snackbar.make(parentLayout,"Mode of Transport changed to Walking", Snackbar.LENGTH_LONG);
                 snackbar.show();
                 // Toast.makeText(MainActivity.this, "Mode of Transport changed to Walking", Toast.LENGTH_SHORT).show();
-                indicater.show();
-                indicater2.hide();
+                walkindicater.show();
+                driveindicater.hide();
 
             }
         });
-        drive = findViewById(R.id.drivingBtn);
+        drive = findViewById(R.id.drivingbtn);
         drive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -135,10 +135,12 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
                 Snackbar snackbar = Snackbar.make(parentLayout,"Mode of Transport changed to Driving", Snackbar.LENGTH_LONG);
                 snackbar.show();
                 // Toast.makeText(MainActivity.this, "Mode of Transport changed to Driving", Toast.LENGTH_SHORT).show();
-                indicater2.show();
-                indicater.hide();
+                driveindicater.show();
+                walkindicater.hide();
             }
         });
+
+
         String[] blocks = new String[]{"Choose your destination here", "Blk 31(School ICT)", "Blk 23(Electrical Engineering)", "Blk 34(DE)", "Blk 52(FMS)", "Blk 72(BA)", "Blk 83(LSCT)"};
         final LatLng[] coordinates = new LatLng[]{null, new LatLng(1.3336, 103.7750),new LatLng(1.3339, 103.775454),new LatLng(1.333599, 103.774022),new LatLng(1.3320, 103.7753),new LatLng(1.331770, 103.776039),new LatLng(1.3301, 103.7744)};
         locationListener = new LocationListener() {
@@ -155,8 +157,8 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
                 if(endlocation != null) {
                     float distanceInKM = location.distanceTo(endlocation) / 1000; //to KM
 
-                    distance.setText(String.format("%.2f", distanceInKM) + "Km");
-                    //average walking speed is 5km/h
+                    distance.setText(String.format("%.2f", distanceInKM) + "KM");
+                    //average walking speed is 6km/h
                     //average driving speed in school zone is 40km/h
                     float estimatedTimeOfArrival =  60 * (distanceInKM / speed); //to mins
 
@@ -210,7 +212,6 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
                 locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
                 if (position == 0) {
 
-                    //lm.removeUpdates(locationListener);
                     stopLocationUpdates();
                 } else requestLocationUpdates(locationManager);
                 switch (position) {
@@ -255,6 +256,7 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
                 .findFragmentById(R.id.map);
 
         mapFragment.getMapAsync(this);
+
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         requestLocationUpdates(locationManager);
@@ -365,9 +367,9 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
+        mMap.getUiSettings().setCompassEnabled(true);
+        mMap.getUiSettings().setRotateGesturesEnabled(true);
         //getMyLocation();
-
     }
 
 
@@ -412,9 +414,13 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
     //If Route finding success..
     @Override
     public void onRoutingSuccess(ArrayList<Route> route, int shortestRouteIndex) {
-
+/*
         CameraUpdate center = CameraUpdateFactory.newLatLng(start);
         CameraUpdate zoom = CameraUpdateFactory.zoomTo(16);
+        mMap.animateCamera(zoom);
+        mMap.animateCamera(zoom);
+
+ */
         if (polylines != null) {
             polylines.clear();
         }
@@ -427,7 +433,7 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
         for (int i = 0; i < route.size(); i++) {
 
             if (i == shortestRouteIndex) {
-                polyOptions.color(getResources().getColor(R.color.colorPrimary));
+                polyOptions.color(getResources().getColor(R.color.Green));
                 polyOptions.width(7);
                 polyOptions.addAll(route.get(shortestRouteIndex).getPoints());
                 Polyline polyline = mMap.addPolyline(polyOptions);
@@ -473,12 +479,25 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
         super.onStart();
 
     }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        stopLocationUpdates();
+
+    }
 
     @Override
     protected void onResume() {
         super.onResume();
         startLocationUpdates();
     }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        stopLocationUpdates();
+
+    }
+
 
 
 
@@ -523,10 +542,7 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
         getFusedLocationProviderClient(this).requestLocationUpdates(mLocationRequest, new LocationCallback() {
                     @Override
                     public void onLocationResult(LocationResult locationResult) {
-
                     }
-
-
                 },
                 Looper.myLooper());
 
