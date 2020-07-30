@@ -188,23 +188,7 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/EMConfirmPass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="New Password does not match"
-        android:textColor="#F30000"
-        android:layout_marginTop="20dp"/>
 
-
-    <TextView
-        android:id="@+id/EMCurrentPass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Invalid Password"
-        android:textColor="#F30000" />
         </LinearLayout>
     </ScrollView>
 
