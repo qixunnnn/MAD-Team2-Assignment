@@ -48,7 +48,7 @@ public class ContactActivity extends AppCompatActivity implements View.OnClickLi
         }
         else if (v.getId() == BUTTON_ID[2])
         {
-            i = new Intent("android.intent.action.VIEW", Uri.parse("https://www1.np.edu.sg/PPO/SQCFeedback/Feedback.aspx"));
+            i = new Intent(this,UserChat.class);
         }
         startActivity(i);
     }

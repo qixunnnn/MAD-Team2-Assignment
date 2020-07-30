@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -151,6 +152,10 @@ public class Admin_AddSchool extends AppCompatActivity{
                 Log.v(TAG,"Adding into database: Course Name: " + CourseName);
                 Log.v(TAG,"Adding into database: Course URL: " + CourseURL);
                 Log.v(TAG,"Adding into database: Course Motto: " + CourseMotto);
+
+                Toast.makeText(Admin_AddSchool.this, "Course has been added successfully", Toast.LENGTH_SHORT).show();
+
+                startActivity(new Intent(Admin_AddSchool.this, AdminModSchool.class));
             }
         });
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {

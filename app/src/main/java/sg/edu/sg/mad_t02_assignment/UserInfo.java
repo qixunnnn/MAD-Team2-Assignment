@@ -33,15 +33,5 @@ public class UserInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_info);
 
-        storageReference = FirebaseStorage.getInstance().getReference("Uploads");
-
-        profile_pic = findViewById(R.id.profile_image);
-
-        profile_pic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
     }
 }

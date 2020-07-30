@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         else if (v.getId() == CARDVIEW_ID[3])
         {
-            i = new Intent(this, AcadCalendar.class);
+            i = new Intent(this, BookActivity.class);
         }
         else if (v.getId() == CARDVIEW_ID[4])
         {

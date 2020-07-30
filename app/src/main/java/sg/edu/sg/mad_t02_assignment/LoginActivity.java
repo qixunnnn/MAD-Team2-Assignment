@@ -40,8 +40,7 @@ public class LoginActivity extends AppCompatActivity {
     private SharedPreferences.Editor loginPrefsEditor;
     private Boolean saveLogin;
     private CheckBox remebermeCheckBox;
-
-
+    private TextView forgetPass;
 
     FirebaseAuth auth = FirebaseAuth.getInstance();
 
@@ -153,11 +152,21 @@ public class LoginActivity extends AppCompatActivity {
             etPassword.setText(loginPreferences.getString("password", ""));
             remebermeCheckBox.setChecked(true);
         }
+
+        forgetPass = findViewById(R.id.textView_ForgetPassword);
+
+        forgetPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this,ForgetPassword.class));
+            }
+        });
     }
 
     public void Login(final String email, final String password)
     {
-
+        final Toast load = Toast.makeText(LoginActivity.this,"Logging in...",Toast.LENGTH_LONG);
+        load.show();
         if (remebermeCheckBox.isChecked()) {
             loginPrefsEditor.putBoolean("saveLogin", true);
             loginPrefsEditor.putString("username", email);
@@ -171,7 +180,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-
+                    loginPrefsEditor.putString("password", password);
+                    loginPrefsEditor.commit();
+                    load.cancel();
                     // there was an error
                     FirebaseUser currentUser = auth.getCurrentUser();
                     String uid = currentUser.getUid();

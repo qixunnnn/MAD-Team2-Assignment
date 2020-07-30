@@ -158,6 +158,7 @@ public class SignUpActivity extends AppCompatActivity {
                     HashMap<String, String> hashMap = new HashMap<>();
                     hashMap.put("id", uid);
                     hashMap.put("role", "newUser");
+                    hashMap.put("email", user.getEmail());
 
                     dbRef.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
@@ -173,7 +174,7 @@ public class SignUpActivity extends AppCompatActivity {
                         }
                     });
                 } else {
-                    Toast.makeText(getApplicationContext(),"Register failed. Email already existed", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Register failed. Email already existed/Invalid Email", Toast.LENGTH_LONG).show();
                 }
             }
         });

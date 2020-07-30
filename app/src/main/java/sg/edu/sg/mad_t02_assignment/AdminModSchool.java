@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -134,7 +135,7 @@ public class AdminModSchool extends AppCompatActivity {
             }
         });
     }
-    ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+    ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
         @Override
         public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
             return false;
@@ -142,19 +143,52 @@ public class AdminModSchool extends AppCompatActivity {
 
         @Override
         public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-/*            deleteCourse(courseList.get(viewHolder.getAdapterPosition()).getCourseID());
-            Log.v(TAG, String.valueOf(courseList.size()));
-            Log.v(TAG, String.valueOf(viewHolder.getAdapterPosition()));
-            courseList.remove(viewHolder.getAdapterPosition());
+            int adapterPos = viewHolder.getAdapterPosition();
 
-            cAdapter.notifyDataSetChanged();*/
-            showUpdateDialog(courseList.get(viewHolder.getAdapterPosition()));
+            switch (direction)
+            {
+                case ItemTouchHelper.LEFT:
+                    showUpdateDialog(courseList.get(adapterPos));
+                    cAdapter.notifyItemChanged(adapterPos);
+                    break;
+
+                case ItemTouchHelper.RIGHT:
+                    deleteDialog(courseList.get(adapterPos), adapterPos);
+                    break;
+            }
         }
     };
+
+    private void deleteDialog(final CourseModel course, final int pos) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Are you sure you want to remove " + course.getCourseName() + "?")
+                .setCancelable(false)
+                //when user press yes
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        deleteCourse(course.getCourseID());
+                    }
+                })
+                //when user press no
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        //  Action for 'NO' Button
+                        dialog.cancel();
+                        cAdapter.notifyItemChanged(pos);
+                    }
+                });
+
+        AlertDialog alert = builder.create();
+        //Setting the title manually
+        alert.setTitle("Delete course");
+        alert.show();
+    }
+
     private void deleteCourse(String courseID){
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("Schools").child(schoolname).child(courseID);
-
         mDatabase.removeValue();
+
+        Toast.makeText(this, "Course has been delete successfully", Toast.LENGTH_SHORT).show();
     }
 
     private void showUpdateDialog(final CourseModel course){
@@ -226,10 +260,7 @@ public class AdminModSchool extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Please enter an appropriate URL address", Toast.LENGTH_SHORT).show();
         }
         else {
-            //Adding into database
-            //Intent to admin
             return true;
-
         }
         return false;
     }
