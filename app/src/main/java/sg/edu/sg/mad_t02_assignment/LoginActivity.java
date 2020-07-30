@@ -180,6 +180,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
+                    loginPrefsEditor.putString("password", password);
+                    loginPrefsEditor.commit();
                     load.cancel();
                     // there was an error
                     FirebaseUser currentUser = auth.getCurrentUser();

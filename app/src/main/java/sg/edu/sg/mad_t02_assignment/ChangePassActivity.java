@@ -3,6 +3,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -31,8 +32,10 @@ public class ChangePassActivity extends AppCompatActivity {
     TextView em;
     private String TAG = "Learning@NP";
     private String FILENAME = "SettingActivity.java";
-
-
+    private SharedPreferences changePassPreferences;
+    private SharedPreferences.Editor changePassPrefsEditor;
+    String password;
+    String username;
     //MyDBHandler dbHandler = new MyDBHandler(this,null,null,1);
     FirebaseAuth auth = FirebaseAuth.getInstance();
 
@@ -56,9 +59,9 @@ public class ChangePassActivity extends AppCompatActivity {
     };
     private static final int[] em_IDS = {
             //stores the id of textview here to reduce repeated codes
-            R.id.EMCurrentPass,
+            //R.id.EMCurrentPass,
             R.id.EMNewPass,
-            R.id.EMConfirmPass,
+            //R.id.EMConfirmPass,
     };
     private View.OnTouchListener touch = new View.OnTouchListener() {
         @Override
@@ -112,6 +115,9 @@ public class ChangePassActivity extends AppCompatActivity {
 
         setTitle("Change Password");
 
+        changePassPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
+
+        password = changePassPreferences.getString("password", password);
 
         final EditText CurrentPass = findViewById(R.id.etCurrentPass);
         final EditText NewPass = findViewById(R.id.editnewPass);
@@ -265,12 +271,17 @@ public class ChangePassActivity extends AppCompatActivity {
                 else if(txt_password.length() < 6 || txt_password2.length() < 6){
                     Toast.makeText(getApplicationContext(), "Password must be more than 6 characters", Toast.LENGTH_SHORT).show();
                 }
+                else if(!txt_currentpass.equals(password)){
+                    Toast.makeText(getApplicationContext(), "Current password is incorrect. Please try again", Toast.LENGTH_LONG).show();
+                }
                 else {
                     if (txt_password.equals(txt_password2)) {
                         ChangePass(txt_password);
-                    } else {
+                    }
+                    else{
                         Toast.makeText(getApplicationContext(), "Password and confirmed password does not match. Please try again", Toast.LENGTH_LONG).show();
                     }
+
                 }
             }
         });
@@ -287,7 +298,7 @@ public class ChangePassActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(ChangePassActivity.this, "Password is updated, sign in with new password!", Toast.LENGTH_SHORT).show();
-
+                                    signOut();
 
                                 } else {
                                     Toast.makeText(ChangePassActivity.this, "Failed to update password!", Toast.LENGTH_SHORT).show();
@@ -297,6 +308,12 @@ public class ChangePassActivity extends AppCompatActivity {
                         });
             }
         }
+    public void signOut() {
+        auth.getInstance().signOut();
+        Intent intent = new Intent(ChangePassActivity.this, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        startActivity(intent);
+    }
     }
 
 

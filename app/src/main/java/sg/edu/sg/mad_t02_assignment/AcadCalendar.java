@@ -25,7 +25,7 @@ public class AcadCalendar extends AppCompatActivity {
 
         try{
             Date cDate = new Date();
-            String endDate = "06/15/2020";
+            String endDate = "09/07/2020";
             Date eDate;
             SimpleDateFormat date = new SimpleDateFormat("MM/dd/yyyy");
             eDate = date.parse(endDate);
