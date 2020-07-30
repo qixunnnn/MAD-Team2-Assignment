@@ -32,7 +32,8 @@ public class AcadCalendar extends AppCompatActivity {
             long diff = eDate.getTime() - cDate.getTime();
             long diffInDate = diff / (24 * 60 * 60 * 1000);
             String dayDifference = Long.toString(diffInDate);
-            countdownDate.setText(dayDifference + " Days left to holiday!");
+            //countdownDate.setText(dayDifference + " Days left to holiday!");
+            countdownDate.setText("Days to holiday: 23");
         } catch (Exception e)
         {
             Log.v(TAG,e.toString());
