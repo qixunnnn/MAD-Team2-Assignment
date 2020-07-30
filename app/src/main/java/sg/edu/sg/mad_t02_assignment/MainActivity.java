@@ -100,13 +100,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                     7);
-        } else {
-           // locationPermission = true;
-            MainPrefsEditor = getSharedPreferences("location", MODE_PRIVATE).edit();
-            MainPrefsEditor.putBoolean("locationpermission", true);
-            MainPrefsEditor.apply();
-
         }
+
     }
 
     @Override

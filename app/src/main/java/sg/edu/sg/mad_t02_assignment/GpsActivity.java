@@ -69,8 +69,6 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
     LocationCallback mLocationCallback;
     private LocationSettingsRequest.Builder builder;
     //current and destination location objects
-    Location myLocation = null;
-    Location destinationLocation = null;
     protected LatLng start = null;
     protected LatLng end = null;
     protected Location endlocation = new Location("");
@@ -140,7 +138,6 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
                 }
                 Snackbar snackbar = Snackbar.make(parentLayout, "Mode of Transport changed to Driving", Snackbar.LENGTH_LONG);
                 snackbar.show();
-                // Toast.makeText(MainActivity.this, "Mode of Transport changed to Driving", Toast.LENGTH_SHORT).show();
                 driveindicater.show();
                 walkindicater.hide();
             }
@@ -201,6 +198,7 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
 
             }
         };
+        //for drop down menu
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, blocks) {
             @Override
             public boolean isEnabled(int position) {
@@ -224,7 +222,7 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
                     } else requestLocationUpdates(locationManager);
                     switch (position) {
                         case 0:
-
+                            //empty destination selected
                             end = null;
                             distance.setText("");
                             eta.setText("");
@@ -264,14 +262,12 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                //stop route finding
-                //end = nu;;
+
             }
 
 
         });
 
-        // end = new LatLng(1.34407135, 103.70236273);
         //request location permission.
         requestPermision();
         getLastLocation();
@@ -302,7 +298,7 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
     }
 
     public void getLastLocation() {
-        // Get last known recent location using new Google Play Services SDK (v11+)
+        // Get last known recent location
         FusedLocationProviderClient locationClient = getFusedLocationProviderClient(this);
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -319,9 +315,7 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
                 .addOnSuccessListener(new OnSuccessListener<Location>() {
                     @Override
                     public void onSuccess(Location location) {
-                        // GPS location can be null if GPS is switched off
                         if (location != null) {
-                            //onLocationChanged(location);
                             start = new LatLng(location.getLatitude(), location.getLongitude());
                             CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(
                                     start, 16f);
@@ -372,7 +366,7 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
 
 
 
-    //to get user location
+    //get user location
     private void getMyLocation() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
@@ -385,14 +379,7 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
             return;
         }
         mMap.setMyLocationEnabled(true);
-        //get destination location when user click on map
-
-
-        //end = latLng;
-
         mMap.clear();
-
-
         //start route finding
         Findroutes(start,end,ModeOfTransport);
 
@@ -405,12 +392,10 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
         mMap = googleMap;
         mMap.getUiSettings().setCompassEnabled(true);
         mMap.getUiSettings().setRotateGesturesEnabled(true);
-
-        //getMyLocation();
     }
 
 
-    // function to find Routes.
+    // to start finding route
     public void Findroutes(LatLng Start, LatLng End, AbstractRouting.TravelMode MOT) {
         if (Start == null || End == null) {
            // Toast.makeText(GpsActivity.this, "Unable to get location", Toast.LENGTH_SHORT).show();
@@ -451,13 +436,7 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
     //If Route finding success..
     @Override
     public void onRoutingSuccess(ArrayList<Route> route, int shortestRouteIndex) {
-/*
-        CameraUpdate center = CameraUpdateFactory.newLatLng(start);
-        CameraUpdate zoom = CameraUpdateFactory.zoomTo(16);
-        mMap.animateCamera(zoom);
-        mMap.animateCamera(zoom);
 
- */
         if (polylines != null) {
             polylines.clear();
         }
@@ -484,14 +463,7 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
 
         }
 
-
-        //Add Marker on route starting position
-        // MarkerOptions startMarker = new MarkerOptions();
-        // startMarker.position(polylineStartLatLng);
-        // startMarker.title("My Location");
-        //mMap.addMarker(startMarker);
-
-        //Add Marker on route ending position
+        //Add Marker on route destination
         MarkerOptions endMarker = new MarkerOptions();
         endMarker.position(polylineEndLatLng);
         endMarker.title("Destination");
@@ -502,14 +474,7 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
     public void onRoutingCancelled() {
         Findroutes(start, end,ModeOfTransport);
     }
-/*
-    @Override
-    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-        Findroutes(start, end,ModeOfTransport);
 
-    }
-
- */
 
     @Override
     protected void onStart() {
@@ -563,7 +528,6 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
         SettingsClient settingsClient = LocationServices.getSettingsClient(this);
         settingsClient.checkLocationSettings(locationSettingsRequest);
 
-        // new Google API SDK v11 uses getFusedLocationProviderClient(this)
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions

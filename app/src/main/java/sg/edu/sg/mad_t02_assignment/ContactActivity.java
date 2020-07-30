@@ -1,12 +1,11 @@
 package sg.edu.sg.mad_t02_assignment;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 
 public class ContactActivity extends AppCompatActivity implements View.OnClickListener{
@@ -48,7 +47,7 @@ public class ContactActivity extends AppCompatActivity implements View.OnClickLi
         }
         else if (v.getId() == BUTTON_ID[2])
         {
-            i = new Intent(this,UserChat.class);
+           // i = new Intent(this,UserChat.class);
         }
         startActivity(i);
     }
