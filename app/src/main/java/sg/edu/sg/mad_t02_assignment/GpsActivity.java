@@ -3,6 +3,7 @@ package sg.edu.sg.mad_t02_assignment;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -15,7 +16,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
@@ -78,11 +78,12 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
 
     //to get location permissions.
     private final static int LOCATION_REQUEST_CODE = 23;
+    final private int REQUEST_CODE_ASK_PERMISSIONS = 123;
     boolean locationPermission = true;
 
     //polyline object
     private List<Polyline> polylines = null;
-
+    private SharedPreferences MainPreferences;
     TextView distance;
     TextView eta;
     TextView arrvial;
@@ -92,7 +93,7 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
     FloatingActionButton driveindicater;
     Integer speed = 6;
     AbstractRouting.TravelMode ModeOfTransport = AbstractRouting.TravelMode.WALKING;
-
+    Boolean Location;
 
 
     @Override
@@ -105,19 +106,24 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
         arrvial = findViewById(R.id.arrivalTV);
         walkindicater = findViewById(R.id.walkindicater);
         driveindicater = findViewById(R.id.driveindicater);
+        distance = findViewById(R.id.distanceTV);
+        eta = findViewById(R.id.etaTV);
         final View parentLayout = findViewById(android.R.id.content);
+        MainPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
+
+        Location = MainPreferences.getBoolean("locationpermission", false);
         walk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ModeOfTransport = AbstractRouting.TravelMode.WALKING;
                 speed = 6;
-                if(end != null) {
+                if (end != null) {
                     requestLocationUpdates(locationManager);
                 }
 
-                Snackbar snackbar = Snackbar.make(parentLayout,"Mode of Transport changed to Walking", Snackbar.LENGTH_LONG);
+                Snackbar snackbar = Snackbar.make(parentLayout, "Mode of Transport changed to Walking", Snackbar.LENGTH_LONG);
                 snackbar.show();
-                // Toast.makeText(MainActivity.this, "Mode of Transport changed to Walking", Toast.LENGTH_SHORT).show();
+
                 walkindicater.show();
                 driveindicater.hide();
 
@@ -129,10 +135,10 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
             public void onClick(View v) {
                 ModeOfTransport = AbstractRouting.TravelMode.DRIVING;
                 speed = 40;
-                if(end != null) {
+                if (end != null) {
                     requestLocationUpdates(locationManager);
                 }
-                Snackbar snackbar = Snackbar.make(parentLayout,"Mode of Transport changed to Driving", Snackbar.LENGTH_LONG);
+                Snackbar snackbar = Snackbar.make(parentLayout, "Mode of Transport changed to Driving", Snackbar.LENGTH_LONG);
                 snackbar.show();
                 // Toast.makeText(MainActivity.this, "Mode of Transport changed to Driving", Toast.LENGTH_SHORT).show();
                 driveindicater.show();
@@ -141,8 +147,8 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
         });
 
 
-        String[] blocks = new String[]{"Choose your destination here", "Blk 31(School ICT)", "Blk 23(Electrical Engineering)", "Blk 34(DE)", "Blk 52(FMS)", "Blk 72(BA)", "Blk 83(LSCT)"};
-        final LatLng[] coordinates = new LatLng[]{null, new LatLng(1.3336, 103.7750),new LatLng(1.3339, 103.775454),new LatLng(1.333599, 103.774022),new LatLng(1.3320, 103.7753),new LatLng(1.331770, 103.776039),new LatLng(1.3301, 103.7744)};
+        final String[] blocks = new String[]{"Choose your destination here", "Blk 31(School ICT)", "Blk 23(Electrical Engineering)", "Blk 34(DE)", "Blk 52(FMS)", "Blk 72(BA)", "Blk 83(LSCT)"};
+        final LatLng[] coordinates = new LatLng[]{null, new LatLng(1.3336, 103.7750), new LatLng(1.3339, 103.775454), new LatLng(1.333599, 103.774022), new LatLng(1.3320, 103.7753), new LatLng(1.331770, 103.776039), new LatLng(1.3301, 103.7744)};
         locationListener = new LocationListener() {
 
             @Override
@@ -154,13 +160,13 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
                 Log.d("location", msg);
                 start = new LatLng(location.getLatitude(), location.getLongitude());
 
-                if(endlocation != null) {
+                if (endlocation != null) {
                     float distanceInKM = location.distanceTo(endlocation) / 1000; //to KM
 
-                    distance.setText(String.format("%.2f", distanceInKM) + "KM");
+                    distance.setText(String.format("%.2f", distanceInKM) + "Km");
                     //average walking speed is 6km/h
                     //average driving speed in school zone is 40km/h
-                    float estimatedTimeOfArrival =  60 * (distanceInKM / speed); //to mins
+                    float estimatedTimeOfArrival = 60 * (distanceInKM / speed); //to mins
 
                     eta.setText(String.format("%.2f", estimatedTimeOfArrival) + "mins");
                     Calendar c = Calendar.getInstance();
@@ -170,6 +176,7 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
                     arrvial.setText("ETA: " + formattedDate);
                 }
                 if (firstOrnot) {
+
                     CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(
                             start, 16f);
                     mMap.animateCamera(cameraUpdate);
@@ -194,7 +201,7 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
 
             }
         };
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, blocks){
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, blocks) {
             @Override
             public boolean isEnabled(int position) {
                 if (position == 0) {
@@ -210,30 +217,48 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-                if (position == 0) {
+                try {
+                    if (position == 0) {
 
-                    stopLocationUpdates();
-                } else requestLocationUpdates(locationManager);
-                switch (position) {
-                    case 0:
+                        stopLocationUpdates();
+                    } else requestLocationUpdates(locationManager);
+                    switch (position) {
+                        case 0:
 
-                        end = null;
-                        distance.setText("");
-                        eta.setText("");
-                        arrvial.setText("");
+                            end = null;
+                            distance.setText("");
+                            eta.setText("");
+                            arrvial.setText("");
 
-                        break;
-                    case 1 :
-                    case 2 :
-                    case 3 :
-                    case 4 :
-                    case 5 :
-                    case 6 :
-                        end = coordinates[position];
-                        endlocation.setLatitude(end.latitude);
-                        endlocation.setLongitude(end.longitude);
-                        break;
+                            break;
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                            if (locationPermission == true) {
+                                end = coordinates[position];
+                                endlocation.setLatitude(end.latitude);
+                                endlocation.setLongitude(end.longitude);
+                                Snackbar snackbar = Snackbar.make(parentLayout, "Navigating to "+ blocks[position], Snackbar.LENGTH_LONG);
+                                snackbar.show();
+                                break;
+                            } else {
+                                Snackbar snackbar = Snackbar.make(parentLayout, "Location permission not given, please enable it in the settings", Snackbar.LENGTH_LONG);
+                                snackbar.show();
+                            }
 
+
+                            break;
+                        default:
+                            throw new IllegalStateException("Unexpected value: " + position);
+                    }
+                }
+                catch (SecurityException e)
+                {
+                    Snackbar snackbar = Snackbar.make(parentLayout, "Location permission not given, please enable it in the settings", Snackbar.LENGTH_LONG);
+                    snackbar.show();
                 }
             }
 
@@ -245,8 +270,7 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
 
 
         });
-        distance = findViewById(R.id.distanceTV);
-        eta = findViewById(R.id.etaTV);
+
         // end = new LatLng(1.34407135, 103.70236273);
         //request location permission.
         requestPermision();
@@ -298,6 +322,10 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
                         // GPS location can be null if GPS is switched off
                         if (location != null) {
                             //onLocationChanged(location);
+                            start = new LatLng(location.getLatitude(), location.getLongitude());
+                            CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(
+                                    start, 16f);
+                            mMap.animateCamera(cameraUpdate);
                         }
                     }
                 })
@@ -312,27 +340,35 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
 
 
     //ask for location permission
-    private void requestPermision() {
+    public void requestPermision() {
 
+            if (ContextCompat.checkSelfPermission(this,
+                    Manifest.permission.ACCESS_COARSE_LOCATION)
+                    != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
+                        LOCATION_REQUEST_CODE);
+                if (ContextCompat.checkSelfPermission(this,
+                        Manifest.permission.ACCESS_FINE_LOCATION)
+                        != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(this,
+                            new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                            7);
+                }
 
+            } else if (ContextCompat.checkSelfPermission(this,
+                    Manifest.permission.ACCESS_FINE_LOCATION)
+                    != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                        7);
+            } else {
+                locationPermission = true;
 
-        if (ContextCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_COARSE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
-                    LOCATION_REQUEST_CODE);
-        } else if (ContextCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                    7);
-        } else {
-            locationPermission = true;
+            }
+
         }
 
-    }
 
 
 
@@ -369,6 +405,7 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
         mMap = googleMap;
         mMap.getUiSettings().setCompassEnabled(true);
         mMap.getUiSettings().setRotateGesturesEnabled(true);
+
         //getMyLocation();
     }
 
@@ -376,7 +413,7 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
     // function to find Routes.
     public void Findroutes(LatLng Start, LatLng End, AbstractRouting.TravelMode MOT) {
         if (Start == null || End == null) {
-            Toast.makeText(GpsActivity.this, "Unable to get location", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(GpsActivity.this, "Unable to get location", Toast.LENGTH_SHORT).show();
         } else {
 
             Routing routing = new Routing.Builder()

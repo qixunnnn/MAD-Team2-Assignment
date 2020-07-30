@@ -1,7 +1,9 @@
 package sg.edu.sg.mad_t02_assignment;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,6 +13,8 @@ import android.widget.TextView;
 import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -22,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     final String TAG = "Home Page";
     private VideoView npVideo;
     private FloatingActionButton gps;
+    private final static int LOCATION_REQUEST_CODE = 23;
 
     //Put all card view ID where
     private static final int[] CARDVIEW_ID = {
@@ -57,6 +62,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         npVideo.start();
         title = findViewById(R.id.loginUser);
         setTitle("Home");
+       // GpsActivity permission = new GpsActivity();
+       // permission.requestPermision();
+        requestPermision();
 
         //Assigning local variable to ID
 
@@ -69,6 +77,36 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onBackPressed(){
         moveTaskToBack(true);
+    }
+    public void requestPermision() {
+
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_COARSE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
+                    LOCATION_REQUEST_CODE);
+            if (ContextCompat.checkSelfPermission(this,
+                    Manifest.permission.ACCESS_FINE_LOCATION)
+                    != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                        7);
+            }
+
+        } else if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                    7);
+        } else {
+           // locationPermission = true;
+            MainPrefsEditor = getSharedPreferences("location", MODE_PRIVATE).edit();
+            MainPrefsEditor.putBoolean("locationpermission", true);
+            MainPrefsEditor.apply();
+
+        }
     }
 
     @Override

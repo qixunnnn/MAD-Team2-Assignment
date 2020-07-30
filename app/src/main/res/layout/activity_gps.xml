@@ -7,18 +7,15 @@
     android:orientation="vertical"
     tools:context=".GpsActivity">
 
-    <Spinner
-        android:id="@+id/dropdown"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:background="#151515">
+        android:background= "@color/colorPrimary">
+
 
 
         <TextView
@@ -27,12 +24,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="left"
-            android:paddingLeft="10dp"
+            android:paddingLeft="15dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:text="5km"
             android:textColor="#FFFFFF"
-            android:textSize="30dp" />
+            android:textSize="25dp" />
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,9 +41,10 @@
                 android:layout_weight="1"
                 android:gravity="right"
                 android:paddingRight="10dp"
+                android:paddingTop="5dp"
                 android:text="ETA: 11:00 PM"
                 android:textColor="#EDE6E6"
-                android:textSize="20dp" />
+                android:textSize="17dp" />
 
             <TextView
                 android:id="@+id/etaTV"
@@ -58,12 +56,17 @@
                 android:paddingRight="10dp"
                 android:text="10mins"
                 android:textColor="#EDE6E6"
-                android:textSize="20dp" />
+                android:textSize="17dp" />
 
         </LinearLayout>
 
 
     </LinearLayout>
+    <Spinner
+        android:id="@+id/dropdown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -121,7 +124,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|right"
                 android:clickable="true"
-
+                android:tint="@color/colorPrimary"
                 android:src="@drawable/walking"
                 app:backgroundTint="#D5D1D1"
                 app:rippleColor="#1f000000" />
@@ -133,6 +136,7 @@
                 android:layout_gravity="bottom|right"
                 android:layout_marginLeft="10dp"
                 android:clickable="true"
+                android:tint="@color/colorPrimary"
                 android:src="@drawable/driving"
                 app:backgroundTint="#D5D1D1" />
 
