@@ -14,6 +14,7 @@ import java.util.Date;
 public class AcadCalendar extends AppCompatActivity {
 
     final String TAG = "Academic Calendar";
+    private static String[] allHolidays = {"07/20/2020","09/07/2020", "12/19/20", "03/01/21"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,15 +26,17 @@ public class AcadCalendar extends AppCompatActivity {
 
         try{
             Date cDate = new Date();
-            String endDate = "09/07/2020";
-            Date eDate;
             SimpleDateFormat date = new SimpleDateFormat("MM/dd/yyyy");
-            eDate = date.parse(endDate);
-            long diff = eDate.getTime() - cDate.getTime();
-            long diffInDate = diff / (24 * 60 * 60 * 1000);
-            String dayDifference = Long.toString(diffInDate);
-            //countdownDate.setText(dayDifference + " Days left to holiday!");
-            countdownDate.setText("Days to holiday: 23");
+            for (int i = 0; i < allHolidays.length; i++){
+                Date eDate = date.parse(allHolidays[i]);
+                long diff = eDate.getTime() - cDate.getTime();
+                long diffInDate = diff / (24 * 60 * 60 * 1000);
+                String dayDifference = Long.toString(diffInDate);
+                if (diffInDate > 0)
+                {
+                    countdownDate.setText(dayDifference + " Days left to the next holiday!");
+                }
+            }
         } catch (Exception e)
         {
             Log.v(TAG,e.toString());

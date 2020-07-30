@@ -174,7 +174,7 @@ public class SignUpActivity extends AppCompatActivity {
                         }
                     });
                 } else {
-                    Toast.makeText(getApplicationContext(),"Register failed. Email already existed", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Register failed. Email already existed/Invalid Email", Toast.LENGTH_LONG).show();
                 }
             }
         });

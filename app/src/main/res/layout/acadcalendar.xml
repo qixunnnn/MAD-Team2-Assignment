@@ -37,7 +37,6 @@
                     android:background="#2196F3"
                     android:fontFamily="monospace"
                     android:gravity="center"
-                    android:layout_marginTop="20dp"
                     android:text="April 2020 Semester 1"
                     android:textAlignment="center"
                     android:textAppearance="?android:attr/textAppearanceLarge"
