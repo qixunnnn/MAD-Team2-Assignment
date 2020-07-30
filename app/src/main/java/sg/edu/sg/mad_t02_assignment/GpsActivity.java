@@ -77,7 +77,7 @@ public class GpsActivity extends FragmentActivity implements OnMapReadyCallback,
     //to get location permissions.
     private final static int LOCATION_REQUEST_CODE = 23;
     final private int REQUEST_CODE_ASK_PERMISSIONS = 123;
-    boolean locationPermission = true;
+    boolean locationPermission = false;
 
     //polyline object
     private List<Polyline> polylines = null;
