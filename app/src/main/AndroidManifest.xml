@@ -34,7 +34,8 @@
         <activity
             android:name=".AdminModSchool"
             android:parentActivityName=".AdminMain" />
-        <activity android:name=".AdminMain" />
+        <activity android:name=".AdminMain"
+            android:parentActivityName=".LoginActivity"/>
         <activity
             android:name=".ForgetPassword"
             android:parentActivityName=".LoginActivity" />
