@@ -79,6 +79,11 @@ Result<br/>
 GPS<br/>
 -Programmed GPSActivity<br/>
 
+Design<br/>
+- Designed the app logo<br/>
+- Admin main page banner<br/>
+- appstore app preview banner<br/>
+
 **Qi Xun :**<br/>
 
 Homepage<br/>
