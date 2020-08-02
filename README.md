@@ -296,7 +296,7 @@ This page uses a linear layout with scrollview and displays textview to input th
 
 GPS Function<br/>
 This allows user to navigate user to certain blocks of the school.<br/>
-<img src="Images/usergpsfunction2" height="500">
+<img src="Images/usergpsfunction2.png" height="500">
 
 AdminHomePage<br/>
 This page is similar to user homepage as it uses cardview and the admin users can click on the respective cardviews to go to the page stated in the text.<br/>
