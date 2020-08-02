@@ -224,8 +224,35 @@ This page is a RecyclerView that displays academic contacts from Ngee Ann Poly. 
 
 SettingsPage<br/>
 Users can come here to change their password and to sign out from the current account they are logged in to.<br/>
-<img src="Images/mad13.PNG" height="500">
+<img src="Images/mad11.PNG" height="500">
 
 ChangePasswordPage<br/>
 This page uses a linear layout with scrollview and displays textview to input the old and new passwords. Users input their current password and also their new password twice. After that, they can click the “CONFIRM” button to confirm changing their password or click the “CANCEL” button to return to the settings page.<br/>
 <img src="Images/madchangepw.png" height="500">
+
+GPS Function<br/>
+This allows user to navigate user to certain blocks of the school.<br/>
+<img src="Images/usergpsfunction.jpg" height="500">
+
+AdminHomePage<br/>
+This page is similar to user homepage as it uses cardview and the admin users can click on the respective cardviews to go to the page stated in the text.<br/>
+<img src="Images/madadminhome.jpg" height="500">
+
+AdminModifySchoolPage<br/>
+This page is a RecyclerView and shows all the available courses for the admin to modify. The admin can swipe left to update the course or swipe right to delete the course.<br/>
+<img src="Images/adminmodifyschool.jpg" height="500">
+<img src="Images/adminupdatecourse.jpg" height="500">
+<img src="Images/admindeletecourseinfo.jpg" height="500">
+
+AdminAddCoursePage<br/>
+This page is for admin users to add a course to a chosen school.<br/>
+<img src="Images/adminaddcourse.jpg" height="500">
+
+AdminAddBookPage<br/>
+This page is for admin users to add a new books to the book price listing for users to see.<br/>
+<img src="Images/adminaddbook.jpg" height="500">
+
+AdminSettingsPage<br/>
+This page is similar to normal user settings as it allows the admin to change the password of the admin account and to sign out of the account.<br/>
+<img src="Images/adminsettings.jpg" height="500">
+

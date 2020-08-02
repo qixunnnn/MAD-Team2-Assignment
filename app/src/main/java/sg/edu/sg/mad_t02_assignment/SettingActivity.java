@@ -54,7 +54,7 @@ public class SettingActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 //alert for user to confirm sign out
-                builder.setMessage("You will be brought to the login page and \"Stay Logged In \" checkbox will be unticked for you")
+                builder.setMessage("Are you sure you want to Sign Out?")
                         .setCancelable(false)
                         //when user press yes
                         .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
