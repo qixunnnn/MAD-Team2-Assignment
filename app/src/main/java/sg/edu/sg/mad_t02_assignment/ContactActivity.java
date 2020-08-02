@@ -47,7 +47,7 @@ public class ContactActivity extends AppCompatActivity implements View.OnClickLi
         }
         else if (v.getId() == BUTTON_ID[2])
         {
-           // i = new Intent(this,UserChat.class);
+            i = new Intent(this,UserChat.class);
         }
         startActivity(i);
     }

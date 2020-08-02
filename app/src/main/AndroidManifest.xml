@@ -15,6 +15,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".MessageActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".UserChat"
+            />
+        <activity
+            android:name=".UserChat"
+            android:label="@string/title_activity_user_chat"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -35,7 +43,7 @@
             android:parentActivityName=".AdminModSchool" />
         <activity
             android:name=".AdminAddBookActivity"
-            android:parentActivityName=".AdminModSchool"></activity>
+            android:parentActivityName=".AdminModSchool" />
         <activity android:name=".UserInfo" />
         <activity
             android:name=".ResultActivity"

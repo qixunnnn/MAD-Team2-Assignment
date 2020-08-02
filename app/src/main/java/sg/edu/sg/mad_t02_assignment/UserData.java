@@ -2,20 +2,28 @@ package sg.edu.sg.mad_t02_assignment;
 
 public class UserData {
 
-    private String profile_pic;
+    private String email;
+    private String id;
     private String role;
     private String username;
-    private String id;
 
     public UserData(){
 
     }
 
-    public UserData(String profile_pic, String role, String username, String id) {
-        this.profile_pic = profile_pic;
+    public UserData(String email, String id, String role, String username) {
+        this.email = email;
         this.role = role;
         this.username = username;
         this.id = id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getId() {
@@ -24,14 +32,6 @@ public class UserData {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public String getProfile_pic() {
-        return profile_pic;
-    }
-
-    public void setProfile_pic(String profile_pic) {
-        this.profile_pic = profile_pic;
     }
 
     public String getRole() {
@@ -49,4 +49,7 @@ public class UserData {
     public void setUsername(String username) {
         this.username = username;
     }
+
+
+
 }

@@ -155,12 +155,17 @@ public class SignUpActivity extends AppCompatActivity {
 
                     dbRef = FirebaseDatabase.getInstance().getReference("Users").child(uid);
 
-                    HashMap<String, String> hashMap = new HashMap<>();
+/*                    HashMap<String, String> hashMap = new HashMap<>();
                     hashMap.put("id", uid);
                     hashMap.put("role", "newUser");
-                    hashMap.put("email", user.getEmail());
+                    hashMap.put("email", user.getEmail());*/
+                    UserData userData = new UserData();
+                    userData.setEmail(user.getEmail());
+                    userData.setId(uid);
+                    userData.setRole("newUser");
+                    //userData.setUsername("XXX");
 
-                    dbRef.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    dbRef.setValue(userData).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
