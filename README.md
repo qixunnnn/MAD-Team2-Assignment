@@ -52,6 +52,7 @@ LoginPage<br/>
 
 Homepage <br/>
 -Programmed the Cardview Design <br/>
+-Programmed and Design the Floating Action button<br/>
 
 SignUp<br/>
 -Used SQLite and sharedPreference<br/>
@@ -78,6 +79,13 @@ Result<br/>
 
 GPS<br/>
 -Programmed GPSActivity<br/>
+-Used Map SDK for android and directions API<br/>
+-Used Polyline to map out the route<br/>
+-Used OnLocationChanged and Looper to constantly get user's current location<br/>
+-Used try catch for error handling<br/>
+-Used Floating Action button for better UI <br/>
+-Used fragment to overlay two layouts together<br/>
+
 
 Design<br/>
 - Designed the app logo<br/>
