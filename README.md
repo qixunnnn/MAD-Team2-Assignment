@@ -32,6 +32,11 @@ Our target audience is graduating Secondary School students and ITE students pla
 -Includes SQLite and sharedpreferences <br/>
 -Has multimedia <br/>
 
+## Things that have been implemented<br/>
+- GPS<br/>
+- Admin to allow them to add textbook, courses, other information, etc.<br/>
+- Used online cloud storage (Firebase) to store information.<br/>
+
 ## Roles and contributions of each member<br/>
 
 **Jun Wei :**<br/>
@@ -47,6 +52,7 @@ LoginPage<br/>
 
 Homepage <br/>
 -Programmed the Cardview Design <br/>
+-Programmed and Design the Floating Action button<br/>
 
 SignUp<br/>
 -Used SQLite and sharedPreference<br/>
@@ -70,6 +76,21 @@ CourseSuits/Quiz<br/>
 Result<br/>
 -Programmed ResultActivity<br/>
 -Used Intent to received data(array)<br/>
+
+GPS<br/>
+-Programmed GPSActivity<br/>
+-Used Map SDK for android and directions API<br/>
+-Used Polyline to map out the route<br/>
+-Used OnLocationChanged and Looper to constantly get user's current location<br/>
+-Used try catch for error handling<br/>
+-Used Floating Action button for better UI <br/>
+-Used fragment to overlay two layouts together<br/>
+
+
+Design<br/>
+- Designed the app logo<br/>
+- Admin main page banner<br/>
+- appstore app preview banner<br/>
 
 **Qi Xun :**<br/>
 
@@ -110,10 +131,29 @@ AcademicContact<br/>
 
 LoginPage<br/>
 -Updated design for Login Page<br/>
+-Programmed Forget password<br/>
 
 Others<br/>
 -Added scroll view in most layouts for responsiveness.<br/>
 -Converting Constraint to Linear layout for responsiveness<br/>
+
+Admin<br/>
+-Designed Admin page <br/>
+-Programmed Admin add courses <br/>
+
+-Live Chat <br/>
+-Programmed Live Chat for Admin and User<br/>
+
+Create Account<br/>
+-Programmed create account <br/>
+-Changed SQLite to Firebase <br/> 
+
+Splash Screen <br/>
+-Programmed Splash Screen  <br/>
+-Design Splash Screen <br/>
+
+User Info  <br/>
+-Programmed and design User Info Paged
 
 **Kamarul :**<br/>
 
@@ -134,6 +174,10 @@ Result<br/>
 -Design for Result Page<br/>
 
 Updated Documentation<br/>
+
+Admin<br/>
+-Programmed AddBookActivity<br/>
+-Designed AddBookActivity<br/>
 
 **Guan Teck :** <br/>
 
@@ -158,6 +202,26 @@ Research on Quiz questions<br/>
 Updated Documentation<br/>
 
 Designed icons<br/>
+
+AutoLogin<br/>
+-Programmed application to autologin
+-Programmed admin role to admin page, user role to user page<br/>
+
+Login<br/>
+-Programmed LoginPage<br/>
+-Changed SQLite to Firebase<br/>
+-Used sharedpreference for Remember Me checkbox<br/>
+-Programmed admin role to admin page, user role to user page<br/>
+
+Change Password<br/>
+-Programmed ChangePassword<br/>
+-Changed SQLite to Firebase<br/>
+-Used sharedpreference for Current Password<br/>
+
+Sign out<br/>
+-Programmed Sign out<br/>
+-Changed SQLite to Firebase<br/>
+
 
 ## Relevant appendices (diagrams, screenshots, user guides)<br/>
 
@@ -232,7 +296,7 @@ This page uses a linear layout with scrollview and displays textview to input th
 
 GPS Function<br/>
 This allows user to navigate user to certain blocks of the school.<br/>
-<img src="Images/usergpsfunction.jpg" height="500">
+<img src="Images/usergpsfunction2.png" height="500">
 
 AdminHomePage<br/>
 This page is similar to user homepage as it uses cardview and the admin users can click on the respective cardviews to go to the page stated in the text.<br/>
