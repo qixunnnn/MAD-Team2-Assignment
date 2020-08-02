@@ -224,7 +224,7 @@ This page is a RecyclerView that displays academic contacts from Ngee Ann Poly. 
 
 SettingsPage<br/>
 Users can come here to change their password and to sign out from the current account they are logged in to.<br/>
-<img src="Images/mad11.png" height="500">
+<img src="Images/mad11.PNG" height="500">
 
 ChangePasswordPage<br/>
 This page uses a linear layout with scrollview and displays textview to input the old and new passwords. Users input their current password and also their new password twice. After that, they can click the “CONFIRM” button to confirm changing their password or click the “CANCEL” button to return to the settings page.<br/>
