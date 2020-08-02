@@ -320,3 +320,9 @@ AdminSettingsPage<br/>
 This page is similar to normal user settings as it allows the admin to change the password of the admin account and to sign out of the account.<br/>
 <img src="Images/adminsettings.jpg" height="500">
 
+LiveChat<br>
+This allow user to conveniently get assistance and answer their enquiries quickly. With 4 admins handling different enquiries.<br>
+<img src="Images/chat1.png height="500">
+<img src="Images/chat2.png height="500">
+
+
