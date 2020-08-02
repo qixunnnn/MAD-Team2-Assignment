@@ -125,12 +125,22 @@ Others<br/>
 -Converting Constraint to Linear layout for responsiveness<br/>
 
 Admin<br/>
--Designed Admin page
--Programmed Admin add courses
+-Designed Admin page <br/>
+-Programmed Admin add courses <br/>
+
+-Live Chat <br/>
+-Programmed Live Chat for Admin and User<br/>
 
 Create Account<br/>
--Programmed create account
--Changed SQLite to Firebase
+-Programmed create account <br/>
+-Changed SQLite to Firebase <br/> 
+
+Splash Screen <br/>
+-Programmed Splash Screen  <br/>
+-Design Splash Screen <br/>
+
+User Info  <br/>
+-Programmed and design User Info Paged
 
 **Kamarul :**<br/>
 
