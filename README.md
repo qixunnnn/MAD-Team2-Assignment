@@ -35,7 +35,7 @@ Our target audience is graduating Secondary School students and ITE students pla
 ## Things that have been implemented<br/>
 - GPS<br/>
 - Admin to allow them to add textbook, courses, other information, etc.<br/>
-- Used online cloud storage (Firebase) to store information.<br/>\
+- Used online cloud storage (Firebase) to store information.<br/>
 
 ## Roles and contributions of each member<br/>
 
@@ -77,7 +77,8 @@ Result<br/>
 -Used Intent to received data(array)<br/>
 
 GPS<br/>
--Programmed GPSActivity
+-Programmed GPSActivity<br/>
+
 **Qi Xun :**<br/>
 
 Homepage<br/>
@@ -181,16 +182,18 @@ Designed icons<br/>
 
 AutoLogin<br/>
 -Programmed application to autologin
+-Programmed admin role to admin page, user role to user page<br/>
 
 Login<br/>
 -Programmed LoginPage<br/>
 -Changed SQLite to Firebase<br/>
 -Used sharedpreference for Remember Me checkbox<br/>
+-Programmed admin role to admin page, user role to user page<br/>
 
 Change Password<br/>
 -Programmed ChangePassword<br/>
 -Changed SQLite to Firebase<br/>
--Used sharedpreference for Current Password checkbox<br/>
+-Used sharedpreference for Current Password<br/>
 
 Sign out<br/>
 -Programmed Sign out<br/>
