@@ -57,34 +57,6 @@ public class LoginActivity extends AppCompatActivity {
             finish(); //finish Activity.
         }
 
-
-        if (auth.getCurrentUser() != null) {
-            FirebaseUser currentUser = auth.getCurrentUser();
-            String uid = currentUser.getUid();
-            dbRef = FirebaseDatabase.getInstance().getReference("Users").child(uid);
-            dbRef.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    String role = snapshot.child("role").getValue().toString();
-                    if(role.equals("admin")){
-                        Intent intent = new Intent(LoginActivity.this, AdminMain.class);
-                        startActivity(intent);
-                        finish();
-                    }
-                    else if(role.equals("newUser")){
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                        startActivity(intent);
-                        finish();
-                    }
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-
-                }
-            });
-
-        }
         setContentView(R.layout.activity_login);
         //remove title in login page
         setTitle("");

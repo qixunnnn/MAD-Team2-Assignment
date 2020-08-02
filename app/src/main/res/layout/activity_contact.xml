@@ -163,7 +163,7 @@
         android:layout_marginRight="12dp"
         android:layout_marginLeft="12sp"
         android:background="@color/DarkKhaki"
-        android:text="Quality Service Feedback"
+        android:text="Live Chat"
         android:textColor="@color/White"
         />
         </LinearLayout>

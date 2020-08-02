@@ -44,6 +44,8 @@ public class MessageActivity extends AppCompatActivity {
     private ArrayList<ChatModel> mChat = new ArrayList<>();
     RecyclerView recyclerView;
 
+    String userid;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +66,9 @@ public class MessageActivity extends AppCompatActivity {
         text_send = findViewById(R.id.text_send);
 
         Intent i = getIntent();
-        final String userid = i.getStringExtra("userid");
+        userid = i.getStringExtra("userid");
+        Log.d("MessageActivity", "UID: " + userid);
+
 
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,15 +106,24 @@ public class MessageActivity extends AppCompatActivity {
     {
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
 
-/*
-        HashMap<String, Object> hashMap = new HashMap<>();
-        hashMap.put("sender", sender);
-        hashMap.put("receiver", receiver);
-        hashMap.put("message", message);
-*/
-
         ChatModel chat = new ChatModel(sender,receiver,message);
         reference.child("Chats").push().setValue(chat);
+
+        final DatabaseReference chatRef = FirebaseDatabase.getInstance().getReference("Chatlist").child(fuser.getUid()).child(userid);
+        chatRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (!snapshot.exists()){
+                    chatRef.child("id").setValue(userid);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
     }
     private void readMessages(final String myid, final String userid)
     {
@@ -122,9 +135,11 @@ public class MessageActivity extends AppCompatActivity {
                 mChat.clear();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     ChatModel chat = snapshot.getValue(ChatModel.class);
-
-                    mChat.add(chat);
-
+                    if (chat.getReceiver().equals(myid) && chat.getSender().equals(userid) ||
+                        chat.getReceiver().equals(userid) && chat.getSender().equals(myid))
+                    {
+                        mChat.add(chat);
+                    }
                 }
                 messageAdapter = new MessageAdapter(mChat,MessageActivity.this);
                 recyclerView.setAdapter(messageAdapter);

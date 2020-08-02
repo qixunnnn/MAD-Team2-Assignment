@@ -41,6 +41,7 @@
                 android:padding="12dp"
                 android:layout_below="@id/profile_image"/>
 
+
             <LinearLayout
                 android:id="@+id/linear_name"
                 android:layout_width="match_parent"
@@ -52,7 +53,7 @@
 
 
                 <EditText
-                    android:id="@+id/et_firstname"
+                    android:id="@+id/editText_usernameInfo"
                     android:layout_width="0dp"
                     android:layout_height="43dp"
                     android:layout_marginRight="50dp"
@@ -60,7 +61,7 @@
 
                     android:ems="10"
                     android:background="#524F4F"
-                    android:hint="First Name"
+                    android:hint="Username"
                     android:textColor="@color/White"
                     android:textColorHint="@color/Gray"
                     android:paddingStart="15dp"
@@ -73,26 +74,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                >
-
-                <EditText
-                    android:id="@+id/et_lastName"
-                    android:layout_width="0dp"
-                    android:layout_height="43dp"
-                    android:layout_marginTop="25dp"
-                    android:layout_marginLeft="50dp"
-                    android:ems="10"
-                    android:background="#524F4F"
-                    android:hint="Last Name"
-                    android:textColor="@color/White"
-                    android:textColorHint="@color/Gray"
-                    android:paddingLeft="15dp"
-                    android:layout_marginRight="50dp"
-                    android:inputType="textPersonName"
-                    android:layout_weight="1"/>
-
-
-            </LinearLayout>
+                />
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -108,7 +90,7 @@
                     app:cardCornerRadius="25dp"
                     />
                 <Button
-                    android:id="@+id/buttonCreate"
+                    android:id="@+id/buttonCreateInfo"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:layout_marginStart="68dp"

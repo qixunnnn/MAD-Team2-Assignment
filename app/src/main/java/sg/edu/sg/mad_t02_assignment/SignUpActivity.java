@@ -163,6 +163,7 @@ public class SignUpActivity extends AppCompatActivity {
                     userData.setEmail(user.getEmail());
                     userData.setId(uid);
                     userData.setRole("newUser");
+                    userData.setUsername("default");
                     //userData.setUsername("XXX");
 
                     dbRef.setValue(userData).addOnCompleteListener(new OnCompleteListener<Void>() {

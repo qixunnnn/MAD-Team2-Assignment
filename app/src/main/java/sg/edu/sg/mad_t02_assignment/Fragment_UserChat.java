@@ -32,7 +32,7 @@ public class Fragment_UserChat extends Fragment {
     FirebaseUser fuser;
     DatabaseReference ref;
 
-    private List<String> usersList;
+    private List<Chatlist> usersList;
 
     @Nullable
     @Override
@@ -47,27 +47,17 @@ public class Fragment_UserChat extends Fragment {
 
         usersList = new ArrayList<>();
 
-        ref = FirebaseDatabase.getInstance().getReference("Chats");
+        ref = FirebaseDatabase.getInstance().getReference("Chatlist").child(fuser.getUid());
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 usersList.clear();
-
                 for (DataSnapshot snapshot: dataSnapshot.getChildren())
                 {
-                    ChatModel chat = snapshot.getValue(ChatModel.class);
-
-                    if (chat.getSender().equals(fuser.getUid()))
-                    {
-                        usersList.add(chat.getReceiver());
-                    }
-                    if (chat.getReceiver().equals(fuser.getUid()))
-                    {
-                        usersList.add(chat.getSender());
-                    }
+                    Chatlist chatlist = snapshot.getValue(Chatlist.class);
+                    usersList.add(chatlist);
                 }
-
-                readChats();
+                chatList();
             }
 
             @Override
@@ -80,37 +70,24 @@ public class Fragment_UserChat extends Fragment {
 
     }
 
-    private void readChats() {
+    private void chatList() {
         mUsers = new ArrayList<>();
-
         ref = FirebaseDatabase.getInstance().getReference("Users");
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                mUsers.clear();
                 for (DataSnapshot snapshot: dataSnapshot.getChildren())
                 {
-                    UserData userData = snapshot.getValue(UserData.class);
-
-                    for (String id: usersList)
-                    {
-                        if (userData.getId().equals(id)){
-                            if (mUsers.size() != 0)
-                            {
-                                for (UserData user1 : mUsers)
-                                {
-                                    if (!userData.getId().equals(user1.getId()))
-                                    {
-                                        mUsers.add(userData);
-                                    }
-                                }
-                            } else
-                            {
-                                mUsers.add(userData);
-                            }
+                    UserData user = snapshot.getValue(UserData.class);
+                    for (Chatlist chatlist: usersList){
+                        if (user.getId().equals(chatlist.getId()))
+                        {
+                            mUsers.add(user);
                         }
                     }
                 }
-                contactAdapter = new F_UserContactAdapter(mUsers,getContext());
+                contactAdapter = new F_UserContactAdapter(mUsers,getContext(),"NewUser");
                 recyclerView.setAdapter(contactAdapter);
             }
 
@@ -120,4 +97,5 @@ public class Fragment_UserChat extends Fragment {
             }
         });
     }
+
 }
